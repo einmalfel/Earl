@@ -1,0 +1,1136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/">
+    <channel>
+        <title>Радио-Т</title>
+        <link>http://www.radio-t.com/</link>
+        <atom10:link href="http://feeds.rucast.net/Radio-t" rel="self"
+                     type="application/rss+xml" xmlns:atom10="http://www.w3.org/2005/Atom"/>
+        <language>en</language>
+        <managingEditor>noemail@noemail.org (podcast@radio-t.com)</managingEditor>
+        <lastBuildDate>Mon, 17 Aug 2015 18:52:34 PDT</lastBuildDate>
+        <generator>Octopress http://octopress.org/</generator>
+        <feedburner:info uri="radio-t"
+                         xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0"/>
+        <atom10:link href="http://pubsubhubbub.appspot.com/" rel="hub"
+                     xmlns:atom10="http://www.w3.org/2005/Atom"/>
+        <description></description>
+        <media:copyright>Creative Commons - Attribution, Noncommercial, No Derivative Works 3.0
+            License.
+        </media:copyright>
+        <media:thumbnail url="http://www.radio-t.com/images/cover.jpg"/>
+        <media:keywords>hitech,russian,radiot,tech,news,радио</media:keywords>
+        <media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology/Tech News
+        </media:category>
+        <itunes:owner>
+            <itunes:email>podcast@radio-t.com</itunes:email>
+            <itunes:name>Umputun, Bobuk, Gray, Ksenks</itunes:name>
+        </itunes:owner>
+        <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+        <itunes:explicit>no</itunes:explicit>
+        <itunes:image href="http://www.radio-t.com/images/cover.jpg"/>
+        <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        <itunes:subtitle>Еженедельные импровизации на хай–тек темы</itunes:subtitle>
+        <itunes:summary>Еженедельные импровизации на хай–тек темы</itunes:summary>
+        <itunes:category text="Technology">
+            <itunes:category text="Tech News"/>
+        </itunes:category>
+        <creativeCommons:license>http://creativecommons.org/licenses/by-nc-nd/3.0/
+        </creativeCommons:license>
+        <item>
+            <title>Радио-Т 457</title>
+            <link>http://www.radio-t.com/p/2015/08/15/podcast-457/</link>
+            <pubDate>Sat, 15 Aug 2015 11:40:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/08/15/podcast-457</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt457.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a
+                href="https://medium.com/@dtauerbach/software-engineers-will-be-obsolete-by-2060-2a214fdf9737"&gt;К
+                2060 программисты останутся без работы&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://thenextweb.com/insider/2015/08/14/kaspersky-antivirus-accused-of-creating-malware-for-over-10-years/"&gt;Касперский
+                это делал?&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.zdnet.com/article/lenovo-rootkit-ensured-its-software-could-not-be-deleted/"&gt;Lenovo
+                подсовывает гадость, опять&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://googleblog.blogspot.com/2015/08/google-alphabet.html"&gt;Google
+                терерь не Google&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="https://blog.docker.com/2015/08/docker-1-8-content-trust-toolbox-registry-orchestration/"&gt;Docker
+                1.8&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.cnet.com/news/here-are-the-7-most-important-things-announced-at-samsung-unpacked/"&gt;7
+                новинок от Samsung Unpacked&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://qz.com/477869/laptop-sized-people-movers-hope-to-make-walking-a-thing-of-the-past/"&gt;Средство
+                передвижения для ленивых гиков&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.information-age.com/technology/cloud-and-virtualisation/123459971/amazon-investigating-major-cloud-outage-github-and-"&gt;Amazon
+                упал&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://social.techcrunch.com/2015/08/11/digitalocean-teams-up-with-bitnami-now-lets-you-install-over-100-web-apps-with-a-few-cli"&gt;DigitalOcean
+                подружился с Bitnami&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast457.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-457.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast457.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="76733042" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast457.mp3"/>
+            <media:content fileSize="76733042" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast457.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>К 2060 программисты останутся без работы. Касперский это делал? Lenovo
+                подсовывает гадость, опять. Google терерь не Google. Docker 1.8. 7 новинок от
+                Samsung Unpacked. Средство передвижения для ленивых гиков. Amazon упал. DigitalOcean
+                подружился с Bitnami
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>К 2060 программисты останутся без работы. Касперский это делал? Lenovo
+                подсовывает гадость, опять. Google терерь не Google. Docker 1.8. 7 новинок от
+                Samsung Unpacked. Средство передвижения для ленивых гиков. Amazon упал. DigitalOcean
+                подружился с Bitnami. Темы наших слушателей Спонсор этого выпуска DigitalOcean аудио
+                ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 456</title>
+            <link>http://www.radio-t.com/p/2015/08/08/podcast-456/</link>
+            <pubDate>Sat, 08 Aug 2015 10:29:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/08/08/podcast-456</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt456.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.theverge.com/2015/7/28/9045331/microsoft-windows-10-review"&gt;Windows
+                10&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://liberatum.ru/exclusive/windows-10-license"&gt;Удалять
+                или оставить в покое&lt;/a&gt;?&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.theplatform.net/2015/08/05/flash-disruption-comes-to-server-main-memory/"&gt;Flash
+                как RAM&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://blog.jooq.org/2015/08/05/ram-is-the-new-ssd/"&gt;RAM
+                будет в 10 раз плотнее&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://mashable.com/2015/08/02/google-plus-history/"&gt;Взлет
+                и падение Google+&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.wired.com/2015/08/epson-printer-no-cartridge/"&gt;Принтер
+                который вас не обманет&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast456.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-456.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast456.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="63619050" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast456.mp3"/>
+            <media:content fileSize="63619050" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast456.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Windows 10. Удалять или оставить в покое? Flash как RAM. RAM будет в 10
+                раз плотнее. Взлет и падение Google+. Принтер который вас не обманет. Темы наших
+                слушателей Спонсор этого выпуска DigitalOcean аудио ● лог чата
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Windows 10. Удалять или оставить в покое? Flash как RAM. RAM будет в 10
+                раз плотнее. Взлет и падение Google+. Принтер который вас не обманет. Темы наших
+                слушателей Спонсор этого выпуска DigitalOcean аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 455</title>
+            <link>http://www.radio-t.com/p/2015/08/01/podcast-455/</link>
+            <pubDate>Sat, 01 Aug 2015 11:22:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/08/01/podcast-455</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt455.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;Вводные разговоры.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="https://aws.amazon.com/blogs/aws/now-available-amazon-aurora/"&gt;Amazon
+                Aurora&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.javacodegeeks.com/2015/07/restful-considered-harmful.html"&gt;RESTful
+                уже не торт&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.techrepublic.com/article/nosql-is-a-complete-game-changer-declares-database-expert/"&gt;NoSQL
+                поменял все&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей.&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast455.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-455.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast455.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="91943621" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast455.mp3"/>
+            <media:content fileSize="91943621" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast455.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Вводные разговоры. Amazon Aurora. RESTful уже не торт. NoSQL поменял
+                все. Темы наших слушателей. Спонсор этого выпуска DigitalOcean аудио ● лог чата
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Вводные разговоры. Amazon Aurora. RESTful уже не торт. NoSQL поменял
+                все. Темы наших слушателей. Спонсор этого выпуска DigitalOcean аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 454</title>
+            <link>http://www.radio-t.com/p/2015/07/26/podcast-454/</link>
+            <pubDate>Sat, 25 Jul 2015 17:58:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/07/26/podcast-454</guid>
+            <description>&lt;ul&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.cnet.com/news/fire-phone-one-year-later-why-amazons-smartphone-flamed-out/"&gt;Fire
+                Phone год спустя&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://social.techcrunch.com/2015/07/23/amazons-aws-unit-reports-q2-revenue-of-1-8b-391m-profit/"&gt;У
+                Амазона всё хорошо с AWS&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/RJCvul"&gt;Google швыряется петабайтами&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://social.techcrunch.com/2015/07/23/dmail-makes-your-gmail-messages-self-destruct/"&gt;Сервис
+                по удалению писем — Dmail&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://siliconrus.com/2015/07/digital-is-dying/"&gt;Рынок
+                разработки сайтов умирает&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://habrahabr.ru/post/263147/"&gt;Взломан сайт
+                AshleyMadison.com&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://social.techcrunch.com/2015/07/20/prismatic-pivots/"&gt;Куда
+                идет Prismatic&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/dhAs0Y"&gt;Странные изобретения, без которых вы
+                легко проживете&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.theregister.co.uk/2015/07/22/os_x_root_hole/"&gt;Уязвимость
+                в Yosemite&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast454.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-454.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast454.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="125433488" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast454.mp3"/>
+            <media:content fileSize="125433488" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast454.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Fire Phone год спустя. У Амазона всё хорошо с AWS. Google швыряется
+                петабайтами. Сервис по удалению писем — Dmail. Рынок разработки сайтов умирает.
+                Взломан сайт AshleyMadison.com. Куда идет Prismatic. Странные изобретения, без
+                которых вы легко проживете.
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Fire Phone год спустя. У Амазона всё хорошо с AWS. Google швыряется
+                петабайтами. Сервис по удалению писем — Dmail. Рынок разработки сайтов умирает.
+                Взломан сайт AshleyMadison.com. Куда идет Prismatic. Странные изобретения, без
+                которых вы легко проживете. Уязвимость в Yosemite. Темы наших слушателей Спонсор
+                этого выпуска DigitalOcean аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 453</title>
+            <link>http://www.radio-t.com/p/2015/07/18/podcast-453/</link>
+            <pubDate>Sat, 18 Jul 2015 14:32:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/07/18/podcast-453</guid>
+            <description>&lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a
+                href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast453.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-453.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast453.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="95825677" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast453.mp3"/>
+            <media:content fileSize="95825677" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast453.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Спонсор этого выпуска DigitalOcean аудио ● лог чата</itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Спонсор этого выпуска DigitalOcean аудио ● лог чата</itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 452</title>
+            <link>http://www.radio-t.com/p/2015/07/11/podcast-452/</link>
+            <pubDate>Sat, 11 Jul 2015 11:27:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/07/11/podcast-452</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt452.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a
+                href="http://gizmodo.com/linux-creator-linus-torvalds-laughs-at-the-ai-apocalyps-1716383135"&gt;Линус
+                о наступление AI&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://arstechnica.com/security/2015/07/simultaneous-downing-of-ny-stock-exchange-united-and-wsj-com-rattle-nerves/"&gt;Все
+                упало и сразу&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="https://aws.amazon.com/blogs/aws/amazon-api-gateway-build-and-run-scalable-application-backends/"&gt;Amazon
+                API Gateway&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.wired.com/2015/07/microsoft-phone-job-cuts/"&gt;MS
+                проиграла еще одну войну&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/zuB9PL"&gt;Azure в 4 раза дороже?&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="https://www.kickstarter.com/projects/dickhardt/dc2-desktop-container-computer-for-docker-containe"&gt;DC2
+                - на вид как контейнер&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей.&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast452.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-452.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast452.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="81287230" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast452.mp3"/>
+            <media:content fileSize="81287230" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast452.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Линус о наступление AI. Все упало и сразу. Amazon API Gateway MS
+                проиграла еще одну войну. Azure в 4 раза дороже? DC2 - на вид как контейнер. Темы
+                наших слушателей. Спонсор этого выпуска DigitalOcean аудио ● лог чата
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Линус о наступление AI. Все упало и сразу. Amazon API Gateway MS
+                проиграла еще одну войну. Azure в 4 раза дороже? DC2 - на вид как контейнер. Темы
+                наших слушателей. Спонсор этого выпуска DigitalOcean аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 451</title>
+            <link>http://www.radio-t.com/p/2015/07/04/podcast-451/</link>
+            <pubDate>Sat, 04 Jul 2015 11:15:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/07/04/podcast-451</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt451.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/ECX8M6"&gt;Microsoft поломал Wi-Fi&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://habrahabr.ru/post/261689/"&gt;Компромиссы
+                микро-сервисов&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/cBRD9P"&gt;9 анти-шаблонов&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.infoq.com/news/2015/07/flocker-docker-volume-migration"&gt;Flocker
+                1.0&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.theregister.co.uk/2015/07/01/amazon_s2n_tls_library/"&gt;Amazon
+                представил TLS crypto&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/MFoeJw"&gt;Сравнение алгоритмов балансировки&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=bpMn5y56clA&amp;amp;feature=youtu.be"&gt;Видео-трансляция&lt;/a&gt;.&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast451.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-451.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast451.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="85710283" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast451.mp3"/>
+            <media:content fileSize="85710283" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast451.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Microsoft поломал Wi-Fi. Компромиссы микро-сервисов. 9 анти-шаблонов.
+                Flocker 1.0 Amazon представил TLS crypto. Сравнение алгоритмов балансировки. Темы
+                наших слушателей. Видео-трансляция. Спонсор этого выпуска DigitalOcean аудио ● лог
+                чата
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Microsoft поломал Wi-Fi. Компромиссы микро-сервисов. 9 анти-шаблонов.
+                Flocker 1.0 Amazon представил TLS crypto. Сравнение алгоритмов балансировки. Темы
+                наших слушателей. Видео-трансляция. Спонсор этого выпуска DigitalOcean аудио ● лог
+                чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 450</title>
+            <link>http://www.radio-t.com/p/2015/06/27/podcast-450/</link>
+            <pubDate>Sat, 27 Jun 2015 11:04:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/06/27/podcast-450</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt450.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/mpS5xj"&gt;Все о DockerCon 2015&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.theregister.co.uk/2015/06/24/docker_commercial_offering/"&gt;Docker
+                будет что продавать&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/4E8YFD"&gt;Плагины для экосистемы docker&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://social.techcrunch.com/2015/06/25/githubs-atom-text-editor-hits-1-0-now-has-over-350000-monthly-active-users/"&gt;Atom
+                дожил до версии 1.0&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/UHGM5h"&gt;Lenovo устроит воскрешение ThinkPad&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.infoq.com/news/2015/06/google-android-eclipse"&gt;Google
+                убила Android Eclipse Tools&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://eclipsesource.com/blogs/2015/06/24/top-10-eclipse-mars-features/"&gt;Что
+                нового в Eclipse Mars&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/d6DH6G"&gt;RapidBox - редакция заинтригована&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/eq0s8u"&gt;Gmail научился не посылать ошибки&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей.&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast450.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-450.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast450.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="83307801" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast450.mp3"/>
+            <media:content fileSize="83307801" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast450.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Все о DockerCon 2015. Docker будет что продавать. Плагины для
+                экосистемы docker. Atom дожил до версии 1.0. Lenovo устроит воскрешение ThinkPad.
+                Google убила Android Eclipse Tools. Что нового в Eclipse Mars. RapidBox - редакция
+                заинтригована. Gmail научил
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Все о DockerCon 2015. Docker будет что продавать. Плагины для экосистемы
+                docker. Atom дожил до версии 1.0. Lenovo устроит воскрешение ThinkPad. Google убила
+                Android Eclipse Tools. Что нового в Eclipse Mars. RapidBox - редакция заинтригована.
+                Gmail научился не посылать ошибки. Темы наших слушателей. Спонсор этого выпуска
+                DigitalOcean аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 449</title>
+            <link>http://www.radio-t.com/p/2015/06/20/podcast-449/</link>
+            <pubDate>Sat, 20 Jun 2015 11:03:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/06/20/podcast-449</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt449.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a
+                href="http://social.techcrunch.com/2015/06/17/google-microsoft-mozilla-and-others-team-up-to-launch-webassembly-a-new-binary-format-fo"&gt;Google,
+                Microsoft, Mozilla и прочие запускают WebAssembly&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://habrahabr.ru/company/defconru/blog/260383/"&gt;LastPass
+                взломан&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.digitaltrends.com/mobile/keyborad-security-flaw-samsung-phones/"&gt;Samsung
+                уязвим через клавиатуру&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.businessinsider.com/former-google-exec-launches-sourcepoint-with-10-million-series-a-funding-2015-6"&gt;Война
+                против вырезателей рекламы&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.theverge.com/2015/6/18/8805183/twitter-project-lightning-curated-news-platform"&gt;Twitter
+                создает новую платформу&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/HHRltX"&gt;Железное домашнее облако Lima&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.itworld.com/article/2937714/cloud-computing/why-linode-moved-to-kvm.html"&gt;Linode
+                ушел в KVM&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://thenextweb.com/apple/2015/06/17/apples-biggest-developer-news-at-wwdc-that-nobodys-talking-about-bitcode/"&gt;Bitcode&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://blog.jetbrains.com/idea/2015/06/intellij-idea-15-eap-is-open/"&gt;IntelliJ
+                IDEA 15 EAP&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="https://aws.amazon.com/blogs/aws/aws-lambda-update-run-java-code-in-response-to-events/"&gt;AWS
+                Lambda теперь и с Java&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей.&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast449.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-449.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast449.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="78830413" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast449.mp3"/>
+            <media:content fileSize="78830413" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast449.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Google, Microsoft, Mozilla и прочие запускают WebAssembly. LastPass
+                взломан. Samsung уязвим через клавиатуру. Война против вырезателей рекламы. Twitter
+                создает новую платформу. Железное домашнее облако Lima. Linode ушел в KVM. Bitcode.
+                IntelliJ IDEA 15 E
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Google, Microsoft, Mozilla и прочие запускают WebAssembly. LastPass
+                взломан. Samsung уязвим через клавиатуру. Война против вырезателей рекламы. Twitter
+                создает новую платформу. Железное домашнее облако Lima. Linode ушел в KVM. Bitcode.
+                IntelliJ IDEA 15 EAP. AWS Lambda теперь и с Java Темы наших слушателей. Спонсор
+                этого выпуска DigitalOcean аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 448</title>
+            <link>http://www.radio-t.com/p/2015/06/13/podcast-448/</link>
+            <pubDate>Sat, 13 Jun 2015 11:05:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/06/13/podcast-448</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt448.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/qHL5Na"&gt;Борьба за продуктивность&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://petapixel.com/2015/06/11/sonder-keyboard-uses-e-ink-to-put-shortcuts-icons-at-your-fingertips/"&gt;Sonder
+                Keyboard с E Ink&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/NzXmnu"&gt;SourceForge уходит некрасиво&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://9to5mac.com/2015/06/11/twitter-dm-limit-ceo-change/"&gt;Twitter
+                нацелился на рынок сообщений&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/z6mwAA"&gt;Instapaper добавил заметок&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/kXwhDk"&gt;WWDC 2015 уныл?&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.apple.com/osx/elcapitan-preview/"&gt;OS X El
+                Capitan&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.apple.com/ios/ios9-preview/"&gt;iOS 9&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.apple.com/watchos-2-preview/"&gt;WatchOS 2&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/anYmqq"&gt;Что-то это все напоминает&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://social.techcrunch.com/2015/06/11/aws-launches-m4-general-purpose-instances-for-ec2/"&gt;AWS
+                запустил M4&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast448.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-448.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast448.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="78987670" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast448.mp3"/>
+            <media:content fileSize="78987670" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast448.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Борьба за продуктивность. Sonder Keyboard с E Ink. SourceForge уходит
+                некрасиво. Twitter нацелился на рынок сообщений. Instapaper добавил заметок. WWDC
+                2015 уныл? OS X El Capitan. iOS 9. WatchOS 2. Что-то это все напоминает AWS запустил
+                M4. Темы наших сл
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Борьба за продуктивность. Sonder Keyboard с E Ink. SourceForge уходит
+                некрасиво. Twitter нацелился на рынок сообщений. Instapaper добавил заметок. WWDC
+                2015 уныл? OS X El Capitan. iOS 9. WatchOS 2. Что-то это все напоминает AWS запустил
+                M4. Темы наших слушателей Спонсор этого выпуска DigitalOcean аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 447</title>
+            <link>http://www.radio-t.com/p/2015/06/06/podcast-447/</link>
+            <pubDate>Sat, 06 Jun 2015 11:34:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/06/06/podcast-447</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt447.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/lVJGzU"&gt;5 мифов о том, как становятся
+                программистами&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.devbattles.com/en/sand/post-1314-The%208%20Most%20InDemand%20Programming%20Languages%20of%202015"&gt;8
+                самых востребованных языков 2015&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.brandonsavage.net/what-about-final-and-private/"&gt;final
+                с private против гибкости&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/3ugGyf"&gt;Монолиты - это наше все&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="https://developers.google.com/protocol-buffers/docs/proto3"&gt;Proto3
+                на подходе&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://blogs.msdn.com/b/looking_forward_microsoft__support_for_secure_shell_ssh1/archive/2015/06/02/managing-looking-forward-mic"&gt;Microsoft
+                полюбит SSH&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей.&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast447.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-447.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast447.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="86081744" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast447.mp3"/>
+            <media:content fileSize="86081744" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast447.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>5 мифов о том, как становятся программистами. 8 самых востребованных
+                языков 2015. final с private против гибкости. Монолиты - это наше все. Proto3 на
+                подходе. Microsoft полюбит SSH. Темы наших слушателей. Спонсор этого выпуска
+                DigitalOcean аудио ● лог ча
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>5 мифов о том, как становятся программистами. 8 самых востребованных
+                языков 2015. final с private против гибкости. Монолиты - это наше все. Proto3 на
+                подходе. Microsoft полюбит SSH. Темы наших слушателей. Спонсор этого выпуска
+                DigitalOcean аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 446</title>
+            <link>http://www.radio-t.com/p/2015/05/30/podcast-446/</link>
+            <pubDate>Sat, 30 May 2015 11:33:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/05/30/podcast-446</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt446.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a
+                href="http://thenextweb.com/google/2015/05/28/everything-google-announced-at-google-io-2015-in-one-handy-list/"&gt;Что
+                было на Google I/O 2015&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://social.techcrunch.com/2015/05/28/google-opens-inbox-to-all-adds-smart-reminders-trip-bundles-undo-send-and-more/"&gt;Inbox
+                для всех&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.phoronix.com/scan.php?page=news_item&amp;amp;px=Mandriva-Liquidated"&gt;Прощай,
+                Mandriva&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/7tknoe"&gt;Ответ Intel на контейнерную
+                революцию&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://habrahabr.ru/post/258595/"&gt;Печальное состояние
+                сисадмина в эпоху контейнеров&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast446.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-446.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast446.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="90064111" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast446.mp3"/>
+            <media:content fileSize="90064111" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast446.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Что было на Google I/O 2015. Inbox для всех. Прощай, Mandriva. Ответ
+                Intel на контейнерную революцию. Печальное состояние сисадмина в эпоху контейнеров.
+                Темы наших слушателей Спонсор этого выпуска DigitalOcean аудио ● лог чата
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Что было на Google I/O 2015. Inbox для всех. Прощай, Mandriva. Ответ
+                Intel на контейнерную революцию. Печальное состояние сисадмина в эпоху контейнеров.
+                Темы наших слушателей Спонсор этого выпуска DigitalOcean аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 445</title>
+            <link>http://www.radio-t.com/p/2015/05/23/podcast-445/</link>
+            <pubDate>Sat, 23 May 2015 10:40:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/05/23/podcast-445</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt445.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.javaworld.com/article/2924046/scripting-jvm-languages/java-at-20-jvm-javas-other-big-legacy.html"&gt;Java
+                через 20 лет&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.opennet.ru/opennews/art.shtml?num=42264"&gt;Библиотеке
+                Qt исполнилось 20 лет&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://9to5mac.com/2015/05/22/ios-9-os-x-10-11-to-bring-quality-focus-smaller-apps-rootless-security-legacy-iphoneipad-support/"&gt;iOS
+                9 &amp;amp; OSX 10.11 to bring&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://googlecloudplatform.blogspot.com/2015/05/Pay-Less-Compute-Moore.html"&gt;Очередной
+                виток войны облачных цен&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/SuZdeb"&gt;Как Amazon защищается против угрозы
+                Google&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://azure.microsoft.com/blog/2015/05/22/microsoft-the-only-vendor-named-a-leader-in-gartner-magic-quadrants-for-iaas-applicat"&gt;Microsoft
+                лучше всех в облаке&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.computerweekly.com/news/4500246502/Canonical-offers-Saas-pricing-for-on-premise-VMs-and-storage"&gt;Canonical
+                вернется на рынок SaaS&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/eHaBo0"&gt;8 странностей стартапов&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей.&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast445.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-445.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast445.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="70259115" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast445.mp3"/>
+            <media:content fileSize="70259115" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast445.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Java через 20 лет. Библиотеке Qt исполнилось 20 лет. iOS 9 &amp;amp;
+                OSX 10.11 to bring Очередной виток войны облачных цен. Как Amazon защищается против
+                угрозы Google. Microsoft лучше всех в облаке. Canonical вернется на рынок SaaS. 8
+                странностей стартапов.
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Java через 20 лет. Библиотеке Qt исполнилось 20 лет. iOS 9 &amp;amp; OSX
+                10.11 to bring Очередной виток войны облачных цен. Как Amazon защищается против
+                угрозы Google. Microsoft лучше всех в облаке. Canonical вернется на рынок SaaS. 8
+                странностей стартапов. Темы наших слушателей. Спонсор этого выпуска DigitalOcean
+                аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 444</title>
+            <link>http://www.radio-t.com/p/2015/05/16/podcast-444/</link>
+            <pubDate>Sat, 16 May 2015 10:56:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/05/16/podcast-444</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt444.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/4Oq7VX"&gt;Google поддержит облака и для
+                внутреннего употребления&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/5KDpEd"&gt;Rackspace ставит на "fanatical
+                support"&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/gG4SFl"&gt;Hub+ добавит все, что надо новому
+                MacBook&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/7pKhnB"&gt;Проблема с терминами, или что не так
+                CP и AP&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.opennet.ru/opennews/ar.t.shtml?num=42188"&gt;Выпуск
+                tmux 2.0&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/OsGYBY"&gt;Google+ Collections&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://blog.jetbrains.com/pycharm/2015/05/meet-pycharm-4-5-all-python-tools-in-one-place/"&gt;PyCharm
+                4.5 на радость питоноводам&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.idownloadblog.com/2015/05/13/bittorrent-bleep-for-iphone/"&gt;BitTorrent
+                запустил Bleep&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://arstechnica.com/security/2015/05/extremely-serious-virtual-machine-bug-threatens-cloud-providers-everywhere/"&gt;Опасный
+                баг на пороге наших облаков&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.theverge.com/2015/5/12/8595749/samsung-round-watch-rotating-bezel"&gt;Samsung
+                будет вращать, но не то&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей.&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast444.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-444.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast444.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="62881874" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast444.mp3"/>
+            <media:content fileSize="62881874" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast444.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Google поддержит облака и для внутреннего употребления. Rackspace
+                ставит на "fanatical support". Hub+ добавит все, что надо новому MacBook. Проблема с
+                терминами, или что не так CP и AP. Выпуск tmux 2.0. Google+ Collections PyCharm 4.5
+                на радость питоново
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Google поддержит облака и для внутреннего употребления. Rackspace ставит
+                на "fanatical support". Hub+ добавит все, что надо новому MacBook. Проблема с
+                терминами, или что не так CP и AP. Выпуск tmux 2.0. Google+ Collections PyCharm 4.5
+                на радость питоноводам. BitTorrent запустил Bleep. Опасный баг на пороге наших
+                облаков. Samsung будет вращать, но не то. Темы наших слушателей. Спонсор этого
+                выпуска DigitalOcean аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 443</title>
+            <link>http://www.radio-t.com/p/2015/05/09/podcast-443/</link>
+            <pubDate>Sat, 09 May 2015 11:37:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/05/09/podcast-443</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt443.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a
+                href="https://blog.docker.com/2015/05/dockers-2nd-birthday-by-the-numbers/"&gt;Docker
+                через 2 года&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://venturebeat.com/2015/05/06/githubs-atom-text-editor-picks-up-750k-downloads-in-its-first-year-with-300k-monthly-users/"&gt;GitHub
+                Atom через год&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.3dnews.ru/913874"&gt;Компьютер «АРМ Эльбрус-401»&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://social.techcrunch.com/2015/05/06/oculus-confirms-gear-vr-consumer-launch-on-track-for-later-this-year/"&gt;Oculus
+                для всех, скоро&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/S1xjou"&gt;Почему он не любит Python&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/yM92gL"&gt;Slack меняет ценовую политику SaaS&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.forbes.com/sites/paulmiller/2015/05/06/google-launches-bigtable-a-big-managed-database-in-the-cloud/"&gt;Google
+                запустил Bigtable для простых смертных&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="https://blog.heroku.com/archives/2015/5/7/new-dyno-types-public-beta"&gt;Heroku
+                - иногда они возвращаются&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.opennet.ru/opennews/art.shtml?num=42153"&gt;Google
+                прикручивает Dart к Android&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://habrahabr.ru/post/256617/"&gt;Релиз Debian Jessie 8.0&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://mashable.com/2015/04/23/acer-revo-one-mini-pc-hands-on/"&gt;Acer Revo
+                One&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.engadget.com/2015/04/24/bittorrent-reportedly-laid-off-dozens-of-employees/"&gt;BitTorrent
+                разогнал четверть конторы&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast443.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-443.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast443.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="63983719" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast443.mp3"/>
+            <media:content fileSize="63983719" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast443.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Docker через 2 года. GitHub Atom через год. Компьютер «АРМ
+                Эльбрус-401». Oculus для всех, скоро. Почему он не любит Python. Slack меняет
+                ценовую политику SaaS. Google запустил Bigtable для простых смертных. Heroku -
+                иногда они возвращаются. Google прикру
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Docker через 2 года. GitHub Atom через год. Компьютер «АРМ Эльбрус-401».
+                Oculus для всех, скоро. Почему он не любит Python. Slack меняет ценовую политику
+                SaaS. Google запустил Bigtable для простых смертных. Heroku - иногда они
+                возвращаются. Google прикручивает Dart к Android. Релиз Debian Jessie 8.0. Acer Revo
+                One BitTorrent разогнал четверть конторы. Темы наших слушателей Спонсор этого
+                выпуска DigitalOcean аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 442</title>
+            <link>http://www.radio-t.com/p/2015/05/02/podcast-442/</link>
+            <pubDate>Sat, 02 May 2015 11:37:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/05/02/podcast-442</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt442.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a href="http://www.rust-lang.org"&gt;Rust&lt;/a&gt; – зачем, почему и
+                для кого? Гость в студии.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://habrahabr.ru/company/microsoft/blog/257029/"&gt;Build
+                2015&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://habrahabr.ru/post/257011/"&gt;Microsoft анонсировала
+                кроссплатформенный редактор&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="https://pro.nitrous.io/"&gt;Nitrous Pro&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://news.netcraft.com/archives/2015/05/01/digitalocean-becomes-the-second-largest-hosting-company-in-the-world.html"&gt;DigitalOcean
+                уже #2&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://jeffknupp.com/blog/2014/04/15/how-devops-is-killing-the-developer/"&gt;DevOps
+                убивает&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.kitploit.com/2015/04/mobaxterm-terminal-for-windows-with-x11.html"&gt;MobaXterm
+                - монстр из окна&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://habrahabr.ru/company/parallels/blog/256961/"&gt;Как
+                Virtuozzo улучшает безопасность Docker&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast442.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-442.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast442.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="77794658" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast442.mp3"/>
+            <media:content fileSize="77794658" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast442.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Rust – зачем, почему и для кого? Гость в студии. Build 2015. Microsoft
+                анонсировала кроссплатформенный редактор. Nitrous Pro. DigitalOcean уже #2. DevOps
+                убивает. MobaXterm - монстр из окна. Как Virtuozzo улучшает безопасность Docker.
+                Темы наших слушател
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Rust – зачем, почему и для кого? Гость в студии. Build 2015. Microsoft
+                анонсировала кроссплатформенный редактор. Nitrous Pro. DigitalOcean уже #2. DevOps
+                убивает. MobaXterm - монстр из окна. Как Virtuozzo улучшает безопасность Docker.
+                Темы наших слушателей Спонсор этого выпуска DigitalOcean аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 441</title>
+            <link>http://www.radio-t.com/p/2015/04/25/podcast-441/</link>
+            <pubDate>Sat, 25 Apr 2015 10:52:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/04/25/podcast-441</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt441.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.bloomberg.com/news/articles/2015-04-23/amazon-finally-discloses-cloud-services-sales-showing-49-jump"&gt;Размер
+                AWS теперь не тайна&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://recode.net/2015/04/23/how-amazons-cloud-business-is-growing/"&gt;Как
+                Amazon по сравнению с конкурентами в облаках&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://social.techcrunch.com/2015/04/21/ubuntu-15-04-launches-with-support-for-openstack-kilo-new-lxd-hypervisor-and-snappy-core"&gt;Ubuntu
+                15.04&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.engadget.com/2015/04/22/google-project-fi/"&gt;Google
+                Project Fi&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://thenextweb.com/google/2015/04/24/theres-an-android-peeing-on-apple-on-google-maps-and-we-cant-figure-out-why/"&gt;Android
+                унизил конкурента&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://social.techcrunch.com/2015/04/21/atlassian-acquires-open-source-video-conferencing-company-bluejimp-to-power-hipchats-vid"&gt;Atlassian
+                добавит BlueJimp в HipChat&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей.&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast441.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-441.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast441.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="68670609" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast441.mp3"/>
+            <media:content fileSize="68670609" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast441.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Размер AWS теперь не тайна. Как Amazon по сравнению с конкурентами в
+                облаках. Ubuntu 15.04. Google Project Fi. Android унизил конкурента. Atlassian
+                добавит BlueJimp в HipChat. Темы наших слушателей. Спонсор этого выпуска
+                DigitalOcean аудио ● лог чата
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Размер AWS теперь не тайна. Как Amazon по сравнению с конкурентами в
+                облаках. Ubuntu 15.04. Google Project Fi. Android унизил конкурента. Atlassian
+                добавит BlueJimp в HipChat. Темы наших слушателей. Спонсор этого выпуска
+                DigitalOcean аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 440</title>
+            <link>http://www.radio-t.com/p/2015/04/18/podcast-440/</link>
+            <pubDate>Sat, 18 Apr 2015 12:06:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/04/18/podcast-440</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt440.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/6OJDts"&gt;Memex на смену Google-killer?&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/Y7Za6u"&gt;Работать на спине&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.opennet.ru/opennews/art.shtml?num=42058"&gt;Выпуск
+                Docker 1.6&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.theregister.co.uk/2015/04/16/http_sys_exploit_wild_ms15_034/"&gt;HTTP
+                'pings of death'&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.marketwired.com/press-release/-2010445.htm"&gt;Cyanogen
+                подружился с Microsoft&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://venturebeat.com/2015/04/17/google-plans-to-propose-its-quic-network-protocol-which-delivers-http-over-udp-as-an-internet-"&gt;Google
+                пpодвигаeт QUIC&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/pnbUNj"&gt;Neone - социальная сеть в коробке&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://social.techcrunch.com/2015/04/11/twitter-cuts-off-datasift-to-step-up-its-own-b2b-big-data-analytics-business/"&gt;Twitter
+                не даст больших данных&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://social.techcrunch.com/2015/04/11/whatever-happened-to-paas/?ncid=rss"&gt;Что
+                случилось с PaaS?&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.engadget.com/2015/04/11/bittorrent-project-maelstrom-beta/"&gt;BitTorrent
+                web browser&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей.&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast440.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-440.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast440.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="74537450" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast440.mp3"/>
+            <media:content fileSize="74537450" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast440.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Memex на смену Google-killer? Работать на спине. Выпуск Docker 1.6.
+                HTTP 'pings of death' Cyanogen подружился с Microsoft Google пpодвигаeт QUIC Neone -
+                социальная сеть в коробке. Twitter не даст больших данных. Что случилось с PaaS?
+                BitTorrent web brows
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Memex на смену Google-killer? Работать на спине. Выпуск Docker 1.6. HTTP
+                'pings of death' Cyanogen подружился с Microsoft Google пpодвигаeт QUIC Neone -
+                социальная сеть в коробке. Twitter не даст больших данных. Что случилось с PaaS?
+                BitTorrent web browser. Темы наших слушателей. Спонсор этого выпуска DigitalOcean
+                аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 439</title>
+            <link>http://www.radio-t.com/p/2015/04/11/podcast-439/</link>
+            <pubDate>Sat, 11 Apr 2015 10:29:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/04/11/podcast-439</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt439.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a href="http://geektimes.ru/post/248534/"&gt;Microsoft отмечает
+                40-летний юбилей&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="https://aws.amazon.com/blogs/aws/amazon-elastic-file-system-shared-file-storage-for-amazon-ec2/"&gt;Amazon
+                Elastic File System&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/wogKzI"&gt;Amazon Marketplace для десктопов&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://social.techcrunch.com/2015/04/09/aws-wants-to-put-machine-learning-in-reach-of-any-developer/?ncid=rss&amp;amp;utm_source=feedbur"&gt;AWS
+                Machine Learning&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://aws.amazon.com/ecs/"&gt;Amazon EC2 Container Service
+                доступны всем&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/LIyhSZ"&gt;Статистика от Stack Overflow&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/FP8Z86"&gt;Из Google Authenticator и Authy в
+                1Password&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://instantcloud.io"&gt;BareMetal SSD в облаке&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/beyyTw"&gt;VirtualBox пробудился&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.linux.com/news/hardware/laptops/820930-google-unveils-4-new-chromebooks-and-chrome-os-on-a-stick/"&gt;Google
+                показaл 4 хромбука и Chrome OS на палочке&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей.&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast439.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-439.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast439.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="76861303" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast439.mp3"/>
+            <media:content fileSize="76861303" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast439.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Microsoft отмечает 40-летний юбилей. Amazon Elastic File System. Amazon
+                Marketplace для десктопов. AWS Machine Learning. Amazon EC2 Container Service
+                доступны всем. Статистика от Stack Overflow. Из Google Authenticator и Authy в
+                1Password. BareMetal SSD
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Microsoft отмечает 40-летний юбилей. Amazon Elastic File System. Amazon
+                Marketplace для десктопов. AWS Machine Learning. Amazon EC2 Container Service
+                доступны всем. Статистика от Stack Overflow. Из Google Authenticator и Authy в
+                1Password. BareMetal SSD в облаке. VirtualBox пробудился. Google показaл 4 хромбука
+                и Chrome OS на палочке. Темы наших слушателей. Спонсор этого выпуска DigitalOcean
+                аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <item>
+            <title>Радио-Т 438</title>
+            <link>http://www.radio-t.com/p/2015/04/04/podcast-438/</link>
+            <pubDate>Sat, 04 Apr 2015 11:05:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/04/04/podcast-438</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt438.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/CpnYxV"&gt;Гиковские шутки на первое апреля&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://blog.jetbrains.com/clion/2015/04/clion-1-0-lets-start-the-countdown/"&gt;CLion
+                1.0&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="https://www.djangoproject.com/weblog/2015/apr/01/release-18-final/"&gt;Django
+                1.8&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://blog.rust-lang.org/2015/04/03/Rust-1.0-beta.html"&gt;Rust
+                1.0 Beta&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/t9Nq2Y"&gt;Микросервисы и контейнеры с другого
+                угла&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://prsm.tc/aozRv7"&gt;7 причин почему фреймворки это языки&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://arstechnica.com/security/2015/03/github-battles-largest-ddos-in-sites-history-targeted-at-anti-censorship-tools/"&gt;GitHub
+                против DDoS&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://bravenewgeek.com/you-cannot-have-exactly-once-delivery/"&gt;Почему не
+                бывает Exactly-Once Delivery&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://java.dzone.com/articles/choosing-good-sharding-key"&gt;Выбор
+                Sharding Key&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей.&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast438.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-438.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast438.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="83483083" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast438.mp3"/>
+            <media:content fileSize="83483083" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast438.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>Гиковские шутки на первое апреля. CLion 1.0. Django 1.8. Rust 1.0 Beta.
+                Микросервисы и контейнеры с другого угла. 7 причин почему фреймворки это языки.
+                GitHub против DDoS. Почему не бывает Exactly-Once Delivery. Выбор Sharding Key. Темы
+                наших слушателей.
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>Гиковские шутки на первое апреля. CLion 1.0. Django 1.8. Rust 1.0 Beta.
+                Микросервисы и контейнеры с другого угла. 7 причин почему фреймворки это языки.
+                GitHub против DDoS. Почему не бывает Exactly-Once Delivery. Выбор Sharding Key. Темы
+                наших слушателей. Спонсор этого выпуска DigitalOcean аудио ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <copyright>Creative Commons - Attribution, Noncommercial, No Derivative Works 3.0 License.
+        </copyright>
+        <media:credit role="author">Umputun, Bobuk, Gray, Ksenks</media:credit>
+        <media:rating>nonadult</media:rating>
+    </channel>
+</rss>

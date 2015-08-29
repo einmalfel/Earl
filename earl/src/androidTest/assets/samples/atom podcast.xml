@@ -1,0 +1,37 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://www.example.org/myfeed</id>
+    <title>My Podcast Feed</title>
+    <updated>2005-07-15T12:00:00Z</updated>
+    <author>
+        <name>James M Snell</name>
+    </author>
+    <link href="http://example.org"/>
+    <link href="http://example.org/myfeed" rel="self"/>
+    <entry>
+        <id>http://www.example.org/entries/1</id>
+        <title>Atom 1.0</title>
+        <updated>2005-07-15T12:00:00Z</updated>
+        <link href="http://www.example.org/entries/1"/>
+        <summary>An overview of Atom 1.0</summary>
+        <link href="http://www.example.org/myaudiofile.mp3"
+              length="1234"
+              rel="enclosure"
+              title="MP3"
+              type="audio/mpeg"/>
+        <link href="http://www.example.org/myaudiofile.torrent"
+              length="1234"
+              rel="enclosure"
+              title="BitTorrent"
+              type="application/x-bittorrent"/>
+        <content type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <h1>Show Notes</h1>
+                <ul>
+                    <li>00:01:00 -- Introduction</li>
+                    <li>00:15:00 -- Talking about Atom 1.0</li>
+                    <li>00:30:00 -- Wrapping up</li>
+                </ul>
+            </div>
+        </content>
+    </entry>
+</feed>

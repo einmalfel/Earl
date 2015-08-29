@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/">
+    <channel>
+        <title>Радио-Т</title>
+        <link>http://www.radio-t.com/</link>
+        <atom10:link href="http://feeds.rucast.net/Radio-t" rel="self"
+                     type="application/rss+xml" xmlns:atom10="http://www.w3.org/2005/Atom"/>
+        <language>en</language>
+        <managingEditor>noemail@noemail.org (podcast@radio-t.com)</managingEditor>
+        <lastBuildDate>Mon, 17 Aug 2015 18:52:34 PDT</lastBuildDate>
+        <generator>Octopress http://octopress.org/</generator>
+        <feedburner:info uri="radio-t"
+                         xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0"/>
+        <atom10:link href="http://pubsubhubbub.appspot.com/" rel="hub"
+                     xmlns:atom10="http://www.w3.org/2005/Atom"/>
+        <description></description>
+        <media:copyright>Creative Commons - Attribution, Noncommercial, No Derivative Works 3.0
+            License.
+        </media:copyright>
+        <media:thumbnail url="http://www.radio-t.com/images/cover.jpg"/>
+        <media:keywords>hitech,russian,radiot,tech,news,радио</media:keywords>
+        <media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology/Tech News
+        </media:category>
+        <itunes:owner>
+            <itunes:email>podcast@radio-t.com</itunes:email>
+            <itunes:name>Umputun, Bobuk, Gray, Ksenks</itunes:name>
+        </itunes:owner>
+        <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+        <itunes:explicit>no</itunes:explicit>
+        <itunes:image href="http://www.radio-t.com/images/cover.jpg"/>
+        <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        <itunes:subtitle>Еженедельные импровизации на хай–тек темы</itunes:subtitle>
+        <itunes:summary>Еженедельные импровизации на хай–тек темы</itunes:summary>
+        <itunes:category text="Technology">
+            <itunes:category text="Tech News"/>
+        </itunes:category>
+        <creativeCommons:license>http://creativecommons.org/licenses/by-nc-nd/3.0/
+        </creativeCommons:license>
+        <item>
+            <title>Радио-Т 457</title>
+            <link>http://www.radio-t.com/p/2015/08/15/podcast-457/</link>
+            <pubDate>Sat, 15 Aug 2015 11:40:00 PDT</pubDate>
+            <guid isPermaLink="false">http://www.radio-t.com/p/2015/08/15/podcast-457</guid>
+            <description>&lt;p&gt;&lt;img src="http://www.radio-t.com/images/radio-t/rt457.jpg"
+                alt="" /&gt;&lt;/p&gt;
+
+                &lt;ul&gt;
+                &lt;li&gt;&lt;a
+                href="https://medium.com/@dtauerbach/software-engineers-will-be-obsolete-by-2060-2a214fdf9737"&gt;К
+                2060 программисты останутся без работы&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://thenextweb.com/insider/2015/08/14/kaspersky-antivirus-accused-of-creating-malware-for-over-10-years/"&gt;Касперский
+                это делал?&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.zdnet.com/article/lenovo-rootkit-ensured-its-software-could-not-be-deleted/"&gt;Lenovo
+                подсовывает гадость, опять&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://googleblog.blogspot.com/2015/08/google-alphabet.html"&gt;Google
+                терерь не Google&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="https://blog.docker.com/2015/08/docker-1-8-content-trust-toolbox-registry-orchestration/"&gt;Docker
+                1.8&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.cnet.com/news/here-are-the-7-most-important-things-announced-at-samsung-unpacked/"&gt;7
+                новинок от Samsung Unpacked&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://qz.com/477869/laptop-sized-people-movers-hope-to-make-walking-a-thing-of-the-past/"&gt;Средство
+                передвижения для ленивых гиков&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://www.information-age.com/technology/cloud-and-virtualisation/123459971/amazon-investigating-major-cloud-outage-github-and-"&gt;Amazon
+                упал&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;&lt;a
+                href="http://social.techcrunch.com/2015/08/11/digitalocean-teams-up-with-bitnami-now-lets-you-install-over-100-web-apps-with-a-few-cli"&gt;DigitalOcean
+                подружился с Bitnami&lt;/a&gt;.&lt;/li&gt;
+                &lt;li&gt;Темы наших слушателей&lt;/li&gt;
+                &lt;/ul&gt;
+
+
+                &lt;p&gt;&lt;em&gt;Спонсор этого выпуска &lt;a href="https://www.digitalocean.com"&gt;DigitalOcean&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="http://cdn.radio-t.com/rt_podcast457.mp3"&gt;аудио&lt;/a&gt; ●
+                &lt;a href="http://chat.radio-t.com/logs/radio-t-457.html"&gt;лог чата&lt;/a&gt;
+                &lt;audio src="http://cdn.radio-t.com/rt_podcast457.mp3" preload="none"&gt;&lt;/audio&gt;&lt;/p&gt;
+            </description>
+            <author>podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)</author>
+            <enclosure length="76733042" type="audio/mpeg"
+                       url="http://cdn.radio-t.com/rt_podcast457.mp3"/>
+            <media:content fileSize="76733042" type="audio/mpeg"
+                           url="http://cdn.radio-t.com/rt_podcast457.mp3"/>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:subtitle>К 2060 программисты останутся без работы. Касперский это делал? Lenovo
+                подсовывает гадость, опять. Google терерь не Google. Docker 1.8. 7 новинок от
+                Samsung Unpacked. Средство передвижения для ленивых гиков. Amazon упал. DigitalOcean
+                подружился с Bitnami
+            </itunes:subtitle>
+            <itunes:author>Umputun, Bobuk, Gray, Ksenks</itunes:author>
+            <itunes:summary>К 2060 программисты останутся без работы. Касперский это делал? Lenovo
+                подсовывает гадость, опять. Google терерь не Google. Docker 1.8. 7 новинок от
+                Samsung Unpacked. Средство передвижения для ленивых гиков. Amazon упал. DigitalOcean
+                подружился с Bitnami. Темы наших слушателей Спонсор этого выпуска DigitalOcean аудио
+                ● лог чата
+            </itunes:summary>
+            <itunes:keywords>hitech,russian,radiot,tech,news,радио</itunes:keywords>
+        </item>
+        <copyright>Creative Commons - Attribution, Noncommercial, No Derivative Works 3.0 License.
+        </copyright>
+        <media:credit role="author">Umputun, Bobuk, Gray, Ksenks</media:credit>
+        <media:rating>nonadult</media:rating>
+    </channel>
+</rss>

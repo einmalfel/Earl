@@ -1,0 +1,64 @@
+{
+  "categories": [],
+  "copyright": "Creative Commons - Attribution, Noncommercial, No Derivative Works 3.0 License.\n        ",
+  "description": "",
+  "generator": "Octopress http://octopress.org/",
+  "items": [
+    {
+      "author": "podcast@radio-t.com (Umputun, Bobuk, Gray, Ksenks)",
+      "categories": [],
+      "description": "\u003cp\u003e\u003cimg src\u003d\"http://www.radio-t.com/images/radio-t/rt457.jpg\"\n                alt\u003d\"\" /\u003e\u003c/p\u003e\n\n                \u003cul\u003e\n                \u003cli\u003e\u003ca\n                href\u003d\"https://medium.com/@dtauerbach/software-engineers-will-be-obsolete-by-2060-2a214fdf9737\"\u003eК\n                2060 программисты останутся без работы\u003c/a\u003e.\u003c/li\u003e\n                \u003cli\u003e\u003ca\n                href\u003d\"http://thenextweb.com/insider/2015/08/14/kaspersky-antivirus-accused-of-creating-malware-for-over-10-years/\"\u003eКасперский\n                это делал?\u003c/a\u003e\u003c/li\u003e\n                \u003cli\u003e\u003ca\n                href\u003d\"http://www.zdnet.com/article/lenovo-rootkit-ensured-its-software-could-not-be-deleted/\"\u003eLenovo\n                подсовывает гадость, опять\u003c/a\u003e.\u003c/li\u003e\n                \u003cli\u003e\u003ca href\u003d\"http://googleblog.blogspot.com/2015/08/google-alphabet.html\"\u003eGoogle\n                терерь не Google\u003c/a\u003e.\u003c/li\u003e\n                \u003cli\u003e\u003ca\n                href\u003d\"https://blog.docker.com/2015/08/docker-1-8-content-trust-toolbox-registry-orchestration/\"\u003eDocker\n                1.8\u003c/a\u003e.\u003c/li\u003e\n                \u003cli\u003e\u003ca\n                href\u003d\"http://www.cnet.com/news/here-are-the-7-most-important-things-announced-at-samsung-unpacked/\"\u003e7\n                новинок от Samsung Unpacked\u003c/a\u003e.\u003c/li\u003e\n                \u003cli\u003e\u003ca\n                href\u003d\"http://qz.com/477869/laptop-sized-people-movers-hope-to-make-walking-a-thing-of-the-past/\"\u003eСредство\n                передвижения для ленивых гиков\u003c/a\u003e.\u003c/li\u003e\n                \u003cli\u003e\u003ca\n                href\u003d\"http://www.information-age.com/technology/cloud-and-virtualisation/123459971/amazon-investigating-major-cloud-outage-github-and-\"\u003eAmazon\n                упал\u003c/a\u003e.\u003c/li\u003e\n                \u003cli\u003e\u003ca\n                href\u003d\"http://social.techcrunch.com/2015/08/11/digitalocean-teams-up-with-bitnami-now-lets-you-install-over-100-web-apps-with-a-few-cli\"\u003eDigitalOcean\n                подружился с Bitnami\u003c/a\u003e.\u003c/li\u003e\n                \u003cli\u003eТемы наших слушателей\u003c/li\u003e\n                \u003c/ul\u003e\n\n\n                \u003cp\u003e\u003cem\u003eСпонсор этого выпуска \u003ca href\u003d\"https://www.digitalocean.com\"\u003eDigitalOcean\u003c/a\u003e\u003c/em\u003e\u003c/p\u003e\n\n                \u003cp\u003e\u003ca href\u003d\"http://cdn.radio-t.com/rt_podcast457.mp3\"\u003eаудио\u003c/a\u003e ●\n                \u003ca href\u003d\"http://chat.radio-t.com/logs/radio-t-457.html\"\u003eлог чата\u003c/a\u003e\n                \u003caudio src\u003d\"http://cdn.radio-t.com/rt_podcast457.mp3\" preload\u003d\"none\"\u003e\u003c/audio\u003e\u003c/p\u003e\n            ",
+      "enclosures": [
+        {
+          "length": 76733042,
+          "type": "audio/mpeg",
+          "url": "http://cdn.radio-t.com/rt_podcast457.mp3"
+        }
+      ],
+      "guid": {
+        "value": "http://www.radio-t.com/p/2015/08/15/podcast-457"
+      },
+      "itunes": {
+        "author": "Umputun, Bobuk, Gray, Ksenks",
+        "explicit": "no",
+        "keywords": [
+          "hitech,russian,radiot,tech,news,радио"
+        ],
+        "subtitle": "К 2060 программисты останутся без работы. Касперский это делал? Lenovo\n                подсовывает гадость, опять. Google терерь не Google. Docker 1.8. 7 новинок от\n                Samsung Unpacked. Средство передвижения для ленивых гиков. Amazon упал. DigitalOcean\n                подружился с Bitnami\n            ",
+        "summary": "К 2060 программисты останутся без работы. Касперский это делал? Lenovo\n                подсовывает гадость, опять. Google терерь не Google. Docker 1.8. 7 новинок от\n                Samsung Unpacked. Средство передвижения для ленивых гиков. Amazon упал. DigitalOcean\n                подружился с Bitnami. Темы наших слушателей Спонсор этого выпуска DigitalOcean аудио\n                ● лог чата\n            "
+      },
+      "link": "http://www.radio-t.com/p/2015/08/15/podcast-457/",
+      "pubDate": "Aug 15, 2015 6:40:00 PM",
+      "title": "Радио-Т 457"
+    }
+  ],
+  "itunes": {
+    "author": "Umputun, Bobuk, Gray, Ksenks",
+    "categories": [
+      {
+        "subCategories": [
+          {
+            "subCategories": [],
+            "text": "Tech News"
+          }
+        ],
+        "text": "Technology"
+      }
+    ],
+    "explicit": "no",
+    "image": "http://www.radio-t.com/images/cover.jpg",
+    "owner": {
+      "eMail": "podcast@radio-t.com",
+      "name": "Umputun, Bobuk, Gray, Ksenks"
+    },
+    "subtitle": "Еженедельные импровизации на хай–тек темы",
+    "summary": "Еженедельные импровизации на хай–тек темы"
+  },
+  "language": "en",
+  "lastBuildDate": "Aug 18, 2015 1:52:34 AM",
+  "link": "http://www.radio-t.com/",
+  "managingEditor": "noemail@noemail.org (podcast@radio-t.com)",
+  "skipDays": [],
+  "skipHours": [],
+  "title": "Радио-Т"
+}
