@@ -2,11 +2,9 @@ package com.einmalfel.earl;
 
 import android.support.annotation.Nullable;
 
-import java.net.URL;
-
 public interface Enclosure {
   @Nullable
-  URL getURL();
+  String getLink();
 
   @Nullable
   Integer getLength();

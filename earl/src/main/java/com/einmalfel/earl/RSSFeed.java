@@ -163,8 +163,8 @@ public class RSSFeed implements Feed {
 
   @Nullable
   @Override
-  public URL getLink() {
-    return link;
+  public String getLink() {
+    return link == null ? null : link.toString();
   }
 
   @Nullable
@@ -193,8 +193,8 @@ public class RSSFeed implements Feed {
 
   @Nullable
   @Override
-  public URL getImageURL() {
-    return (image == null || image.url == null) ? null : image.url;
+  public String getImageLink() {
+    return (image == null || image.url == null) ? null : image.url.toString();
   }
 
   @Nullable

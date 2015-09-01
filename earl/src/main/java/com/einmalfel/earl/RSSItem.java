@@ -109,8 +109,8 @@ public class RSSItem implements Item {
 
   @Nullable
   @Override
-  public URL getLink() {
-    return link;
+  public String getLink() {
+    return link == null ? null : link.toString();
   }
 
   @Nullable
@@ -133,8 +133,8 @@ public class RSSItem implements Item {
 
   @Nullable
   @Override
-  public URL getImageURL() {
-    return itunes == null ? null : itunes.image;
+  public String getImageLink() {
+    return itunes == null ? null : itunes.image.toString();
   }
 
   @Nullable

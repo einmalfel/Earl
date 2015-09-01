@@ -38,8 +38,8 @@ public class RSSEnclosure implements Enclosure {
 
   @Nullable
   @Override
-  public URL getURL() {
-    return url;
+  public String getLink() {
+    return url.toString();
   }
 
   @Nullable

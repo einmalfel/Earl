@@ -3,13 +3,12 @@ package com.einmalfel.earl;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import java.net.URL;
 import java.util.Date;
 import java.util.List;
 
 public interface Feed {
   @Nullable
-  URL getLink();
+  String getLink();
 
   @Nullable
   Date getPublicationDate();
@@ -24,7 +23,7 @@ public interface Feed {
   String getCopyright();
 
   @Nullable
-  URL getImageURL();
+  String getImageLink();
 
   @Nullable
   String getAuthor();
