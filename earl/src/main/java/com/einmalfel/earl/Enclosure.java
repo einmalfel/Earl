@@ -1,9 +1,10 @@
 package com.einmalfel.earl;
 
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 public interface Enclosure {
-  @Nullable
+  @NonNull
   String getLink();
 
   @Nullable

@@ -1,6 +1,7 @@
 package com.einmalfel.earl;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -10,7 +11,9 @@ import java.io.IOException;
 public class RSSGuid {
   static final String XML_TAG = "guid";
 
+  @NonNull
   public final String value;
+  @Nullable
   public final Boolean isPermalink;
 
   @NonNull
@@ -21,7 +24,7 @@ public class RSSGuid {
                        permalink == null ? null : Boolean.valueOf(permalink));
   }
 
-  public RSSGuid(String value, Boolean isPermalink) {
+  public RSSGuid(@NonNull String value, @Nullable Boolean isPermalink) {
     this.value = value;
     this.isPermalink = isPermalink;
   }

@@ -1,6 +1,7 @@
 package com.einmalfel.earl;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -12,7 +13,9 @@ public class ItunesOwner {
   static final String XML_TAG = "owner";
   private static final String TAG = "E.ITO";
 
+  @Nullable
   public final String name;
+  @Nullable
   public final String eMail;
 
   @NonNull
@@ -35,7 +38,7 @@ public class ItunesOwner {
     return new ItunesOwner(name, eMail);
   }
 
-  public ItunesOwner(String name, String eMail) {
+  public ItunesOwner(@Nullable String name, @Nullable String eMail) {
     this.name = name;
     this.eMail = eMail;
   }

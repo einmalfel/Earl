@@ -12,7 +12,9 @@ import java.util.List;
 
 public class ItunesCategory {
   static final String XML_TAG = "category";
+  @NonNull
   public final String text;
+  @NonNull
   public final List<ItunesCategory> subCategories;
 
   @NonNull
@@ -27,7 +29,7 @@ public class ItunesCategory {
     return new ItunesCategory(Utils.nonNullString(value), subCategories);
   }
 
-  public ItunesCategory(String text, @NonNull List<ItunesCategory> subCategories) {
+  public ItunesCategory(@NonNull String text, @NonNull List<ItunesCategory> subCategories) {
     this.text = text;
     this.subCategories = Collections.unmodifiableList(subCategories);
   }

@@ -1,7 +1,6 @@
 package com.einmalfel.earl;
 
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -12,8 +11,11 @@ import java.net.URL;
 public class RSSEnclosure implements Enclosure {
   static final String XML_TAG = "enclosure";
 
+  @NonNull
   public final URL url;
+  @NonNull
   public final Integer length;
+  @NonNull
   public final String type;
 
   @NonNull
@@ -28,25 +30,25 @@ public class RSSEnclosure implements Enclosure {
     return result;
   }
 
-  public RSSEnclosure(URL url, Integer length, String type) {
+  public RSSEnclosure(@NonNull URL url, @NonNull Integer length, @NonNull String type) {
     this.url = url;
     this.length = length;
     this.type = type;
   }
 
-  @Nullable
+  @NonNull
   @Override
   public String getLink() {
     return url.toString();
   }
 
-  @Nullable
+  @NonNull
   @Override
   public Integer getLength() {
     return length;
   }
 
-  @Nullable
+  @NonNull
   @Override
   public String getType() {
     return type;

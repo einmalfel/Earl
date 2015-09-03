@@ -11,7 +11,9 @@ import java.net.URL;
 public class RSSSource {
   static final String XML_TAG = "source";
 
+  @NonNull
   public final String value;
+  @NonNull
   public final URL url;
 
   @NonNull
@@ -21,7 +23,7 @@ public class RSSSource {
     return new RSSSource(Utils.nonNullString(parser.nextText()), url);
   }
 
-  public RSSSource(String value, URL url) {
+  public RSSSource(@NonNull String value, @NonNull URL url) {
     this.value = value;
     this.url = url;
   }

@@ -20,16 +20,27 @@ public class RSSItem implements Item {
   static final String XML_TAG = "item";
   private static final String TAG = "E.RIT";
 
+  @Nullable
   public final String title;
+  @Nullable
   public final URL link;
+  @Nullable
   public final String description;
+  @Nullable
   public final String author;
+  @NonNull
   public final List<RSSCategory> categories;
+  @Nullable
   public final URL comments;
+  @NonNull
   public final List<RSSEnclosure> enclosures;
+  @Nullable
   public final RSSGuid guid;
+  @Nullable
   public final Date pubDate;
+  @Nullable
   public final RSSSource source;
+  @Nullable
   public final ItunesItem itunes;
 
   @NonNull
@@ -93,7 +104,11 @@ public class RSSItem implements Item {
     return result;
   }
 
-  public RSSItem(String title, URL link, String description, String author, @NonNull List<RSSCategory> categories, URL comments, @NonNull List<RSSEnclosure> enclosures, RSSGuid guid, Date pubDate, RSSSource source, ItunesItem itunes) {
+  public RSSItem(@Nullable String title, @Nullable URL link, @Nullable String description,
+                 @Nullable String author, @NonNull List<RSSCategory> categories,
+                 @Nullable URL comments, @NonNull List<RSSEnclosure> enclosures,
+                 @Nullable RSSGuid guid, @Nullable Date pubDate, @Nullable RSSSource source,
+                 @Nullable ItunesItem itunes) {
     this.title = title;
     this.link = link;
     this.description = description;
@@ -134,7 +149,7 @@ public class RSSItem implements Item {
   @Nullable
   @Override
   public String getImageLink() {
-    return itunes == null ? null : itunes.image.toString();
+    return itunes == null || itunes.image == null ? null : itunes.image.toString();
   }
 
   @Nullable

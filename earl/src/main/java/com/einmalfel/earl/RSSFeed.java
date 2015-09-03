@@ -21,27 +21,47 @@ public class RSSFeed implements Feed {
 
   private static final String TAG = "E.RSF";
 
+  @NonNull
   public final String title;
+  @NonNull
   public final URL link;
+  @NonNull
   public final String description;
+  @Nullable
   public final String language;
+  @Nullable
   public final String copyright;
+  @Nullable
   public final String managingEditor;
+  @Nullable
   public final String webMaster;
+  @Nullable
   public final Date pubDate;
+  @Nullable
   public final Date lastBuildDate;
+  @NonNull
   public final List<RSSCategory> categories;
+  @Nullable
   public final String generator;
+  @Nullable
   public final URL docs;
+  @Nullable
   public final RSSCloud cloud;
+  @Nullable
   public final Integer ttl;
+  @Nullable
   public final String rating;
+  @Nullable
   public final RSSImage image;
+  @Nullable
   public final RSSTextInput textInput;
+  @NonNull
   public final List<Integer> skipHours;
+  @NonNull
   public final List<String> skipDays;
+  @NonNull
   public final List<RSSItem> items;
-
+  @Nullable
   public final ItunesFeed itunes;
 
   @NonNull
@@ -137,7 +157,16 @@ public class RSSFeed implements Feed {
     return result;
   }
 
-  public RSSFeed(String title, URL link, String description, String language, String copyright, String managingEditor, String webMaster, Date pubDate, Date lastBuildDate, @NonNull List<RSSCategory> categories, String generator, URL docs, RSSCloud cloud, Integer ttl, String rating, RSSImage image, RSSTextInput textInput, @NonNull List<Integer> skipHours, @NonNull List<String> skipDays, @NonNull List<RSSItem> items, ItunesFeed itunes) {
+  public RSSFeed(@NonNull String title, @NonNull URL link, @NonNull String description,
+                 @Nullable String language, @Nullable String copyright,
+                 @Nullable String managingEditor, @Nullable String webMaster,
+                 @Nullable Date pubDate, @Nullable Date lastBuildDate,
+                 @NonNull List<RSSCategory> categories, @Nullable String generator,
+                 @Nullable URL docs, @Nullable RSSCloud cloud,
+                 @Nullable Integer ttl, @Nullable String rating, @Nullable RSSImage image,
+                 @Nullable RSSTextInput textInput,
+                 @NonNull List<Integer> skipHours, @NonNull List<String> skipDays,
+                 @NonNull List<RSSItem> items, @Nullable ItunesFeed itunes) {
     this.title = title;
     this.link = link;
     this.description = description;
@@ -164,7 +193,7 @@ public class RSSFeed implements Feed {
   @Nullable
   @Override
   public String getLink() {
-    return link == null ? null : link.toString();
+    return link.toString();
   }
 
   @Nullable
@@ -173,13 +202,13 @@ public class RSSFeed implements Feed {
     return pubDate;
   }
 
-  @Nullable
+  @NonNull
   @Override
   public String getTitle() {
     return title;
   }
 
-  @Nullable
+  @NonNull
   @Override
   public String getDescription() {
     return description;
@@ -194,7 +223,7 @@ public class RSSFeed implements Feed {
   @Nullable
   @Override
   public String getImageLink() {
-    return (image == null || image.url == null) ? null : image.url.toString();
+    return (image == null) ? null : image.url.toString();
   }
 
   @Nullable

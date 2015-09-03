@@ -13,7 +13,7 @@ public interface Feed {
   @Nullable
   Date getPublicationDate();
 
-  @Nullable
+  @NonNull
   String getTitle();
 
   @Nullable

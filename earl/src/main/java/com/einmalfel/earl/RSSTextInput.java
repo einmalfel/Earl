@@ -15,9 +15,13 @@ public class RSSTextInput {
   static final String XML_TAG = "textInput";
   private static final String TAG = "E.RTI";
 
+  @NonNull
   public final String title;
+  @NonNull
   public final String description;
+  @NonNull
   public final String name;
+  @NonNull
   public final URL link;
 
   @NonNull
@@ -42,7 +46,8 @@ public class RSSTextInput {
     return result;
   }
 
-  public RSSTextInput(String title, String description, String name, URL link) {
+  public RSSTextInput(@NonNull String title, @NonNull String description, @NonNull String name,
+                      @NonNull URL link) {
     this.title = title;
     this.description = description;
     this.name = name;

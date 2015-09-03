@@ -2,6 +2,7 @@ package com.einmalfel.earl;
 
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -62,22 +63,36 @@ public class ItunesItem {
     }
   }
 
+  @Nullable
   public final String author;
+  @Nullable
   public final Boolean block;
+  @Nullable
   public final URL image;
+  @Nullable
   public final Long duration;
+  @Nullable
   public final String explicit;
+  @Nullable
   public final Boolean isClosedCaptioned;
+  @Nullable
   public final Integer order;
+  @Nullable
   public final String subtitle;
+  @Nullable
   public final String summary;
   /**
    * Allows users to search on text keywords
    * This one is now deprecated by Apple
    */
+  @NonNull
   public final List<String> keywords;
 
-  public ItunesItem(String author, Boolean block, URL image, Long duration, String explicit, Boolean isClosedCaptioned, Integer order, String subtitle, String summary, @NonNull List<String> keywords) {
+  public ItunesItem(@Nullable String author, @Nullable Boolean block, @Nullable URL image,
+                    @Nullable Long duration, @Nullable String explicit,
+                    @Nullable Boolean isClosedCaptioned, @Nullable Integer order,
+                    @Nullable String subtitle, @Nullable String summary,
+                    @NonNull List<String> keywords) {
     this.author = author;
     this.block = block;
     this.image = image;

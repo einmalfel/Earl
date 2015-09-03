@@ -1,6 +1,7 @@
 package com.einmalfel.earl;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -15,11 +16,17 @@ public class RSSImage {
   static final String XML_TAG = "image";
   private static final String TAG = "E.RSI";
 
+  @NonNull
   public final String title;
+  @Nullable
   public final String description;
+  @NonNull
   public final URL link;
+  @NonNull
   public final URL url;
+  @Nullable
   public final Integer width;
+  @Nullable
   public final Integer height;
 
   @NonNull
@@ -46,7 +53,8 @@ public class RSSImage {
     return result;
   }
 
-  public RSSImage(String title, String description, URL link, URL url, Integer width, Integer height) {
+  public RSSImage(@NonNull String title, @Nullable String description, @NonNull URL link,
+                  @NonNull URL url, @Nullable Integer width, @Nullable Integer height) {
     this.title = title;
     this.description = description;
     this.link = link;
