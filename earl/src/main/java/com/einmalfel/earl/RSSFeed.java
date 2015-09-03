@@ -111,7 +111,7 @@ public class RSSFeed implements Feed {
 
     RSSFeed result = new RSSFeed(
         Utils.nonNullString(map.remove("title")),
-        map.containsKey("link") ? new URL(map.remove("link")) : null,
+        Utils.nonNullUrl(map.remove("link")),
         Utils.nonNullString(map.remove("description")),
         map.remove("language"),
         map.remove("copyright"),
@@ -121,7 +121,7 @@ public class RSSFeed implements Feed {
         map.containsKey("lastBuildDate") ? Utils.parseRFC822Date(map.remove("lastBuildDate")) : null,
         categories,
         map.remove("generator"),
-        map.containsKey("docs") ? new URL(map.remove("docs")) : null,
+        map.containsKey("docs") ? Utils.tryParseUrl(map.remove("docs")) : null,
         cloud,
         map.containsKey("ttl") ? Utils.tryParseInt(map.remove("ttl")) : null,
         map.remove("rating"),

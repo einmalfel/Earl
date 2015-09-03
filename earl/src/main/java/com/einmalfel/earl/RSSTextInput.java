@@ -33,7 +33,7 @@ public class RSSTextInput {
         Utils.nonNullString(map.remove("title")),
         Utils.nonNullString(map.remove("description")),
         Utils.nonNullString(map.remove("name")),
-        map.containsKey("link") ? new URL(map.remove("link")) : null);
+        Utils.nonNullUrl(map.remove("link")));
 
     for (String tag : map.keySet()) {
       Log.w(TAG, "Unknown textInput tag: " + tag);

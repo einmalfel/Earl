@@ -8,6 +8,8 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -107,5 +109,32 @@ class Utils {
     } else {
       return string;
     }
+  }
+
+  @Nullable
+  static URL tryParseUrl(@Nullable String string) {
+    if (string == null) {
+      Log.w(TAG, "Null value while parsing url", new NullPointerException());
+      return null;
+    } else {
+      try {
+        return new URL(string);
+      } catch (MalformedURLException exception) {
+        Log.w(TAG, "Error parsing url value '" + string, exception);
+        return null;
+      }
+    }
+  }
+
+  @NonNull
+  static URL nonNullUrl(@Nullable String string) {
+    URL result = tryParseUrl(string);
+    if (result == null) {
+      Log.w(TAG, "Malformed URL replaced with 'http://'");
+      try {
+        result = new URL("http://");
+      } catch (MalformedURLException ignored) {throw new AssertionError("Should never get here");}
+    }
+    return result;
   }
 }

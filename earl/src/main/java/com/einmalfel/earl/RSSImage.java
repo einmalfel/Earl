@@ -34,8 +34,8 @@ public class RSSImage {
     RSSImage result = new RSSImage(
         Utils.nonNullString(map.remove("title")),
         map.remove("description"),
-        map.containsKey("link") ? new URL(map.remove("link")) : null,
-        map.containsKey("url") ? new URL(map.remove("url")) : null,
+        Utils.nonNullUrl(map.remove("link")),
+        Utils.nonNullUrl(map.remove("url")),
         map.containsKey("width") ? Utils.tryParseInt(map.remove("width")) : null,   // default
         map.containsKey("height") ? Utils.tryParseInt(map.remove("height")) : null);// values 88X31
 

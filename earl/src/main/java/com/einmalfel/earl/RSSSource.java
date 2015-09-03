@@ -17,7 +17,7 @@ public class RSSSource {
   @NonNull
   static RSSSource read(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
-    String url = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url");
+    URL url = Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url"));
     return new RSSSource(Utils.nonNullString(parser.nextText()), url);
   }
 

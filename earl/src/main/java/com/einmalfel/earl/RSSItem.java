@@ -75,11 +75,11 @@ public class RSSItem implements Item {
     }
     RSSItem result = new RSSItem(
         map.remove("title"),
-        map.containsKey("link") ? new URL(map.remove("link")) : null,
+        map.containsKey("link") ? Utils.tryParseUrl(map.remove("link")) : null,
         map.remove("description"),
         map.remove("author"),
         categories,
-        map.containsKey("comments") ? new URL(map.remove("comments")) : null,
+        map.containsKey("comments") ? Utils.tryParseUrl(map.remove("comments")) : null,
         enclosures,
         guid,
         map.containsKey("pubDate") ? Utils.parseRFC822Date(map.remove("pubDate")) : null,

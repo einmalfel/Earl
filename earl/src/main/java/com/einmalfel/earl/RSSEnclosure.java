@@ -20,9 +20,8 @@ public class RSSEnclosure implements Enclosure {
   static RSSEnclosure read(@NonNull XmlPullParser parser)
       throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
-    String urlString = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url");
     RSSEnclosure result = new RSSEnclosure(
-        urlString == null ? null : new URL(urlString),
+        Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url")),
         Utils.nonNullInt(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "length")),
         Utils.nonNullString(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type")));
     parser.nextText();
