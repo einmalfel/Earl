@@ -19,4 +19,20 @@ public class EarlParserTest extends AndroidTestCase {
         new GsonBuilder().setPrettyPrinting().create().toJson(EarlParser.parseOrThrow(sample, 0)),
         new Scanner(reference, "UTF-8").useDelimiter("\\A").next());
   }
+
+  public void testCBCNews() throws Exception {
+    InputStream sample = getContext().getAssets().open("samples/CBC news.xml");
+    InputStream reference = getContext().getAssets().open("references/CBC news.json");
+    assertEquals(
+        new GsonBuilder().setPrettyPrinting().create().toJson(EarlParser.parseOrThrow(sample, 0)),
+        new Scanner(reference, "UTF-8").useDelimiter("\\A").next());
+  }
+
+  public void testNPRNews() throws Exception {
+    InputStream sample = getContext().getAssets().open("samples/NPR news.xml");
+    InputStream reference = getContext().getAssets().open("references/NPR news.json");
+    assertEquals(
+        new GsonBuilder().setPrettyPrinting().create().toJson(EarlParser.parseOrThrow(sample, 0)),
+        new Scanner(reference, "UTF-8").useDelimiter("\\A").next());
+  }
 }

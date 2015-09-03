@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:npr="http://www.npr.org/rss/" xmlns:nprml="http://api.npr.org/nprml">
+    <channel>
+        <title>Hourly News Summary</title>
+        <link>http://www.npr.org/templates/topics/topic.php?topicId=1001</link>
+        <description><![CDATA[Five minutes of NPR news, updated hourly.]]></description>
+        <copyright>Copyright 2007 NPR - For Personal Use Only</copyright>
+        <generator>NPR API RSS Generator 0.94</generator>
+        <language>en-us</language>
+        <itunes:summary><![CDATA[Five minutes of NPR news, updated hourly.]]></itunes:summary>
+        <itunes:subtitle><![CDATA[Five minutes of NPR news, updated hourly.]]></itunes:subtitle>
+        <itunes:author>NPR</itunes:author>
+        <itunes:block>no</itunes:block>
+        <itunes:owner>
+            <itunes:email/>
+            <itunes:name/>
+        </itunes:owner>
+        <itunes:category text="News &amp; Politics"/>
+        <itunes:image
+            href="http://media.npr.org/images/podcasts/2013/primary/hourly_news_summary-c464279737c989a5fbf3049bc229152af3c36b9d.png?s=1400"/>
+        <image>
+            <url>
+                http://media.npr.org/images/podcasts/2013/primary/hourly_news_summary-c464279737c989a5fbf3049bc229152af3c36b9d.png?s=200
+            </url>
+            <title>Hourly News Summary</title>
+            <link>http://www.npr.org/templates/topics/topic.php?topicId=1001</link>
+        </image>
+        <lastBuildDate>Tue, 01 Sep 2015 10:00:00 -0400</lastBuildDate>
+        <item>
+            <title>NPR News: 09-01-2015 10AM ET</title>
+            <description><![CDATA[NPR News: 09-01-2015 10AM ET]]></description>
+            <pubDate>Tue, 01 Sep 2015 10:00:00 -0400</pubDate>
+            <copyright>Copyright 2007 NPR - For Personal Use Only</copyright>
+            <guid>ca8da2f4-137e-4c1f-a05d-82ac96a7cecc</guid>
+            <itunes:author>NPR</itunes:author>
+            <itunes:summary><![CDATA[NPR News: 09-01-2015 10AM ET]]></itunes:summary>
+            <itunes:subtitle><![CDATA[NPR News: 09-01-2015 10AM ET]]></itunes:subtitle>
+            <itunes:duration>300</itunes:duration>
+            <itunes:explicit>no</itunes:explicit>
+            <enclosure
+                length="0"
+                type="audio/mpeg" url="http://public.npr.org/anon.npr-mp3/npr/newscasts/2015/09/01/newscast100606.mp3?orgId=1&amp;d=300&amp;p=500005&amp;story=436586515&amp;t=podcast&amp;e=436586515&amp;ft=pod&amp;f=500005"/>
+        </item>
+    </channel>
+</rss>

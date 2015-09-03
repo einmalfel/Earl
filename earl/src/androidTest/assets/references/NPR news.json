@@ -1,0 +1,60 @@
+{
+  "categories": [],
+  "copyright": "Copyright 2007 NPR - For Personal Use Only",
+  "description": "Five minutes of NPR news, updated hourly.",
+  "generator": "NPR API RSS Generator 0.94",
+  "image": {
+    "link": "http://www.npr.org/templates/topics/topic.php?topicId\u003d1001",
+    "title": "Hourly News Summary",
+    "url": "http://media.npr.org/images/podcasts/2013/primary/hourly_news_summary-c464279737c989a5fbf3049bc229152af3c36b9d.png?s\u003d200"
+  },
+  "items": [
+    {
+      "categories": [],
+      "description": "NPR News: 09-01-2015 10AM ET",
+      "enclosures": [
+        {
+          "length": 0,
+          "type": "audio/mpeg",
+          "url": "http://public.npr.org/anon.npr-mp3/npr/newscasts/2015/09/01/newscast100606.mp3?orgId\u003d1\u0026d\u003d300\u0026p\u003d500005\u0026story\u003d436586515\u0026t\u003dpodcast\u0026e\u003d436586515\u0026ft\u003dpod\u0026f\u003d500005"
+        }
+      ],
+      "guid": {
+        "value": "ca8da2f4-137e-4c1f-a05d-82ac96a7cecc"
+      },
+      "itunes": {
+        "author": "NPR",
+        "duration": 300,
+        "explicit": "no",
+        "keywords": [],
+        "subtitle": "NPR News: 09-01-2015 10AM ET",
+        "summary": "NPR News: 09-01-2015 10AM ET"
+      },
+      "pubDate": "Sep 1, 2015 5:00:00 PM",
+      "title": "NPR News: 09-01-2015 10AM ET"
+    }
+  ],
+  "itunes": {
+    "author": "NPR",
+    "block": false,
+    "categories": [
+      {
+        "subCategories": [],
+        "text": "News \u0026 Politics"
+      }
+    ],
+    "image": "http://media.npr.org/images/podcasts/2013/primary/hourly_news_summary-c464279737c989a5fbf3049bc229152af3c36b9d.png?s\u003d1400",
+    "owner": {
+      "eMail": "",
+      "name": ""
+    },
+    "subtitle": "Five minutes of NPR news, updated hourly.",
+    "summary": "Five minutes of NPR news, updated hourly."
+  },
+  "language": "en-us",
+  "lastBuildDate": "Sep 1, 2015 5:00:00 PM",
+  "link": "http://www.npr.org/templates/topics/topic.php?topicId\u003d1001",
+  "skipDays": [],
+  "skipHours": [],
+  "title": "Hourly News Summary"
+}

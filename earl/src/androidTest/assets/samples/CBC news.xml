@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/DTDs/Podcast-1.0.dtd">
+    <channel>
+        <title>CBC News: Hourly Edition</title>
+        <link>http://www.cbc.ca/podcasting/</link>
+        <description>The latest national and international news, updated every hour</description>
+        <itunes:summary>The latest national and international news, updated every hour
+        </itunes:summary>
+        <itunes:category text="News &amp; Politics"/>
+        <itunes:author>CBC News: Hourly Edition</itunes:author>
+        <itunes:image href="http://www.cbc.ca/podcasting/images/promo-hourlies.jpg"/>
+        <image>
+            <title>CBC News: Hourly Edition</title>
+            <url>http://www.cbc.ca/podcasting/images/promo-hourlies.jpg</url>
+            <link>http://www.cbc.ca/podcasting/</link>
+        </image>
+        <item>
+            <guid isPermaLink="false">http://podcast.cbc.ca/mp3/hourlynews_20150901_0900.mp3</guid>
+            <title>CBC News: Hourly Edition for 2015/09/01 at 09:00 EDT</title>
+            <description>CBC News: Hourly Edition for 2015/09/01 at 09:00 EDT</description>
+            <pubDate>Tue, 01 Sep 2015 09:00:00 EDT</pubDate>
+            <itunes:duration>4:30</itunes:duration>
+            <enclosure length="270" type="audio/mpeg"
+                       url="http://podcast.cbc.ca/mp3/hourlynews.mp3"/>
+        </item>
+    </channel>
+</rss>
