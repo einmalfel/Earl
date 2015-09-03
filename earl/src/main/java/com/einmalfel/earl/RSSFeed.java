@@ -110,9 +110,9 @@ public class RSSFeed implements Feed {
     }
 
     RSSFeed result = new RSSFeed(
-        map.remove("title"),
+        Utils.nonNullString(map.remove("title")),
         map.containsKey("link") ? new URL(map.remove("link")) : null,
-        map.remove("description"),
+        Utils.nonNullString(map.remove("description")),
         map.remove("language"),
         map.remove("copyright"),
         map.remove("managingEditor"),

@@ -16,8 +16,8 @@ public class RSSCategory {
   @NonNull
   static RSSCategory read(@NonNull XmlPullParser parser)throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
-    String domain = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "domain");
-    return new RSSCategory(parser.nextText(), domain);
+    return new RSSCategory(Utils.nonNullString(parser.nextText()),
+                           parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "domain"));
   }
 
   public RSSCategory(String value, String domain) {

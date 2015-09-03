@@ -24,7 +24,7 @@ public class ItunesCategory {
     while (parser.nextTag() != XmlPullParser.END_TAG) {
       subCategories.add(ItunesCategory.read(parser));
     }
-    return new ItunesCategory(value, subCategories);
+    return new ItunesCategory(Utils.nonNullString(value), subCategories);
   }
 
   public ItunesCategory(String text, @NonNull List<ItunesCategory> subCategories) {

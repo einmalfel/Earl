@@ -32,7 +32,7 @@ public class RSSImage {
       }
     }
     RSSImage result = new RSSImage(
-        map.remove("title"),
+        Utils.nonNullString(map.remove("title")),
         map.remove("description"),
         map.containsKey("link") ? new URL(map.remove("link")) : null,
         map.containsKey("url") ? new URL(map.remove("url")) : null,

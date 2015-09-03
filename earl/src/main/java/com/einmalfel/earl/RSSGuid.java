@@ -17,7 +17,8 @@ public class RSSGuid {
   static RSSGuid read(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
     String permalink = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "isPermalink");
-    return new RSSGuid(parser.nextText(), permalink == null ? null : Boolean.valueOf(permalink));
+    return new RSSGuid(Utils.nonNullString(parser.nextText()),
+                       permalink == null ? null : Boolean.valueOf(permalink));
   }
 
   public RSSGuid(String value, Boolean isPermalink) {

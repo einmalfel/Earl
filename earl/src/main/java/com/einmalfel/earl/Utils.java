@@ -98,4 +98,14 @@ class Utils {
       return result;
     }
   }
+
+  @NonNull
+  static String nonNullString(@Nullable String string) {
+    if (string == null) {
+      Log.w(TAG, "Unexpectedly got null string. Replaced with empty", new NullPointerException());
+      return "";
+    } else {
+      return string;
+    }
+  }
 }

@@ -30,9 +30,9 @@ public class RSSTextInput {
       }
     }
     RSSTextInput result = new RSSTextInput(
-        map.remove("title"),
-        map.remove("description"),
-        map.remove("name"),
+        Utils.nonNullString(map.remove("title")),
+        Utils.nonNullString(map.remove("description")),
+        Utils.nonNullString(map.remove("name")),
         map.containsKey("link") ? new URL(map.remove("link")) : null);
 
     for (String tag : map.keySet()) {

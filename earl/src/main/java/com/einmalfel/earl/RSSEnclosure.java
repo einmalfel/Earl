@@ -23,8 +23,8 @@ public class RSSEnclosure implements Enclosure {
     String urlString = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url");
     RSSEnclosure result = new RSSEnclosure(
         urlString == null ? null : new URL(urlString),
-        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"));
         Utils.nonNullInt(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "length")),
+        Utils.nonNullString(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type")));
     parser.nextText();
     return result;
   }
