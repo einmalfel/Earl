@@ -13,9 +13,7 @@ import java.net.URL;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.Locale;
 
 class Utils {
@@ -29,8 +27,7 @@ class Utils {
       new SimpleDateFormat("HH:mm:ss", Locale.US),
       new SimpleDateFormat("H:mm:ss", Locale.US),
       new SimpleDateFormat("   mm:ss", Locale.US),
-      new SimpleDateFormat("    m:ss", Locale.US),
-      new SimpleDateFormat("ssssssss", Locale.US),};
+      new SimpleDateFormat("    m:ss", Locale.US),};
 
   @Nullable
   static Date parseRFC822Date(@NonNull String dateString) {
@@ -42,17 +39,20 @@ class Utils {
     }
   }
 
+  /**
+   * @param dateString time string to parse
+   * @return episode duration in seconds or null if parsing fails
+   */
   @Nullable
-  static Long parseItunesDuration(@NonNull String dateString) {
+  static Integer parseItunesDuration(@NonNull String dateString) {
     for (DateFormat format : itunesDurationFormats) {
       try {
         Date date = format.parse(dateString);
-        Calendar calendar = GregorianCalendar.getInstance(Locale.US);
-        calendar.setTime(date);
-        return calendar.getTimeInMillis() / 1000;
+        return (int)(date.getTime() / 1000);
       } catch (ParseException ignored) {}
     }
-    return null;
+    // if none of formats match, this could be an integer value in seconds
+    return tryParseInt(dateString);
   }
 
   /**

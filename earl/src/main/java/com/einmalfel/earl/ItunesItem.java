@@ -70,7 +70,7 @@ public class ItunesItem {
   @Nullable
   public final URL image;
   @Nullable
-  public final Long duration;
+  public final Integer duration;
   @Nullable
   public final String explicit;
   @Nullable
@@ -89,7 +89,7 @@ public class ItunesItem {
   public final List<String> keywords;
 
   public ItunesItem(@Nullable String author, @Nullable Boolean block, @Nullable URL image,
-                    @Nullable Long duration, @Nullable String explicit,
+                    @Nullable Integer duration, @Nullable String explicit,
                     @Nullable Boolean isClosedCaptioned, @Nullable Integer order,
                     @Nullable String subtitle, @Nullable String summary,
                     @NonNull List<String> keywords) {
