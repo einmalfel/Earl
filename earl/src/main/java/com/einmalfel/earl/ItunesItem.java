@@ -49,7 +49,7 @@ public class ItunesItem {
           map.containsKey("duration") ? Utils.parseItunesDuration(map.remove("duration")) : null,
           map.remove("explicit"),
           map.containsKey("isClosedCaptioned") ? "yes".equals(map.remove("isClosedCaptioned")) : null,
-          map.containsKey("order") ? Integer.valueOf(map.remove("order")) : null,
+          map.containsKey("order") ? Utils.tryParseInt(map.remove("order")) : null,
           map.remove("subtitle"),
           map.remove("summary"),
           keywords == null ? new LinkedList<String>() : keywords);

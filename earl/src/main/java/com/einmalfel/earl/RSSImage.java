@@ -36,8 +36,8 @@ public class RSSImage {
         map.remove("description"),
         map.containsKey("link") ? new URL(map.remove("link")) : null,
         map.containsKey("url") ? new URL(map.remove("url")) : null,
-        map.containsKey("width") ? Integer.valueOf(map.remove("width")) : null, // default values 88X31
-        map.containsKey("height") ? Integer.valueOf(map.remove("height")) : null);
+        map.containsKey("width") ? Utils.tryParseInt(map.remove("width")) : null,   // default
+        map.containsKey("height") ? Utils.tryParseInt(map.remove("height")) : null);// values 88X31
 
     for (String tag : map.keySet()) {
       Log.w(TAG, "Unknown image tag: " + tag);

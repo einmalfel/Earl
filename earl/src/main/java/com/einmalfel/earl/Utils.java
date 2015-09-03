@@ -73,4 +73,29 @@ class Utils {
     }
   }
 
+  @Nullable
+  static Integer tryParseInt(@Nullable String string) {
+    if (string == null) {
+      Log.w(TAG, "Null value while parsing integer", new NullPointerException());
+      return null;
+    } else {
+      try {
+        return Integer.valueOf(string);
+      } catch (NumberFormatException exception) {
+        Log.w(TAG, "Error parsing integer value '" + string, exception);
+        return null;
+      }
+    }
+  }
+
+  @NonNull
+  static Integer nonNullInt(@Nullable String string) {
+    Integer result = tryParseInt(string);
+    if (result == null) {
+      Log.w(TAG, "Malformed integer string replaced with '-1'");
+      return -1;
+    } else {
+      return result;
+    }
+  }
 }

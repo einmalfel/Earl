@@ -82,7 +82,7 @@ public class RSSFeed implements Feed {
               break;
             case "skipHours":
               while (parser.nextTag() == XmlPullParser.START_TAG && "hour".equals(parser.getName())) {
-                skipHours.add(Integer.valueOf(parser.nextText()));
+                skipHours.add(Utils.tryParseInt(parser.nextText()));
               }
               break;
             case "skipDays":
@@ -123,7 +123,7 @@ public class RSSFeed implements Feed {
         map.remove("generator"),
         map.containsKey("docs") ? new URL(map.remove("docs")) : null,
         cloud,
-        map.containsKey("ttl") ? Integer.valueOf(map.remove("ttl")) : null,
+        map.containsKey("ttl") ? Utils.tryParseInt(map.remove("ttl")) : null,
         map.remove("rating"),
         image,
         textInput,

@@ -22,7 +22,7 @@ public class RSSCloud {
     String port = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "port");
     return new RSSCloud(
         parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "domain"),
-        port == null ? null : Integer.parseInt(port),
+        port == null ? null : Utils.tryParseInt(port),
         parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "path"),
         parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "registerProcedure"),
         parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "protocol"));

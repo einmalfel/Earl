@@ -21,11 +21,10 @@ public class RSSEnclosure implements Enclosure {
       throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
     String urlString = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url");
-    String lengthString = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "length");
     RSSEnclosure result = new RSSEnclosure(
         urlString == null ? null : new URL(urlString),
-        lengthString == null ? null : Integer.valueOf(lengthString),
         parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"));
+        Utils.nonNullInt(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "length")),
     parser.nextText();
     return result;
   }
