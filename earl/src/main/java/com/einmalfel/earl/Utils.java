@@ -39,43 +39,59 @@ class Utils {
     }
   }
 
+  private static DateFormat RFC3339;
+  private static DateFormat RFC3339Ms;
+  private static DateFormat RFC3339Tz;
+  private static DateFormat RFC3339TzMs;
+
+  static void setupRFC3339() {
+    RFC3339 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US);
+    RFC3339Ms = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'", Locale.US);
+    RFC3339Ms.setLenient(true);
+    RFC3339Tz = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ", Locale.US);
+    RFC3339TzMs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ", Locale.US);
+    RFC3339TzMs.setLenient(true);
+  }
+
   /**
-   * sourced from: http://cokere.com/RFC3339Date.txt
+   * based on: http://cokere.com/RFC3339Date.txt
    */
-  public static java.util.Date parseRFC3339Date(String datestring) throws java.text.ParseException, IndexOutOfBoundsException{
-    Date d = new Date();
+  @Nullable
+  public static java.util.Date parseRFC3339Date(@NonNull String string) {
+    if (RFC3339 == null) {
+      setupRFC3339();
+    }
+    try {
+      Date date;
 
-    //if there is no time zone, we don't need to do any special parsing.
-    if(datestring.endsWith("Z")){
-      try{
-        SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");//spec for RFC3339
-        d = s.parse(datestring);
+      //if there is no time zone, we don't need to do any special parsing.
+      if (string.endsWith("Z")) {
+        try {
+          date = RFC3339.parse(string);
+        } catch (java.text.ParseException pe) {//try again with optional decimals
+          date = RFC3339Ms.parse(string);
+        }
+        return date;
       }
-      catch(java.text.ParseException pe){//try again with optional decimals
-        SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'");//spec for RFC3339 (with fractional seconds)
-        s.setLenient(true);
-        d = s.parse(datestring);
+
+      //step one, split off the timezone.
+      String firstPart = string.substring(0, string.lastIndexOf('-'));
+      String secondPart = string.substring(string.lastIndexOf('-'));
+
+      //step two, remove the colon from the timezone offset
+      secondPart = secondPart.substring(0, secondPart.indexOf(':')) + secondPart
+          .substring(secondPart.indexOf(':') + 1);
+      string = firstPart + secondPart;
+      try {
+        date = RFC3339Tz.parse(string);
+      } catch (java.text.ParseException pe) {//try again with optional decimals
+        date = RFC3339TzMs.parse(string);
       }
-      return d;
+      return date;
+    } catch (ParseException exception) {
+      Log.w(TAG, "Failed to parse RFC3339 string " + string, exception);
+      return null;
     }
-
-    //step one, split off the timezone.
-    String firstpart = datestring.substring(0,datestring.lastIndexOf('-'));
-    String secondpart = datestring.substring(datestring.lastIndexOf('-'));
-
-    //step two, remove the colon from the timezone offset
-    secondpart = secondpart.substring(0,secondpart.indexOf(':')) + secondpart.substring(secondpart.indexOf(':')+1);
-    datestring  = firstpart + secondpart;
-    SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");//spec for RFC3339
-    try{
-      d = s.parse(datestring);
-    }
-    catch(java.text.ParseException pe){//try again with optional decimals
-      s = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ");//spec for RFC3339 (with fractional seconds)
-      s.setLenient(true);
-      d = s.parse(datestring);
-    }
-    return d;
   }
 
   /**
