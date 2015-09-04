@@ -24,14 +24,14 @@
               title="BitTorrent"
               type="application/x-bittorrent"/>
         <content type="xhtml">
-            <div xmlns="http://www.w3.org/1999/xhtml">
-                <h1>Show Notes</h1>
-                <ul>
-                    <li>00:01:00 -- Introduction</li>
-                    <li>00:15:00 -- Talking about Atom 1.0</li>
-                    <li>00:30:00 -- Wrapping up</li>
-                </ul>
-            </div>
+            &lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;
+            &lt;h1&gt;Show Notes&lt;/h1&gt;
+            &lt;ul&gt;
+            &lt;li&gt;00:01:00 -- Introduction&lt;/li&gt;
+            &lt;li&gt;00:15:00 -- Talking about Atom 1.0&lt;/li&gt;
+            &lt;li&gt;00:30:00 -- Wrapping up&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
         </content>
     </entry>
 </feed>
