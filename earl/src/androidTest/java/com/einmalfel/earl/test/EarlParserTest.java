@@ -4,7 +4,9 @@ import android.test.AndroidTestCase;
 import android.util.Log;
 
 import com.einmalfel.earl.EarlParser;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -41,6 +43,7 @@ public class EarlParserTest extends AndroidTestCase {
 
   private String objectToJson(Object object) throws JsonProcessingException {
     return new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT)
+                             .setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.NONE)
                              .setSerializationInclusion(JsonInclude.Include.NON_NULL)
                              .writeValueAsString(object);
   }

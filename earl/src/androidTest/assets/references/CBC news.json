@@ -12,19 +12,16 @@
     "enclosures" : [ {
       "length" : 270,
       "type" : "audio/mpeg",
-      "url" : "http://podcast.cbc.ca/mp3/hourlynews.mp3",
-      "link" : "http://podcast.cbc.ca/mp3/hourlynews.mp3"
+      "url" : "http://podcast.cbc.ca/mp3/hourlynews.mp3"
     } ],
     "guid" : {
       "value" : "http://podcast.cbc.ca/mp3/hourlynews_20150901_0900.mp3"
     },
     "pubDate" : 1441112400000,
-    "title" : "CBC News: Hourly Edition for 2015/09/01 at 09:00 EDT",
-    "publicationDate" : 1441112400000
+    "title" : "CBC News: Hourly Edition for 2015/09/01 at 09:00 EDT"
   } ],
   "link" : "http://www.cbc.ca/podcasting/",
   "skipDays" : [ ],
   "skipHours" : [ ],
-  "title" : "CBC News: Hourly Edition",
-  "imageLink" : "http://www.cbc.ca/podcasting/images/promo-hourlies.jpg"
+  "title" : "CBC News: Hourly Edition"
 }

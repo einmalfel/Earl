@@ -14,8 +14,7 @@
     "enclosures" : [ {
       "length" : 0,
       "type" : "audio/mpeg",
-      "url" : "http://public.npr.org/anon.npr-mp3/npr/newscasts/2015/09/01/newscast100606.mp3?orgId=1&d=300&p=500005&story=436586515&t=podcast&e=436586515&ft=pod&f=500005",
-      "link" : "http://public.npr.org/anon.npr-mp3/npr/newscasts/2015/09/01/newscast100606.mp3?orgId=1&d=300&p=500005&story=436586515&t=podcast&e=436586515&ft=pod&f=500005"
+      "url" : "http://public.npr.org/anon.npr-mp3/npr/newscasts/2015/09/01/newscast100606.mp3?orgId=1&d=300&p=500005&story=436586515&t=podcast&e=436586515&ft=pod&f=500005"
     } ],
     "guid" : {
       "value" : "ca8da2f4-137e-4c1f-a05d-82ac96a7cecc"
@@ -29,8 +28,7 @@
       "summary" : "NPR News: 09-01-2015 10AM ET"
     },
     "pubDate" : 1441116000000,
-    "title" : "NPR News: 09-01-2015 10AM ET",
-    "publicationDate" : 1441116000000
+    "title" : "NPR News: 09-01-2015 10AM ET"
   } ],
   "itunes" : {
     "author" : "NPR",
@@ -52,6 +50,5 @@
   "link" : "http://www.npr.org/templates/topics/topic.php?topicId=1001",
   "skipDays" : [ ],
   "skipHours" : [ ],
-  "title" : "Hourly News Summary",
-  "imageLink" : "http://media.npr.org/images/podcasts/2013/primary/hourly_news_summary-c464279737c989a5fbf3049bc229152af3c36b9d.png?s=200"
+  "title" : "Hourly News Summary"
 }

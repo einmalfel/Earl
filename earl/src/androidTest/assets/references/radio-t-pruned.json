@@ -10,8 +10,7 @@
     "enclosures" : [ {
       "length" : 76733042,
       "type" : "audio/mpeg",
-      "url" : "http://cdn.radio-t.com/rt_podcast457.mp3",
-      "link" : "http://cdn.radio-t.com/rt_podcast457.mp3"
+      "url" : "http://cdn.radio-t.com/rt_podcast457.mp3"
     } ],
     "guid" : {
       "value" : "http://www.radio-t.com/p/2015/08/15/podcast-457"
@@ -25,8 +24,7 @@
     },
     "link" : "http://www.radio-t.com/p/2015/08/15/podcast-457/",
     "pubDate" : 1439664000000,
-    "title" : "Радио-Т 457",
-    "publicationDate" : 1439664000000
+    "title" : "Радио-Т 457"
   } ],
   "itunes" : {
     "author" : "Umputun, Bobuk, Gray, Ksenks",
@@ -52,6 +50,5 @@
   "managingEditor" : "noemail@noemail.org (podcast@radio-t.com)",
   "skipDays" : [ ],
   "skipHours" : [ ],
-  "title" : "Радио-Т",
-  "author" : "noemail@noemail.org (podcast@radio-t.com)"
+  "title" : "Радио-Т"
 }
