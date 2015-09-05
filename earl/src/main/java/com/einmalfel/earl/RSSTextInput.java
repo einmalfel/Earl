@@ -15,6 +15,8 @@ public class RSSTextInput {
   static final String XML_TAG = "textInput";
   private static final String TAG = "E.RTI";
 
+  private enum ST {title, description, name, link}
+
   @NonNull
   public final String title;
   @NonNull
@@ -27,23 +29,20 @@ public class RSSTextInput {
   @NonNull
   static RSSTextInput read(@NonNull XmlPullParser parser)
       throws IOException, XmlPullParserException {
-    Map<String, String> map = new HashMap<>();
-    while (parser.next() != XmlPullParser.END_TAG || !XML_TAG.equals(parser.getName())) {
-      if (parser.getEventType() == XmlPullParser.START_TAG) {
-        map.put(parser.getName(), parser.nextText());
+    Map<ST, String> map = new HashMap<>();
+    while (parser.nextTag() == XmlPullParser.START_TAG) {
+      try {
+        map.put(ST.valueOf(parser.getName()), parser.nextText());
+      } catch (IllegalArgumentException ignored) {
+        Log.w(TAG, "Unknown RSS TextInput tag " + parser.getName());
+        Utils.skipTag(parser);
       }
     }
-    RSSTextInput result = new RSSTextInput(
-        Utils.nonNullString(map.remove("title")),
-        Utils.nonNullString(map.remove("description")),
-        Utils.nonNullString(map.remove("name")),
-        Utils.nonNullUrl(map.remove("link")));
-
-    for (String tag : map.keySet()) {
-      Log.w(TAG, "Unknown textInput tag: " + tag);
-    }
-
-    return result;
+    return new RSSTextInput(
+        Utils.nonNullString(map.remove(ST.title)),
+        Utils.nonNullString(map.remove(ST.description)),
+        Utils.nonNullString(map.remove(ST.name)),
+        Utils.nonNullUrl(map.remove(ST.link)));
   }
 
   public RSSTextInput(@NonNull String title, @NonNull String description, @NonNull String name,

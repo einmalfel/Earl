@@ -8,7 +8,6 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,49 +18,54 @@ import java.util.Map;
 public class ItunesFeed {
   private static final String TAG = "E.ITF";
 
+  private enum ST {author, block, explicit, complete, subtitle, summary}
+
   static class ItunesFeedBuilder {
-    final Map<String, String> map = new HashMap<>();
+    final Map<ST, String> map = new HashMap<>();
     final List<ItunesCategory> categories = new LinkedList<>();
     ItunesOwner owner;
-    String image;
+    URL image;
+    URL newFeedURL;
 
     void parseTag(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
       String tagName = parser.getName();
-      switch (tagName) {
-        case ItunesCategory.XML_TAG:
-          categories.add(ItunesCategory.read(parser));
-          break;
-        case ItunesOwner.XML_TAG:
-          owner = ItunesOwner.read(parser);
-          break;
-        case "image":
-          image = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "href");
-          parser.nextToken();
-          break;
-        default:
-          map.put(tagName, parser.nextText());
+      try {
+        map.put(ST.valueOf(tagName), parser.nextText());
+      } catch (IllegalArgumentException ignored) {
+        switch (tagName) {
+          case ItunesCategory.XML_TAG:
+            categories.add(ItunesCategory.read(parser));
+            break;
+          case ItunesOwner.XML_TAG:
+            owner = ItunesOwner.read(parser);
+            break;
+          case "image":
+            image = Utils.tryParseUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "href"));
+            parser.nextToken();
+            break;
+          case "new-feed-url":
+            newFeedURL = Utils.tryParseUrl(parser.nextText());
+            break;
+          default:
+            Log.w(TAG, "Unknown Itunes tag " + tagName + " skipping..");
+            Utils.skipTag(parser);
+        }
       }
     }
 
     @NonNull
-    ItunesFeed build() throws MalformedURLException {
-      ItunesFeed result = new ItunesFeed(
-          map.remove("author"),
-          map.containsKey("block") ? ("yes".equals(map.remove("block"))) : null,
+    ItunesFeed build() {
+      return new ItunesFeed(
+          map.remove(ST.author),
+          map.containsKey(ST.block) ? ("yes".equals(map.remove(ST.block))) : null,
           categories,
-          image == null ? null : Utils.tryParseUrl(image),
-          map.remove("explicit"),
-          map.containsKey("complete") ? ("yes".equals(map.remove("block"))) : null,
-          map.containsKey("new-feed-url") ? Utils.tryParseUrl(map.remove("new-feed-url")) : null,
+          image,
+          map.remove(ST.explicit),
+          map.containsKey(ST.complete) ? ("yes".equals(map.remove(ST.complete))) : null,
+          newFeedURL,
           owner,
-          map.remove("subtitle"),
-          map.remove("summary"));
-
-      for (String tag : map.keySet()) {
-        Log.w(TAG, "Unknown itunes feed tag: " + tag);
-      }
-
-      return result;
+          map.remove(ST.subtitle),
+          map.remove(ST.summary));
     }
   }
 

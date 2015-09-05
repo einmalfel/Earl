@@ -20,46 +20,48 @@ import java.util.Map;
 public class ItunesItem {
   private static final String TAG = "E.ITI";
 
+  private enum ST {author, block, duration, explicit, isClosedCaptioned, order, subtitle, summary}
+
   static class ItunesItemBuilder {
-    final Map<String, String> map = new HashMap<>();
+    final Map<ST, String> map = new HashMap<>();
     URL image;
     List<String> keywords;
 
     void parseTag(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
       String tagName = parser.getName();
-      switch (tagName) {
-        case "image":
-          String imageStr = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "href");
-          image = imageStr == null ? null : new URL(imageStr);
-          parser.nextText();
-          break;
-        case "keywords":
-          keywords = Arrays.asList(parser.nextText().split(" "));
-          break;
-        default:
-          map.put(tagName, parser.nextText());
+      try {
+        map.put(ST.valueOf(tagName), parser.nextText());
+      } catch (IllegalArgumentException ignored) {
+        switch (tagName) {
+          case "image":
+            String imageStr = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "href");
+            image = imageStr == null ? null : Utils.tryParseUrl(imageStr);
+            parser.nextText();
+            break;
+          case "keywords":
+            keywords = Arrays.asList(parser.nextText().split(" "));
+            break;
+          default:
+            Log.w(TAG, "Unknown itunes item tag " + tagName);
+            Utils.skipTag(parser);
+        }
       }
     }
 
     @NonNull
     ItunesItem build() {
-      ItunesItem result = new ItunesItem(
-          map.remove("author"),
-          map.containsKey("block") ? "yes".equals(map.remove("block")) : null,
+      return new ItunesItem(
+          map.remove(ST.author),
+          map.containsKey(ST.block) ? "yes".equals(map.remove(ST.block)) : null,
           image,
-          map.containsKey("duration") ? Utils.parseItunesDuration(map.remove("duration")) : null,
-          map.remove("explicit"),
-          map.containsKey("isClosedCaptioned") ? "yes".equals(map.remove("isClosedCaptioned")) : null,
-          map.containsKey("order") ? Utils.tryParseInt(map.remove("order")) : null,
-          map.remove("subtitle"),
-          map.remove("summary"),
+          map.containsKey(ST.duration) ? Utils.parseItunesDuration(map.remove(ST.duration)) : null,
+          map.remove(ST.explicit),
+          map.containsKey(ST.isClosedCaptioned) ? " yes".equals(
+              map.remove(ST.isClosedCaptioned)) : null,
+          map.containsKey(ST.order) ? Utils.tryParseInt(map.remove(ST.order)) : null,
+          map.remove(ST.subtitle),
+          map.remove(ST.summary),
           keywords == null ? new LinkedList<String>() : keywords);
-
-      for (String tag : map.keySet()) {
-        Log.w(TAG, "Unknown itunes item tag: " + tag);
-      }
-
-      return result;
     }
   }
 

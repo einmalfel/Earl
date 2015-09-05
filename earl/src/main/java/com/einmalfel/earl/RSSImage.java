@@ -16,6 +16,8 @@ public class RSSImage {
   static final String XML_TAG = "image";
   private static final String TAG = "E.RSI";
 
+  private enum ST {title, description, link, url, width, height}
+
   @NonNull
   public final String title;
   @Nullable
@@ -32,25 +34,23 @@ public class RSSImage {
   @NonNull
   static RSSImage read(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
-    Map<String, String> map = new HashMap<>();
-    while (parser.next() != XmlPullParser.END_TAG || !XML_TAG.equals(parser.getName())) {
-      if (parser.getEventType() == XmlPullParser.START_TAG) {
-        map.put(parser.getName(), parser.nextText());
+    Map<ST, String> map = new HashMap<>();
+    while (parser.nextTag() == XmlPullParser.START_TAG) {
+      try {
+        map.put(ST.valueOf(parser.getName()), parser.nextText());
+      } catch (IllegalArgumentException ignored) {
+        Log.w(TAG, "Unknown RSS image tag " + parser.getName());
+        Utils.skipTag(parser);
       }
     }
-    RSSImage result = new RSSImage(
-        Utils.nonNullString(map.remove("title")),
-        map.remove("description"),
-        Utils.nonNullUrl(map.remove("link")),
-        Utils.nonNullUrl(map.remove("url")),
-        map.containsKey("width") ? Utils.tryParseInt(map.remove("width")) : null,   // default
-        map.containsKey("height") ? Utils.tryParseInt(map.remove("height")) : null);// values 88X31
-
-    for (String tag : map.keySet()) {
-      Log.w(TAG, "Unknown image tag: " + tag);
-    }
-
-    return result;
+    return new RSSImage(
+        Utils.nonNullString(map.remove(ST.title)),
+        map.remove(ST.description),
+        Utils.nonNullUrl(map.remove(ST.link)),
+        Utils.nonNullUrl(map.remove(ST.url)),
+        map.containsKey(ST.width) ? Utils.tryParseInt(map.remove(ST.width)) : null,   // default
+        map.containsKey(ST.height) ? Utils
+            .tryParseInt(map.remove(ST.height)) : null);// values 88X31
   }
 
   public RSSImage(@NonNull String title, @Nullable String description, @NonNull URL link,

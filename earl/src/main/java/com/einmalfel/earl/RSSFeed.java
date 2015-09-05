@@ -21,6 +21,11 @@ public class RSSFeed implements Feed {
 
   private static final String TAG = "E.RSF";
 
+  private enum ST {
+    title, link, description, language, copyright, managingEditor, webMaster, pubDate,
+    lastBuildDate, generator, docs, ttl, rating
+  }
+
   @NonNull
   public final String title;
   @NonNull
@@ -69,7 +74,7 @@ public class RSSFeed implements Feed {
       throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
 
-    Map<String, String> map = new HashMap<>(5);
+    Map<ST, String> map = new HashMap<>(5);
     List<RSSItem> items = new LinkedList<>();
     List<RSSCategory> categories = new LinkedList<>();
     RSSCloud cloud = null;
@@ -79,40 +84,47 @@ public class RSSFeed implements Feed {
     List<String> skipDays = new LinkedList<>();
     ItunesFeed.ItunesFeedBuilder itunesBuilder = null;
 
-    while (parser.nextTag() == XmlPullParser.START_TAG && (maxItems < 1 || items.size() < maxItems)) {
+    while (parser.nextTag() == XmlPullParser.START_TAG && (maxItems < 1 || items
+        .size() < maxItems)) {
       switch (parser.getNamespace()) {
         //RSS tags
         case XmlPullParser.NO_NAMESPACE:
           String tagName = parser.getName();
-          switch (tagName) {
-            case RSSItem.XML_TAG:
-              items.add(RSSItem.read(parser));
-              break;
-            case RSSCategory.XML_TAG:
-              categories.add(RSSCategory.read(parser));
-              break;
-            case RSSCloud.XML_TAG:
-              cloud = RSSCloud.read(parser);
-              break;
-            case RSSImage.XML_TAG:
-              image = RSSImage.read(parser);
-              break;
-            case RSSTextInput.XML_TAG:
-              textInput = RSSTextInput.read(parser);
-              break;
-            case "skipHours":
-              while (parser.nextTag() == XmlPullParser.START_TAG && "hour".equals(parser.getName())) {
-                skipHours.add(Utils.tryParseInt(parser.nextText()));
-              }
-              break;
-            case "skipDays":
-              while (parser.nextTag() == XmlPullParser.START_TAG && "day".equals(parser.getName())) {
-                skipDays.add(parser.nextText());
-              }
-              break;
-            default:
-              map.put(tagName, parser.nextText());
-              break;
+          try {
+            map.put(ST.valueOf(tagName), parser.nextText());
+          } catch (IllegalArgumentException ignored) {
+            switch (tagName) {
+              case RSSItem.XML_TAG:
+                items.add(RSSItem.read(parser));
+                break;
+              case RSSCategory.XML_TAG:
+                categories.add(RSSCategory.read(parser));
+                break;
+              case RSSCloud.XML_TAG:
+                cloud = RSSCloud.read(parser);
+                break;
+              case RSSImage.XML_TAG:
+                image = RSSImage.read(parser);
+                break;
+              case RSSTextInput.XML_TAG:
+                textInput = RSSTextInput.read(parser);
+                break;
+              case "skipHours":
+                while (parser.nextTag() == XmlPullParser.START_TAG && "hour".equals(
+                    parser.getName())) {
+                  skipHours.add(Utils.tryParseInt(parser.nextText()));
+                }
+                break;
+              case "skipDays":
+                while (parser.nextTag() == XmlPullParser.START_TAG && "day".equals(
+                    parser.getName())) {
+                  skipDays.add(parser.nextText());
+                }
+                break;
+              default:
+                Log.w(TAG, "Unknown RSS feed tag " + tagName);
+                Utils.skipTag(parser);
+            }
           }
           break;
         //Itunes tags
@@ -129,32 +141,29 @@ public class RSSFeed implements Feed {
       }
     }
 
-    RSSFeed result = new RSSFeed(
-        Utils.nonNullString(map.remove("title")),
-        Utils.nonNullUrl(map.remove("link")),
-        Utils.nonNullString(map.remove("description")),
-        map.remove("language"),
-        map.remove("copyright"),
-        map.remove("managingEditor"),
-        map.remove("webMaster"),
-        map.containsKey("pubDate") ? Utils.parseRFC822Date(map.remove("pubDate")) : null,
-        map.containsKey("lastBuildDate") ? Utils.parseRFC822Date(map.remove("lastBuildDate")) : null,
+    return new RSSFeed(
+        Utils.nonNullString(map.remove(ST.title)),
+        Utils.nonNullUrl(map.remove(ST.link)),
+        Utils.nonNullString(map.remove(ST.description)),
+        map.remove(ST.language),
+        map.remove(ST.copyright),
+        map.remove(ST.managingEditor),
+        map.remove(ST.webMaster),
+        map.containsKey(ST.pubDate) ? Utils.parseRFC822Date(map.remove(ST.pubDate)) : null,
+        map.containsKey(ST.lastBuildDate) ? Utils
+            .parseRFC822Date(map.remove(ST.lastBuildDate)) : null,
         categories,
-        map.remove("generator"),
-        map.containsKey("docs") ? Utils.tryParseUrl(map.remove("docs")) : null,
+        map.remove(ST.generator),
+        map.containsKey(ST.docs) ? Utils.tryParseUrl(map.remove(ST.docs)) : null,
         cloud,
-        map.containsKey("ttl") ? Utils.tryParseInt(map.remove("ttl")) : null,
-        map.remove("rating"),
+        map.containsKey(ST.ttl) ? Utils.tryParseInt(map.remove(ST.ttl)) : null,
+        map.remove(ST.rating),
         image,
         textInput,
         skipHours,
         skipDays,
         items,
         itunesBuilder == null ? null : itunesBuilder.build());
-    for (String key : map.keySet()) {
-      Log.w(TAG, "Unknown RSS tag: " + key);
-    }
-    return result;
   }
 
   public RSSFeed(@NonNull String title, @NonNull URL link, @NonNull String description,

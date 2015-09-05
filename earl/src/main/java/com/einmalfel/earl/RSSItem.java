@@ -20,6 +20,8 @@ public class RSSItem implements Item {
   static final String XML_TAG = "item";
   private static final String TAG = "E.RIT";
 
+  private enum ST {title, link, description, author, comments, pubDate}
+
   @Nullable
   public final String title;
   @Nullable
@@ -46,7 +48,7 @@ public class RSSItem implements Item {
   @NonNull
   static RSSItem read(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
-    Map<String, String> map = new HashMap<>(5);
+    Map<ST, String> map = new HashMap<>(5);
     List<RSSEnclosure> enclosures = new LinkedList<>();
     List<RSSCategory> categories = new LinkedList<>();
     RSSGuid guid = null;
@@ -56,21 +58,26 @@ public class RSSItem implements Item {
       switch (parser.getNamespace()) {
         case XmlPullParser.NO_NAMESPACE:
           String tagName = parser.getName();
-          switch (tagName) {
-            case RSSEnclosure.XML_TAG:
-              enclosures.add(RSSEnclosure.read(parser));
-              break;
-            case RSSCategory.XML_TAG:
-              categories.add(RSSCategory.read(parser));
-              break;
-            case RSSSource.XML_TAG:
-              source = RSSSource.read(parser);
-              break;
-            case RSSGuid.XML_TAG:
-              guid = RSSGuid.read(parser);
-              break;
-            default:
-              map.put(tagName, parser.nextText());
+          try {
+            map.put(ST.valueOf(tagName), parser.nextText());
+          } catch (IllegalArgumentException ignored) {
+            switch (tagName) {
+              case RSSEnclosure.XML_TAG:
+                enclosures.add(RSSEnclosure.read(parser));
+                break;
+              case RSSCategory.XML_TAG:
+                categories.add(RSSCategory.read(parser));
+                break;
+              case RSSSource.XML_TAG:
+                source = RSSSource.read(parser);
+                break;
+              case RSSGuid.XML_TAG:
+                guid = RSSGuid.read(parser);
+                break;
+              default:
+                Log.w(TAG, "Unknown RSS item tag " + tagName);
+                Utils.skipTag(parser);
+            }
           }
           break;
         case Utils.ITUNES_NAMESPACE:
@@ -84,24 +91,19 @@ public class RSSItem implements Item {
           Utils.skipTag(parser);
       }
     }
-    RSSItem result = new RSSItem(
-        map.remove("title"),
-        map.containsKey("link") ? Utils.tryParseUrl(map.remove("link")) : null,
-        map.remove("description"),
-        map.remove("author"),
+
+    return new RSSItem(
+        map.remove(ST.title),
+        map.containsKey(ST.link) ? Utils.tryParseUrl(map.remove(ST.link)) : null,
+        map.remove(ST.description),
+        map.remove(ST.author),
         categories,
-        map.containsKey("comments") ? Utils.tryParseUrl(map.remove("comments")) : null,
+        map.containsKey(ST.comments) ? Utils.tryParseUrl(map.remove(ST.comments)) : null,
         enclosures,
         guid,
-        map.containsKey("pubDate") ? Utils.parseRFC822Date(map.remove("pubDate")) : null,
+        map.containsKey(ST.pubDate) ? Utils.parseRFC822Date(map.remove(ST.pubDate)) : null,
         source,
         itunesBuilder == null ? null : itunesBuilder.build());
-
-    for (String tag : map.keySet()) {
-      Log.w(TAG, "Unknown RSS item tag: " + tag);
-    }
-
-    return result;
   }
 
   public RSSItem(@Nullable String title, @Nullable URL link, @Nullable String description,
