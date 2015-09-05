@@ -49,7 +49,7 @@ public class ItunesFeed {
           map.remove("author"),
           map.containsKey("block") ? ("yes".equals(map.remove("block"))) : null,
           categories,
-          image == null ? null : new URL(image),
+          image == null ? null : Utils.tryParseUrl(image),
           map.remove("explicit"),
           map.containsKey("complete") ? ("yes".equals(map.remove("block"))) : null,
           map.containsKey("new-feed-url") ? Utils.tryParseUrl(map.remove("new-feed-url")) : null,
