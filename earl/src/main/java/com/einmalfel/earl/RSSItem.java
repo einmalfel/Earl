@@ -55,40 +55,38 @@ public class RSSItem implements Item {
     RSSSource source = null;
     ItunesItem.ItunesItemBuilder itunesBuilder = null;
     while (parser.nextTag() == XmlPullParser.START_TAG) {
-      switch (parser.getNamespace()) {
-        case XmlPullParser.NO_NAMESPACE:
-          String tagName = parser.getName();
-          try {
-            map.put(ST.valueOf(tagName), parser.nextText());
-          } catch (IllegalArgumentException ignored) {
-            switch (tagName) {
-              case RSSEnclosure.XML_TAG:
-                enclosures.add(RSSEnclosure.read(parser));
-                break;
-              case RSSCategory.XML_TAG:
-                categories.add(RSSCategory.read(parser));
-                break;
-              case RSSSource.XML_TAG:
-                source = RSSSource.read(parser);
-                break;
-              case RSSGuid.XML_TAG:
-                guid = RSSGuid.read(parser);
-                break;
-              default:
-                Log.w(TAG, "Unknown RSS item tag " + tagName);
-                Utils.skipTag(parser);
-            }
+      String namespace = parser.getNamespace();
+      if (XmlPullParser.NO_NAMESPACE.equals(namespace)) {
+        String tagName = parser.getName();
+        try {
+          map.put(ST.valueOf(tagName), parser.nextText());
+        } catch (IllegalArgumentException ignored) {
+          switch (tagName) {
+            case RSSEnclosure.XML_TAG:
+              enclosures.add(RSSEnclosure.read(parser));
+              break;
+            case RSSCategory.XML_TAG:
+              categories.add(RSSCategory.read(parser));
+              break;
+            case RSSSource.XML_TAG:
+              source = RSSSource.read(parser);
+              break;
+            case RSSGuid.XML_TAG:
+              guid = RSSGuid.read(parser);
+              break;
+            default:
+              Log.w(TAG, "Unknown RSS item tag " + tagName);
+              Utils.skipTag(parser);
           }
-          break;
-        case Utils.ITUNES_NAMESPACE:
-          if (itunesBuilder == null) {
-            itunesBuilder = new ItunesItem.ItunesItemBuilder();
-          }
-          itunesBuilder.parseTag(parser);
-          break;
-        default:
-          Log.w(TAG, "Unknown namespace in RSS item " + parser.getNamespace());
-          Utils.skipTag(parser);
+        }
+      } else if (Utils.ITUNES_NAMESPACE.equalsIgnoreCase(namespace)) {
+        if (itunesBuilder == null) {
+          itunesBuilder = new ItunesItem.ItunesItemBuilder();
+        }
+        itunesBuilder.parseTag(parser);
+      } else {
+        Log.w(TAG, "Unknown namespace in RSS item " + parser.getNamespace());
+        Utils.skipTag(parser);
       }
     }
 

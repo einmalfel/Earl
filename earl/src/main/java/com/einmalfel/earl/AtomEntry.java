@@ -46,7 +46,7 @@ public class AtomEntry extends AtomCommonAttributes implements Item {
   @NonNull
   static AtomEntry read(XmlPullParser parser)
       throws XmlPullParserException, IOException {
-    parser.require(XmlPullParser.START_TAG, Utils.ATOM_NAMESPACE, XML_TAG);
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
 
     List<AtomPerson> authors = new LinkedList<>();
     List<AtomLink> links = new LinkedList<>();
@@ -63,53 +63,51 @@ public class AtomEntry extends AtomCommonAttributes implements Item {
 
     AtomCommonAttributes atomCommonAttributes = new AtomCommonAttributes(parser);
     while (parser.nextTag() == XmlPullParser.START_TAG) {
-      switch (parser.getNamespace()) {
-        case Utils.ATOM_NAMESPACE:
-          switch (parser.getName()) {
-            case AtomLink.XML_TAG:
-              links.add(AtomLink.read(parser));
-              break;
-            case AtomCategory.XML_TAG:
-              categories.add(AtomCategory.read(parser));
-              break;
-            case "contributor":
-              contributors.add(AtomPerson.read(parser));
-              break;
-            case "author":
-              authors.add(AtomPerson.read(parser));
-              break;
-            case "title":
-              title = AtomText.read(parser);
-              break;
-            case "summary":
-              summary = AtomText.read(parser);
-              break;
-            case "rights":
-              rights = AtomText.read(parser);
-              break;
-            case "id":
-              id = parser.nextText();
-              break;
-            case "published":
-              published = AtomDate.read(parser);
-              break;
-            case "updated":
-              updated = AtomDate.read(parser);
-              break;
-            case AtomContent.XML_TAG:
-              content = AtomContent.read(parser);
-              break;
-            case AtomFeed.XML_TAG:
-              source = AtomFeed.read(parser, 0);
-              break;
-            default:
-              Log.w(TAG, "Unknown tag in Atom entry " + parser.getName());
-              Utils.skipTag(parser);
-          }
-          break;
-        default:
-          Log.w(TAG, "Unknown namespace in RSS item " + parser.getNamespace());
-          Utils.skipTag(parser);
+      if (Utils.ATOM_NAMESPACE.equalsIgnoreCase(parser.getNamespace())) {
+        switch (parser.getName()) {
+          case AtomLink.XML_TAG:
+            links.add(AtomLink.read(parser));
+            break;
+          case AtomCategory.XML_TAG:
+            categories.add(AtomCategory.read(parser));
+            break;
+          case "contributor":
+            contributors.add(AtomPerson.read(parser));
+            break;
+          case "author":
+            authors.add(AtomPerson.read(parser));
+            break;
+          case "title":
+            title = AtomText.read(parser);
+            break;
+          case "summary":
+            summary = AtomText.read(parser);
+            break;
+          case "rights":
+            rights = AtomText.read(parser);
+            break;
+          case "id":
+            id = parser.nextText();
+            break;
+          case "published":
+            published = AtomDate.read(parser);
+            break;
+          case "updated":
+            updated = AtomDate.read(parser);
+            break;
+          case AtomContent.XML_TAG:
+            content = AtomContent.read(parser);
+            break;
+          case AtomFeed.XML_TAG:
+            source = AtomFeed.read(parser, 0);
+            break;
+          default:
+            Log.w(TAG, "Unknown tag in Atom entry " + parser.getName());
+            Utils.skipTag(parser);
+        }
+      } else {
+        Log.w(TAG, "Unknown namespace in Atom item " + parser.getNamespace());
+        Utils.skipTag(parser);
       }
     }
 

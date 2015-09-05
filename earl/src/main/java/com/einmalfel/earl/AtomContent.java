@@ -17,7 +17,7 @@ public class AtomContent extends AtomText {
 
   @NonNull
   static AtomContent read(XmlPullParser parser) throws XmlPullParserException, IOException {
-    parser.require(XmlPullParser.START_TAG, Utils.ATOM_NAMESPACE, XML_TAG);
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
     String srcString = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "src");
     return new AtomContent(
         srcString == null ? null : Utils.tryParseUri(srcString),

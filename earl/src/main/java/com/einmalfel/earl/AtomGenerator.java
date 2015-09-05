@@ -21,7 +21,7 @@ public class AtomGenerator extends AtomCommonAttributes {
 
   @NonNull
   static AtomGenerator read(XmlPullParser parser) throws XmlPullParserException, IOException {
-    parser.require(XmlPullParser.START_TAG, Utils.ATOM_NAMESPACE, XML_TAG);
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
     String uri = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "uri");
     return new AtomGenerator(
         new AtomCommonAttributes(parser),

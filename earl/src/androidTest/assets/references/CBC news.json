@@ -17,9 +17,22 @@
     "guid" : {
       "value" : "http://podcast.cbc.ca/mp3/hourlynews_20150901_0900.mp3"
     },
+    "itunes" : {
+      "duration" : 270,
+      "keywords" : [ ]
+    },
     "pubDate" : 1441112400000,
     "title" : "CBC News: Hourly Edition for 2015/09/01 at 09:00 EDT"
   } ],
+  "itunes" : {
+    "author" : "CBC News: Hourly Edition",
+    "categories" : [ {
+      "subCategories" : [ ],
+      "text" : "News & Politics"
+    } ],
+    "image" : "http://www.cbc.ca/podcasting/images/promo-hourlies.jpg",
+    "summary" : "The latest national and international news, updated every hour\n        "
+  },
   "link" : "http://www.cbc.ca/podcasting/",
   "skipDays" : [ ],
   "skipHours" : [ ],

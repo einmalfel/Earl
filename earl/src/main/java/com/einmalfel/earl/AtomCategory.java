@@ -22,7 +22,7 @@ public class AtomCategory extends AtomCommonAttributes {
   @NonNull
   static AtomCategory read(XmlPullParser parser)
       throws XmlPullParserException, IOException {
-    parser.require(XmlPullParser.START_TAG, Utils.ATOM_NAMESPACE, XML_TAG);
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
     String schemeString = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "scheme");
     AtomCategory result = new AtomCategory(
         new AtomCommonAttributes(parser),

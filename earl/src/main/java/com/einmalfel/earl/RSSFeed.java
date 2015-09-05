@@ -86,58 +86,53 @@ public class RSSFeed implements Feed {
 
     while (parser.nextTag() == XmlPullParser.START_TAG && (maxItems < 1 || items
         .size() < maxItems)) {
-      switch (parser.getNamespace()) {
-        //RSS tags
-        case XmlPullParser.NO_NAMESPACE:
-          String tagName = parser.getName();
-          try {
-            map.put(ST.valueOf(tagName), parser.nextText());
-          } catch (IllegalArgumentException ignored) {
-            switch (tagName) {
-              case RSSItem.XML_TAG:
-                items.add(RSSItem.read(parser));
-                break;
-              case RSSCategory.XML_TAG:
-                categories.add(RSSCategory.read(parser));
-                break;
-              case RSSCloud.XML_TAG:
-                cloud = RSSCloud.read(parser);
-                break;
-              case RSSImage.XML_TAG:
-                image = RSSImage.read(parser);
-                break;
-              case RSSTextInput.XML_TAG:
-                textInput = RSSTextInput.read(parser);
-                break;
-              case "skipHours":
-                while (parser.nextTag() == XmlPullParser.START_TAG && "hour".equals(
-                    parser.getName())) {
-                  skipHours.add(Utils.tryParseInt(parser.nextText()));
-                }
-                break;
-              case "skipDays":
-                while (parser.nextTag() == XmlPullParser.START_TAG && "day".equals(
-                    parser.getName())) {
-                  skipDays.add(parser.nextText());
-                }
-                break;
-              default:
-                Log.w(TAG, "Unknown RSS feed tag " + tagName);
-                Utils.skipTag(parser);
-            }
+      String namespace = parser.getNamespace();
+      if (XmlPullParser.NO_NAMESPACE.equalsIgnoreCase(namespace)) {
+        String tagName = parser.getName();
+        try {
+          map.put(ST.valueOf(tagName), parser.nextText());
+        } catch (IllegalArgumentException ignored) {
+          switch (tagName) {
+            case RSSItem.XML_TAG:
+              items.add(RSSItem.read(parser));
+              break;
+            case RSSCategory.XML_TAG:
+              categories.add(RSSCategory.read(parser));
+              break;
+            case RSSCloud.XML_TAG:
+              cloud = RSSCloud.read(parser);
+              break;
+            case RSSImage.XML_TAG:
+              image = RSSImage.read(parser);
+              break;
+            case RSSTextInput.XML_TAG:
+              textInput = RSSTextInput.read(parser);
+              break;
+            case "skipHours":
+              while (parser.nextTag() == XmlPullParser.START_TAG && "hour".equals(
+                  parser.getName())) {
+                skipHours.add(Utils.tryParseInt(parser.nextText()));
+              }
+              break;
+            case "skipDays":
+              while (parser.nextTag() == XmlPullParser.START_TAG && "day".equals(
+                  parser.getName())) {
+                skipDays.add(parser.nextText());
+              }
+              break;
+            default:
+              Log.w(TAG, "Unknown RSS feed tag " + tagName);
+              Utils.skipTag(parser);
           }
-          break;
-        //Itunes tags
-        case Utils.ITUNES_NAMESPACE:
-          if (itunesBuilder == null) {
-            itunesBuilder = new ItunesFeed.ItunesFeedBuilder();
-          }
-          itunesBuilder.parseTag(parser);
-          break;
-        //Unknown tags
-        default:
-          Log.w(TAG, "Unknown RSS feed extension " + parser.getNamespace());
-          Utils.skipTag(parser);
+        }
+      } else if (Utils.ITUNES_NAMESPACE.equalsIgnoreCase(namespace)) {
+        if (itunesBuilder == null) {
+          itunesBuilder = new ItunesFeed.ItunesFeedBuilder();
+        }
+        itunesBuilder.parseTag(parser);
+      } else {
+        Log.w(TAG, "Unknown RSS feed extension " + parser.getNamespace());
+        Utils.skipTag(parser);
       }
     }
 

@@ -48,7 +48,7 @@ public class AtomFeed extends AtomCommonAttributes implements Feed {
   @NonNull
   static AtomFeed read(XmlPullParser parser, int maxItm) throws IOException,
       XmlPullParserException {
-    parser.require(XmlPullParser.START_TAG, Utils.ATOM_NAMESPACE, XML_TAG);
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
 
     List<AtomEntry> entries = new LinkedList<>();
     List<AtomPerson> contributors = new LinkedList<>();
@@ -66,57 +66,55 @@ public class AtomFeed extends AtomCommonAttributes implements Feed {
 
     AtomCommonAttributes atomCommonAttributes = new AtomCommonAttributes(parser);
     while (parser.nextTag() == XmlPullParser.START_TAG && (maxItm < 1 || entries.size() < maxItm)) {
-      switch (parser.getNamespace()) {
-        case Utils.ATOM_NAMESPACE:
-          String tagName = parser.getName();
-          switch (tagName) {
-            case AtomEntry.XML_TAG:
-              entries.add(AtomEntry.read(parser));
-              break;
-            case "contributor":
-              contributors.add(AtomPerson.read(parser));
-              break;
-            case "author":
-              authors.add(AtomPerson.read(parser));
-              break;
-            case AtomLink.XML_TAG:
-              links.add(AtomLink.read(parser));
-              break;
-            case AtomCategory.XML_TAG:
-              categories.add(AtomCategory.read(parser));
-              break;
-            case AtomGenerator.XML_TAG:
-              generator = AtomGenerator.read(parser);
-              break;
-            case "title":
-              title = AtomText.read(parser);
-              break;
-            case "rights":
-              rights = AtomText.read(parser);
-              break;
-            case "subtitle":
-              subtitle = AtomText.read(parser);
-              break;
-            case "id":
-              id = parser.nextText();
-              break;
-            case "icon":
-              icon = Utils.tryParseUri(parser.nextText());
-              break;
-            case "logo":
-              logo = Utils.tryParseUri(parser.nextText());
-              break;
-            case "updated":
-              updated = AtomDate.read(parser);
-              break;
-            default:
-              Log.w(TAG, "Unknown Atom feed tag " + parser.getName());
-              Utils.skipTag(parser);
-          }
-          break;
-        default:
-          Log.w(TAG, "Unknown Atom feed extension " + parser.getNamespace());
-          Utils.skipTag(parser);
+      if (Utils.ATOM_NAMESPACE.equalsIgnoreCase(parser.getNamespace())) {
+        String tagName = parser.getName();
+        switch (tagName) {
+          case AtomEntry.XML_TAG:
+            entries.add(AtomEntry.read(parser));
+            break;
+          case "contributor":
+            contributors.add(AtomPerson.read(parser));
+            break;
+          case "author":
+            authors.add(AtomPerson.read(parser));
+            break;
+          case AtomLink.XML_TAG:
+            links.add(AtomLink.read(parser));
+            break;
+          case AtomCategory.XML_TAG:
+            categories.add(AtomCategory.read(parser));
+            break;
+          case AtomGenerator.XML_TAG:
+            generator = AtomGenerator.read(parser);
+            break;
+          case "title":
+            title = AtomText.read(parser);
+            break;
+          case "rights":
+            rights = AtomText.read(parser);
+            break;
+          case "subtitle":
+            subtitle = AtomText.read(parser);
+            break;
+          case "id":
+            id = parser.nextText();
+            break;
+          case "icon":
+            icon = Utils.tryParseUri(parser.nextText());
+            break;
+          case "logo":
+            logo = Utils.tryParseUri(parser.nextText());
+            break;
+          case "updated":
+            updated = AtomDate.read(parser);
+            break;
+          default:
+            Log.w(TAG, "Unknown Atom feed tag " + parser.getName());
+            Utils.skipTag(parser);
+        }
+      } else {
+        Log.w(TAG, "Unknown Atom feed extension " + parser.getNamespace());
+        Utils.skipTag(parser);
       }
     }
 

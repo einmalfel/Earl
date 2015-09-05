@@ -29,7 +29,7 @@ public class AtomLink extends AtomCommonAttributes implements Enclosure {
   @NonNull
   static AtomLink read(XmlPullParser parser)
       throws XmlPullParserException, IOException {
-    parser.require(XmlPullParser.START_TAG, Utils.ATOM_NAMESPACE, XML_TAG);
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
     String length = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "length");
     AtomLink result = new AtomLink(
         new AtomCommonAttributes(parser),

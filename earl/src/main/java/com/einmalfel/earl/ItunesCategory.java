@@ -20,7 +20,7 @@ public class ItunesCategory {
   @NonNull
   static ItunesCategory read(@NonNull XmlPullParser parser)
       throws IOException, XmlPullParserException {
-    parser.require(XmlPullParser.START_TAG, Utils.ITUNES_NAMESPACE, XML_TAG);
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
     String value = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "text");
     List<ItunesCategory> subCategories = new LinkedList<>();
     while (parser.nextTag() != XmlPullParser.END_TAG) {
