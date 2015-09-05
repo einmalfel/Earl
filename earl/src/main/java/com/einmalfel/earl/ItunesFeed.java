@@ -52,7 +52,7 @@ public class ItunesFeed {
           image == null ? null : new URL(image),
           map.remove("explicit"),
           map.containsKey("complete") ? ("yes".equals(map.remove("block"))) : null,
-          map.remove("new-feed-url"),
+          map.containsKey("new-feed-url") ? Utils.tryParseUrl(map.remove("new-feed-url")) : null,
           owner,
           map.remove("subtitle"),
           map.remove("summary"));
@@ -78,7 +78,7 @@ public class ItunesFeed {
   @Nullable
   public final Boolean complete;
   @Nullable
-  public final String newFeedURL;
+  public final URL newFeedURL;
   @Nullable
   public final ItunesOwner owner;
   @Nullable
@@ -89,7 +89,7 @@ public class ItunesFeed {
   public ItunesFeed(@Nullable String author, @Nullable Boolean block,
                     @NonNull List<ItunesCategory> categories, @Nullable URL image,
                     @Nullable String explicit, @Nullable Boolean complete,
-                    @Nullable String newFeedURL, @Nullable ItunesOwner owner,
+                    @Nullable URL newFeedURL, @Nullable ItunesOwner owner,
                     @Nullable String subtitle, @Nullable String summary) {
     this.author = author;
     this.block = block;
