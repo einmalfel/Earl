@@ -29,9 +29,9 @@ class Utils {
 
   private static final DateFormat[] itunesDurationFormats = {
       new SimpleDateFormat("HH:mm:ss", Locale.US),
-      new SimpleDateFormat("H:mm:ss", Locale.US),
-      new SimpleDateFormat("   mm:ss", Locale.US),
-      new SimpleDateFormat("    m:ss", Locale.US),};
+      new SimpleDateFormat( "H:mm:ss", Locale.US),
+      new SimpleDateFormat(   "mm:ss", Locale.US),
+      new SimpleDateFormat(    "m:ss", Locale.US),};
 
   @Nullable
   static Date parseRFC822Date(@NonNull String dateString) {
