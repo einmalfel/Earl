@@ -53,6 +53,8 @@ public class EarlParser {
           switch (parser.getName()) {
             case RSSFeed.XML_TAG:
               return RSSFeed.read(parser, maxItems);
+            case AtomFeed.XML_TAG:
+              return AtomFeed.read(parser, maxItems);
           }
       }
     } finally {

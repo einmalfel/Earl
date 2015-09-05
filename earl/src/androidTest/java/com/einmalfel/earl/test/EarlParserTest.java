@@ -41,6 +41,14 @@ public class EarlParserTest extends AndroidTestCase {
             new Scanner(reference, "UTF-8").useDelimiter("\\A").next());
   }
 
+  public void testAtomPodcast() throws Exception {
+    InputStream sample = getContext().getAssets().open("samples/atom podcast.xml");
+    InputStream reference = getContext().getAssets().open("references/atom podcast.json");
+    assertEquals(
+        objectToJson(EarlParser.parseOrThrow(sample, 0)),
+        new Scanner(reference, "UTF-8").useDelimiter("\\A").next());
+  }
+
   private String objectToJson(Object object) throws JsonProcessingException {
     return new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT)
                              .setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.NONE)

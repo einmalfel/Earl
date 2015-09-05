@@ -1,0 +1,54 @@
+{
+  "authors" : [ {
+    "name" : "James M Snell"
+  } ],
+  "categories" : [ ],
+  "contributors" : [ ],
+  "entries" : [ {
+    "authors" : [ ],
+    "categories" : [ ],
+    "content" : {
+      "type" : "xhtml",
+      "value" : "\n            <div xmlns=\"http://www.w3.org/1999/xhtml\">\n            <h1>Show Notes</h1>\n            <ul>\n            <li>00:01:00 -- Introduction</li>\n            <li>00:15:00 -- Talking about Atom 1.0</li>\n            <li>00:30:00 -- Wrapping up</li>\n            </ul>\n            </div>\n        "
+    },
+    "contributors" : [ ],
+    "id" : "http://www.example.org/entries/1",
+    "links" : [ {
+      "href" : "http://www.example.org/entries/1"
+    }, {
+      "href" : "http://www.example.org/myaudiofile.mp3",
+      "length" : 1234,
+      "rel" : "enclosure",
+      "title" : "MP3",
+      "type" : "audio/mpeg"
+    }, {
+      "href" : "http://www.example.org/myaudiofile.torrent",
+      "length" : 1234,
+      "rel" : "enclosure",
+      "title" : "BitTorrent",
+      "type" : "application/x-bittorrent"
+    } ],
+    "summary" : {
+      "value" : "An overview of Atom 1.0"
+    },
+    "title" : {
+      "value" : "Atom 1.0"
+    },
+    "updated" : {
+      "date" : 1121414400000
+    }
+  } ],
+  "id" : "http://www.example.org/myfeed",
+  "links" : [ {
+    "href" : "http://example.org"
+  }, {
+    "href" : "http://example.org/myfeed",
+    "rel" : "self"
+  } ],
+  "title" : {
+    "value" : "My Podcast Feed"
+  },
+  "updated" : {
+    "date" : 1121414400000
+  }
+}

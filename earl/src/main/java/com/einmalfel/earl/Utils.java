@@ -9,6 +9,8 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -17,6 +19,8 @@ import java.util.Date;
 import java.util.Locale;
 
 class Utils {
+  static final String ATOM_NAMESPACE = "http://www.w3.org/2005/Atom";
+
   static final String ITUNES_NAMESPACE = "http://www.itunes.com/dtds/podcast-1.0.dtd";
 
   private static final String TAG = "E.UTL";
@@ -189,6 +193,33 @@ class Utils {
       try {
         result = new URL("http://");
       } catch (MalformedURLException ignored) {throw new AssertionError("Should never get here");}
+    }
+    return result;
+  }
+
+  @Nullable
+  static URI tryParseUri(@Nullable String string) {
+    if (string == null) {
+      Log.w(TAG, "Null value while parsing uri", new NullPointerException());
+      return null;
+    } else {
+      try {
+        return new URI(string);
+      } catch (URISyntaxException exception) {
+        Log.w(TAG, "Error parsing uri value '" + string, exception);
+        return null;
+      }
+    }
+  }
+
+  @NonNull
+  static URI nonNullUri(@Nullable String string) {
+    URI result = tryParseUri(string);
+    if (result == null) {
+      Log.w(TAG, "Malformed URI replaced with 'http://'");
+      try {
+        result = new URI("http:///");
+      } catch (URISyntaxException ignored) {throw new AssertionError("Should never get here");}
     }
     return result;
   }
