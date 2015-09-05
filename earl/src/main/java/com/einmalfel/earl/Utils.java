@@ -17,6 +17,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.TimeZone;
 
 class Utils {
   static final String ATOM_NAMESPACE = "http://www.w3.org/2005/Atom";
@@ -26,12 +27,6 @@ class Utils {
   private static final String TAG = "E.UTL";
   private static final DateFormat rfc822DateTimeFormat = new SimpleDateFormat(
       "EEE, dd MMM yyyy HH:mm:ss Z", Locale.US);
-
-  private static final DateFormat[] itunesDurationFormats = {
-      new SimpleDateFormat("HH:mm:ss", Locale.US),
-      new SimpleDateFormat( "H:mm:ss", Locale.US),
-      new SimpleDateFormat(   "mm:ss", Locale.US),
-      new SimpleDateFormat(    "m:ss", Locale.US),};
 
   @Nullable
   static Date parseRFC822Date(@NonNull String dateString) {
@@ -98,12 +93,30 @@ class Utils {
     }
   }
 
+  private static DateFormat[] itunesDurationFormats = null;
+
+  static void setupItunesDateFormats() {
+    itunesDurationFormats = new DateFormat[]{
+        new SimpleDateFormat("HH:mm:ss", Locale.US),
+        new SimpleDateFormat("H:mm:ss", Locale.US),
+        new SimpleDateFormat("mm:ss", Locale.US),
+        new SimpleDateFormat("m:ss", Locale.US),};
+
+    TimeZone utc = TimeZone.getTimeZone("UTC");
+    for (DateFormat format : itunesDurationFormats) {
+      format.setTimeZone(utc);
+    }
+  }
+
   /**
    * @param dateString time string to parse
    * @return episode duration in seconds or null if parsing fails
    */
   @Nullable
   static Integer parseItunesDuration(@NonNull String dateString) {
+    if (itunesDurationFormats == null) {
+      setupItunesDateFormats();
+    }
     for (DateFormat format : itunesDurationFormats) {
       try {
         Date date = format.parse(dateString);
