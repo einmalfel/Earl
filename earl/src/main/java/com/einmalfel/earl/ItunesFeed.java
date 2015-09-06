@@ -29,27 +29,27 @@ public class ItunesFeed {
 
     void parseTag(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
       String tagName = parser.getName();
-      try {
-        map.put(ST.valueOf(tagName), parser.nextText());
-      } catch (IllegalArgumentException ignored) {
-        switch (tagName) {
-          case ItunesCategory.XML_TAG:
-            categories.add(ItunesCategory.read(parser));
-            break;
-          case ItunesOwner.XML_TAG:
-            owner = ItunesOwner.read(parser);
-            break;
-          case "image":
-            image = Utils.tryParseUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "href"));
-            parser.nextToken();
-            break;
-          case "new-feed-url":
-            newFeedURL = Utils.tryParseUrl(parser.nextText());
-            break;
-          default:
+      switch (tagName) {
+        case ItunesCategory.XML_TAG:
+          categories.add(ItunesCategory.read(parser));
+          break;
+        case ItunesOwner.XML_TAG:
+          owner = ItunesOwner.read(parser);
+          break;
+        case "image":
+          image = Utils.tryParseUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "href"));
+          parser.nextToken();
+          break;
+        case "new-feed-url":
+          newFeedURL = Utils.tryParseUrl(parser.nextText());
+          break;
+        default:
+          try {
+            map.put(ST.valueOf(tagName), parser.nextText());
+          } catch (IllegalArgumentException ignored) {
             Log.w(TAG, "Unknown Itunes tag " + tagName + " skipping..");
             Utils.skipTag(parser);
-        }
+          }
       }
     }
 

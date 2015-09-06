@@ -61,26 +61,26 @@ public class RSSItem implements Item {
       String namespace = parser.getNamespace();
       if (XmlPullParser.NO_NAMESPACE.equals(namespace)) {
         String tagName = parser.getName();
-        try {
-          map.put(ST.valueOf(tagName), parser.nextText());
-        } catch (IllegalArgumentException ignored) {
-          switch (tagName) {
-            case RSSEnclosure.XML_TAG:
-              enclosures.add(RSSEnclosure.read(parser));
-              break;
-            case RSSCategory.XML_TAG:
-              categories.add(RSSCategory.read(parser));
-              break;
-            case RSSSource.XML_TAG:
-              source = RSSSource.read(parser);
-              break;
-            case RSSGuid.XML_TAG:
-              guid = RSSGuid.read(parser);
-              break;
-            default:
+        switch (tagName) {
+          case RSSEnclosure.XML_TAG:
+            enclosures.add(RSSEnclosure.read(parser));
+            break;
+          case RSSCategory.XML_TAG:
+            categories.add(RSSCategory.read(parser));
+            break;
+          case RSSSource.XML_TAG:
+            source = RSSSource.read(parser);
+            break;
+          case RSSGuid.XML_TAG:
+            guid = RSSGuid.read(parser);
+            break;
+          default:
+            try {
+              map.put(ST.valueOf(tagName), parser.nextText());
+            } catch (IllegalArgumentException ignored) {
               Log.w(TAG, "Unknown RSS item tag " + tagName);
               Utils.skipTag(parser);
-          }
+            }
         }
       } else if (Utils.ITUNES_NAMESPACE.equalsIgnoreCase(namespace)) {
         if (itunesBuilder == null) {

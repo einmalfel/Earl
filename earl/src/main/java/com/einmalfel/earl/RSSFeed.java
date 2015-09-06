@@ -92,41 +92,41 @@ public class RSSFeed implements Feed {
       String namespace = parser.getNamespace();
       if (XmlPullParser.NO_NAMESPACE.equalsIgnoreCase(namespace)) {
         String tagName = parser.getName();
-        try {
-          map.put(ST.valueOf(tagName), parser.nextText());
-        } catch (IllegalArgumentException ignored) {
-          switch (tagName) {
-            case RSSItem.XML_TAG:
-              items.add(RSSItem.read(parser));
-              break;
-            case RSSCategory.XML_TAG:
-              categories.add(RSSCategory.read(parser));
-              break;
-            case RSSCloud.XML_TAG:
-              cloud = RSSCloud.read(parser);
-              break;
-            case RSSImage.XML_TAG:
-              image = RSSImage.read(parser);
-              break;
-            case RSSTextInput.XML_TAG:
-              textInput = RSSTextInput.read(parser);
-              break;
-            case "skipHours":
-              while (parser.nextTag() == XmlPullParser.START_TAG && "hour".equals(
-                  parser.getName())) {
-                skipHours.add(Utils.tryParseInt(parser.nextText()));
-              }
-              break;
-            case "skipDays":
-              while (parser.nextTag() == XmlPullParser.START_TAG && "day".equals(
-                  parser.getName())) {
-                skipDays.add(parser.nextText());
-              }
-              break;
-            default:
+        switch (tagName) {
+          case RSSItem.XML_TAG:
+            items.add(RSSItem.read(parser));
+            break;
+          case RSSCategory.XML_TAG:
+            categories.add(RSSCategory.read(parser));
+            break;
+          case RSSCloud.XML_TAG:
+            cloud = RSSCloud.read(parser);
+            break;
+          case RSSImage.XML_TAG:
+            image = RSSImage.read(parser);
+            break;
+          case RSSTextInput.XML_TAG:
+            textInput = RSSTextInput.read(parser);
+            break;
+          case "skipHours":
+            while (parser.nextTag() == XmlPullParser.START_TAG && "hour".equals(
+                parser.getName())) {
+              skipHours.add(Utils.tryParseInt(parser.nextText()));
+            }
+            break;
+          case "skipDays":
+            while (parser.nextTag() == XmlPullParser.START_TAG && "day".equals(
+                parser.getName())) {
+              skipDays.add(parser.nextText());
+            }
+            break;
+          default:
+            try {
+               map.put(ST.valueOf(tagName), parser.nextText());
+            } catch (IllegalArgumentException ignored) {
               Log.w(TAG, "Unknown RSS feed tag " + tagName);
               Utils.skipTag(parser);
-          }
+            }
         }
       } else if (Utils.ITUNES_NAMESPACE.equalsIgnoreCase(namespace)) {
         if (itunesBuilder == null) {

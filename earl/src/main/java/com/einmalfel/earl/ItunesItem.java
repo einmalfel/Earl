@@ -29,22 +29,22 @@ public class ItunesItem {
 
     void parseTag(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
       String tagName = parser.getName();
-      try {
-        map.put(ST.valueOf(tagName), parser.nextText());
-      } catch (IllegalArgumentException ignored) {
-        switch (tagName) {
-          case "image":
-            String imageStr = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "href");
-            image = imageStr == null ? null : Utils.tryParseUrl(imageStr);
-            parser.nextText();
-            break;
-          case "keywords":
-            keywords = Arrays.asList(parser.nextText().split(" "));
-            break;
-          default:
+      switch (tagName) {
+        case "image":
+          String imageStr = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "href");
+          image = imageStr == null ? null : Utils.tryParseUrl(imageStr);
+          parser.nextText();
+          break;
+        case "keywords":
+          keywords = Arrays.asList(parser.nextText().split(" "));
+          break;
+        default:
+          try {
+            map.put(ST.valueOf(tagName), parser.nextText());
+          } catch (IllegalArgumentException ignored) {
             Log.w(TAG, "Unknown itunes item tag " + tagName);
             Utils.skipTag(parser);
-        }
+          }
       }
     }
 
