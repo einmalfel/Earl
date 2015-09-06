@@ -237,19 +237,49 @@ public class RSSFeed implements Feed {
   @Nullable
   @Override
   public String getCopyright() {
-    return copyright;
+    if (copyright != null) {
+      return copyright;
+    }
+    if (media != null && media.license != null) {
+      return media.license.value;
+    }
+    return null;
   }
 
   @Nullable
   @Override
   public String getImageLink() {
-    return (image == null) ? null : image.url.toString();
+    if (image != null) {
+      return image.url.toString();
+    }
+    if (itunes != null && itunes.image != null) {
+      return itunes.image.toString();
+    }
+    if (media != null && !media.thumbnails.isEmpty()) {
+      return media.thumbnails.get(0).url.toString();
+    }
+    return null;
   }
 
   @Nullable
   @Override
   public String getAuthor() {
-    return managingEditor;
+    if (managingEditor != null) {
+      return managingEditor;
+    }
+    if (itunes != null && itunes.author != null) {
+      return itunes.author;
+    }
+    if (itunes != null && itunes.owner != null) {
+      return itunes.owner.name;
+    }
+    if (media != null && !media.credits.isEmpty()) {
+      for (MediaCredit credit : media.credits) if ("author".equalsIgnoreCase(credit.role)) {
+        return credit.value;
+      }
+      return media.credits.get(0).value;
+    }
+    return null;
   }
 
   @NonNull

@@ -151,25 +151,64 @@ public class RSSItem implements Item {
   @Nullable
   @Override
   public String getTitle() {
-    return title;
+    if (title != null) {
+      return title;
+    }
+    if (media != null && media.title != null) {
+      return media.title.value;
+    }
+    if (itunes != null && itunes.subtitle != null) {
+      return itunes.subtitle;
+    }
+    return null;
   }
 
   @Nullable
   @Override
   public String getDescription() {
-    return description;
+    if (description != null) {
+      return description;
+    }
+    if (itunes != null && itunes.subtitle != null) {
+      return itunes.subtitle;
+    }
+    if (itunes != null && itunes.summary != null) {
+      return itunes.summary;
+    }
+    if (media != null && media.description != null) {
+      return media.description.value;
+    }
+    return null;
   }
 
   @Nullable
   @Override
   public String getImageLink() {
-    return itunes == null || itunes.image == null ? null : itunes.image.toString();
+    if (itunes != null && itunes.image != null) {
+      return itunes.image.toString();
+    }
+    if (media != null && !media.thumbnails.isEmpty()) {
+      return media.thumbnails.get(0).url.toString();
+    }
+    return null;
   }
 
   @Nullable
   @Override
   public String getAuthor() {
-    return author;
+    if (author != null) {
+      return author;
+    }
+    if (itunes != null && itunes.author != null) {
+      return itunes.author;
+    }
+    if (media != null && !media.credits.isEmpty()) {
+      for (MediaCredit credit : media.credits) if ("author".equalsIgnoreCase(credit.role)) {
+        return credit.value;
+      }
+      return media.credits.get(0).value;
+    }
+    return null;
   }
 
   @NonNull
