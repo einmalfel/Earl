@@ -91,6 +91,7 @@ public class MediaCommunity {
           Log.w(TAG, "Unexpected tag inside media:community: " + parser.getName());
           Utils.skipTag(parser);
       }
+      Utils.finishTag(parser);
     }
 
     return new MediaCommunity(starRating, statistics,

@@ -99,6 +99,7 @@ public class RSSItem implements Item {
         Log.w(TAG, "Unknown namespace in RSS item " + parser.getNamespace());
         Utils.skipTag(parser);
       }
+      Utils.finishTag(parser);
     }
 
     return new RSSItem(

@@ -37,6 +37,7 @@ public class RSSTextInput {
         Log.w(TAG, "Unknown RSS TextInput tag " + parser.getName());
         Utils.skipTag(parser);
       }
+      Utils.finishTag(parser);
     }
     return new RSSTextInput(
         Utils.nonNullString(map.remove(ST.title)),

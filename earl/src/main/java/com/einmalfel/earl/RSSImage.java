@@ -42,6 +42,7 @@ public class RSSImage {
         Log.w(TAG, "Unknown RSS image tag " + parser.getName());
         Utils.skipTag(parser);
       }
+      Utils.finishTag(parser);
     }
     return new RSSImage(
         Utils.nonNullString(map.remove(ST.title)),

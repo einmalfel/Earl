@@ -31,6 +31,7 @@ public class MediaGroup extends MediaCommon {
         Log.w(TAG, "Unexpected tag found in media:group: " + tagName);
         Utils.skipTag(parser);
       }
+      Utils.finishTag(parser);
     }
     return new MediaGroup(builder.build(), contents);
   }

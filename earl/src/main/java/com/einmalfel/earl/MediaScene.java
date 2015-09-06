@@ -48,6 +48,7 @@ public class MediaScene {
           Log.w(TAG, "Unexpected tag inside media:scene: " + parser.getName());
           Utils.skipTag(parser);
       }
+      Utils.finishTag(parser);
     }
 
     return new MediaScene(sceneTitle, sceneDescription, sceneStartTime, sceneEndTime);

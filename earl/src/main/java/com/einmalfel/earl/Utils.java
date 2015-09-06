@@ -154,6 +154,23 @@ class Utils {
   }
 
   /**
+   * Fast-forward parser to the end of current tag (last tag whose START_TAG we passed),
+   * skipping all nested tags.
+   *
+   * @throws XmlPullParserException
+   * @throws IOException
+   */
+  static void finishTag(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
+    while (parser.getEventType() != XmlPullParser.END_TAG) {
+      if (parser.getEventType() == XmlPullParser.START_TAG) {
+        Utils.skipTag(parser);
+      }
+      parser.next();
+    }
+  }
+
+  /**
+   * Skip next tag (we are currently at its START_TAG).
    * Copied from http://developer.android.com/training/basics/network-ops/xml.html#skip
    */
   static void skipTag(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {

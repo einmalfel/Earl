@@ -34,6 +34,7 @@ public class ItunesOwner {
         default:
           Log.w(TAG, "Unexpected owner tag " + parser.getName());
       }
+      Utils.finishTag(parser);
     }
     return new ItunesOwner(name, eMail);
   }

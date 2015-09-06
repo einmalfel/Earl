@@ -116,6 +116,7 @@ public class AtomFeed extends AtomCommonAttributes implements Feed {
         Log.w(TAG, "Unknown Atom feed extension " + parser.getNamespace());
         Utils.skipTag(parser);
       }
+      Utils.finishTag(parser);
     }
 
     if (title == null) {

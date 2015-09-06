@@ -112,12 +112,14 @@ public class RSSFeed implements Feed {
             while (parser.nextTag() == XmlPullParser.START_TAG && "hour".equals(
                 parser.getName())) {
               skipHours.add(Utils.tryParseInt(parser.nextText()));
+              Utils.finishTag(parser);
             }
             break;
           case "skipDays":
             while (parser.nextTag() == XmlPullParser.START_TAG && "day".equals(
                 parser.getName())) {
               skipDays.add(parser.nextText());
+              Utils.finishTag(parser);
             }
             break;
           default:
@@ -145,6 +147,7 @@ public class RSSFeed implements Feed {
         Log.w(TAG, "Unknown RSS feed extension " + parser.getNamespace());
         Utils.skipTag(parser);
       }
+      Utils.finishTag(parser);
     }
 
     return new RSSFeed(

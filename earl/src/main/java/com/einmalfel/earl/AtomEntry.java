@@ -109,6 +109,7 @@ public class AtomEntry extends AtomCommonAttributes implements Item {
         Log.w(TAG, "Unknown namespace in Atom item " + parser.getNamespace());
         Utils.skipTag(parser);
       }
+      Utils.finishTag(parser);
     }
 
     if (title == null) {
