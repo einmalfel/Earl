@@ -44,6 +44,8 @@ public class RSSItem implements Item {
   public final RSSSource source;
   @Nullable
   public final ItunesItem itunes;
+  @Nullable
+  public final MediaItem media;
 
   @NonNull
   static RSSItem read(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
@@ -54,6 +56,7 @@ public class RSSItem implements Item {
     RSSGuid guid = null;
     RSSSource source = null;
     ItunesItem.ItunesItemBuilder itunesBuilder = null;
+    MediaItem.MediaItemBuilder mediaBuilder = null;
     while (parser.nextTag() == XmlPullParser.START_TAG) {
       String namespace = parser.getNamespace();
       if (XmlPullParser.NO_NAMESPACE.equals(namespace)) {
@@ -84,6 +87,14 @@ public class RSSItem implements Item {
           itunesBuilder = new ItunesItem.ItunesItemBuilder();
         }
         itunesBuilder.parseTag(parser);
+      } else if (Utils.MEDIA_NAMESPACE.equalsIgnoreCase(namespace)) {
+        if (mediaBuilder == null) {
+          mediaBuilder = new MediaItem.MediaItemBuilder();
+        }
+        if (!mediaBuilder.parseTag(parser)) {
+          Log.w(TAG, "Unknown mrss tag on item level");
+          Utils.skipTag(parser);
+        }
       } else {
         Log.w(TAG, "Unknown namespace in RSS item " + parser.getNamespace());
         Utils.skipTag(parser);
@@ -101,14 +112,15 @@ public class RSSItem implements Item {
         guid,
         map.containsKey(ST.pubDate) ? Utils.parseRFC822Date(map.remove(ST.pubDate)) : null,
         source,
-        itunesBuilder == null ? null : itunesBuilder.build());
+        itunesBuilder == null ? null : itunesBuilder.build(),
+        mediaBuilder == null ? null : mediaBuilder.build());
   }
 
   public RSSItem(@Nullable String title, @Nullable URL link, @Nullable String description,
                  @Nullable String author, @NonNull List<RSSCategory> categories,
                  @Nullable URL comments, @NonNull List<RSSEnclosure> enclosures,
                  @Nullable RSSGuid guid, @Nullable Date pubDate, @Nullable RSSSource source,
-                 @Nullable ItunesItem itunes) {
+                 @Nullable ItunesItem itunes, @Nullable MediaItem media) {
     this.title = title;
     this.link = link;
     this.description = description;
@@ -120,6 +132,7 @@ public class RSSItem implements Item {
     this.pubDate = pubDate;
     this.source = source;
     this.itunes = itunes;
+    this.media = media;
   }
 
   @Nullable

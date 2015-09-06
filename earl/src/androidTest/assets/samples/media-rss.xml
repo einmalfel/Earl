@@ -1,0 +1,65 @@
+<rss version="2.0" xmlns:georss="http://www.georss.org/georss"
+     xmlns:gml="http://www.opengis.net/gml"
+     xmlns:media="http://search.yahoo.com/mrss/">
+    <channel>
+        <title>Song Site</title>
+        <description>Media RSS example with new fields added in v1.5.0</description>
+        <item>
+            <link>http://www.foo.com</link>
+            <pubDate>Mon, 27 Aug 2001 16:08:56 PST</pubDate>
+            <media:content bitrate="128" expression="full" fileSize="2000"
+                           type="video/quicktime" url="http://www.foo.com/video.mov"/>
+            <media:community>
+                <media:starRating average="3.5" count="20" max="10" min="1"/>
+                <media:statistics favorites="5" views="5"/>
+                <media:tags>news: 5, abc:3</media:tags>
+            </media:community>
+            <media:comments>
+                <media:comment>comment1</media:comment>
+                <media:comment>comment2</media:comment>
+            </media:comments>
+            <media:embed height="323" url="http://www.foo.com/player.swf" width="512">
+                <media:param name="type">application/x-shockwave-flash</media:param>
+                <media:param name="width">512</media:param>
+                <media:param name="height">323</media:param>
+                <media:param name="allowFullScreen">true</media:param>
+                <media:param name="flashVars">
+                    id=12345&amp;vid=678912i&amp;lang=en-us&amp;intl=us&amp;thumbUrl=http://www.foo.com/thumbnail.jpg
+                </media:param>
+            </media:embed>
+            <media:responses>
+                <media:response>http://www.response1.com</media:response>
+                <media:response>http://www.response2.com</media:response>
+            </media:responses>
+            <media:backLinks>
+                <media:backLink>http://www.backlink1.com</media:backLink>
+                <media:backLink>http://www.backlink2.com</media:backLink>
+            </media:backLinks>
+            <media:status state="active"/>
+            <media:price currency="EUR" price="19.99" type="rent"/>
+            <media:license href="http://www.licensehost.com/license" type="text/html">Sample license
+                for a video
+            </media:license>
+            <media:subTitle href="http://www.foo.org/subtitle.smil" lang="en-us"
+                            type="application/smil"/>
+            <media:peerLink href="http://www.foo.org/sampleFile.torrent"
+                            type="application/x-bittorrent "/>
+            <media:location description="My house" end="01:00" start="00:01">
+                <georss:where>
+                    <gml:Point>
+                        <gml:pos>35.669998 139.770004</gml:pos>
+                    </gml:Point>
+                </georss:where>
+            </media:location>
+            <media:restriction relationship="deny" type="sharing"/>
+            <media:scenes>
+                <media:scene>
+                    <sceneTitle>sceneTitle1</sceneTitle>
+                    <sceneDescription>sceneDesc1</sceneDescription>
+                    <sceneStartTime>00:15</sceneStartTime>
+                    <sceneEndTime>00:45</sceneEndTime>
+                </media:scene>
+            </media:scenes>
+        </item>
+    </channel>
+</rss>

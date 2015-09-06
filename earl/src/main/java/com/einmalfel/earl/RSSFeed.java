@@ -68,6 +68,8 @@ public class RSSFeed implements Feed {
   public final List<RSSItem> items;
   @Nullable
   public final ItunesFeed itunes;
+  @Nullable
+  public final MediaCommon media;
 
   @NonNull
   static RSSFeed read(@NonNull XmlPullParser parser, int maxItems)
@@ -83,6 +85,7 @@ public class RSSFeed implements Feed {
     List<Integer> skipHours = new LinkedList<>();
     List<String> skipDays = new LinkedList<>();
     ItunesFeed.ItunesFeedBuilder itunesBuilder = null;
+    MediaCommon.MediaCommonBuilder mediaBuilder = null;
 
     while (parser.nextTag() == XmlPullParser.START_TAG && (maxItems < 1 || items
         .size() < maxItems)) {
@@ -130,6 +133,14 @@ public class RSSFeed implements Feed {
           itunesBuilder = new ItunesFeed.ItunesFeedBuilder();
         }
         itunesBuilder.parseTag(parser);
+      } else if (Utils.MEDIA_NAMESPACE.equalsIgnoreCase(namespace)) {
+        if (mediaBuilder == null) {
+          mediaBuilder = new MediaCommon.MediaCommonBuilder();
+        }
+        if (!mediaBuilder.parseTag(parser)) {
+          Log.w(TAG, "Unknown mrss tag on feed level");
+          Utils.skipTag(parser);
+        }
       } else {
         Log.w(TAG, "Unknown RSS feed extension " + parser.getNamespace());
         Utils.skipTag(parser);
@@ -158,7 +169,8 @@ public class RSSFeed implements Feed {
         skipHours,
         skipDays,
         items,
-        itunesBuilder == null ? null : itunesBuilder.build());
+        itunesBuilder == null ? null : itunesBuilder.build(),
+        mediaBuilder == null ? null : mediaBuilder.build());
   }
 
   public RSSFeed(@NonNull String title, @NonNull URL link, @NonNull String description,
@@ -168,9 +180,9 @@ public class RSSFeed implements Feed {
                  @NonNull List<RSSCategory> categories, @Nullable String generator,
                  @Nullable URL docs, @Nullable RSSCloud cloud,
                  @Nullable Integer ttl, @Nullable String rating, @Nullable RSSImage image,
-                 @Nullable RSSTextInput textInput,
-                 @NonNull List<Integer> skipHours, @NonNull List<String> skipDays,
-                 @NonNull List<RSSItem> items, @Nullable ItunesFeed itunes) {
+                 @Nullable RSSTextInput textInput, @NonNull List<Integer> skipHours,
+                 @NonNull List<String> skipDays, @NonNull List<RSSItem> items,
+                 @Nullable ItunesFeed itunes, @Nullable MediaCommon media) {
     this.title = title;
     this.link = link;
     this.description = description;
@@ -190,8 +202,9 @@ public class RSSFeed implements Feed {
     this.textInput = textInput;
     this.skipHours = Collections.unmodifiableList(skipHours);
     this.skipDays = Collections.unmodifiableList(skipDays);
-    this.itunes = itunes;
     this.items = Collections.unmodifiableList(items);
+    this.itunes = itunes;
+    this.media = media;
   }
 
   @Nullable

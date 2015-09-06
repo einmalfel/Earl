@@ -1,0 +1,107 @@
+{
+  "categories" : [ ],
+  "description" : "Media RSS example with new fields added in v1.5.0",
+  "items" : [ {
+    "categories" : [ ],
+    "enclosures" : [ ],
+    "link" : "http://www.foo.com",
+    "media" : {
+      "backLinks" : [ "http://www.backlink1.com", "http://www.backlink2.com" ],
+      "categories" : [ ],
+      "comments" : [ "comment1", "comment2" ],
+      "community" : {
+        "starRating" : {
+          "average" : "3.5",
+          "count" : 20,
+          "max" : 10,
+          "min" : 1
+        },
+        "statistics" : {
+          "favorites" : 5,
+          "views" : 5
+        },
+        "tags" : [ "news: 5", " abc:3" ]
+      },
+      "credits" : [ ],
+      "embed" : {
+        "height" : 323,
+        "url" : "http://www.foo.com/player.swf",
+        "values" : {
+          "flashVars" : "\n                    id=12345&vid=678912i&lang=en-us&intl=us&thumbUrl=http://www.foo.com/thumbnail.jpg\n                ",
+          "allowFullScreen" : "true",
+          "height" : "323",
+          "type" : "application/x-shockwave-flash",
+          "width" : "512"
+        },
+        "width" : 512
+      },
+      "keywords" : [ ],
+      "license" : {
+        "href" : "http://www.licensehost.com/license",
+        "type" : "text/html",
+        "value" : "Sample license\n                for a video\n            "
+      },
+      "location" : {
+        "description" : "My house",
+        "end" : 60000,
+        "start" : 1000
+      },
+      "peerLink" : {
+        "href" : "http://www.foo.org/sampleFile.torrent",
+        "type" : "application/x-bittorrent "
+      },
+      "prices" : [ {
+        "currency" : "EUR",
+        "price" : "19.99",
+        "type" : "rent"
+      } ],
+      "responses" : [ "http://www.response1.com", "http://www.response2.com" ],
+      "restrictions" : [ {
+        "relationship" : "deny",
+        "type" : "sharing",
+        "value" : ""
+      } ],
+      "scenes" : [ {
+        "sceneDescription" : "sceneDesc1",
+        "sceneEndTime" : 45000,
+        "sceneStartTime" : 15000,
+        "sceneTitle" : "sceneTitle1"
+      } ],
+      "status" : {
+        "state" : "active"
+      },
+      "subTitles" : [ {
+        "href" : "http://www.foo.org/subtitle.smil",
+        "lang" : "en-us",
+        "type" : "application/smil"
+      } ],
+      "texts" : [ ],
+      "thumbnails" : [ ],
+      "contents" : [ {
+        "backLinks" : [ ],
+        "categories" : [ ],
+        "comments" : [ ],
+        "credits" : [ ],
+        "keywords" : [ ],
+        "prices" : [ ],
+        "responses" : [ ],
+        "restrictions" : [ ],
+        "scenes" : [ ],
+        "subTitles" : [ ],
+        "texts" : [ ],
+        "thumbnails" : [ ],
+        "bitrate" : 128,
+        "expression" : "full",
+        "fileSize" : 2000,
+        "type" : "video/quicktime",
+        "url" : "http://www.foo.com/video.mov"
+      } ],
+      "groups" : [ ]
+    },
+    "pubDate" : 998957336000
+  } ],
+  "link" : "http://",
+  "skipDays" : [ ],
+  "skipHours" : [ ],
+  "title" : "Song Site"
+}

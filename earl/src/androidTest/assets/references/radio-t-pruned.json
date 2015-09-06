@@ -23,6 +23,38 @@
       "summary" : "К 2060 программисты останутся без работы. Касперский это делал? Lenovo\n                подсовывает гадость, опять. Google терерь не Google. Docker 1.8. 7 новинок от\n                Samsung Unpacked. Средство передвижения для ленивых гиков. Amazon упал. DigitalOcean\n                подружился с Bitnami. Темы наших слушателей Спонсор этого выпуска DigitalOcean аудио\n                ● лог чата\n            "
     },
     "link" : "http://www.radio-t.com/p/2015/08/15/podcast-457/",
+    "media" : {
+      "backLinks" : [ ],
+      "categories" : [ ],
+      "comments" : [ ],
+      "credits" : [ ],
+      "keywords" : [ ],
+      "prices" : [ ],
+      "responses" : [ ],
+      "restrictions" : [ ],
+      "scenes" : [ ],
+      "subTitles" : [ ],
+      "texts" : [ ],
+      "thumbnails" : [ ],
+      "contents" : [ {
+        "backLinks" : [ ],
+        "categories" : [ ],
+        "comments" : [ ],
+        "credits" : [ ],
+        "keywords" : [ ],
+        "prices" : [ ],
+        "responses" : [ ],
+        "restrictions" : [ ],
+        "scenes" : [ ],
+        "subTitles" : [ ],
+        "texts" : [ ],
+        "thumbnails" : [ ],
+        "fileSize" : 76733042,
+        "type" : "audio/mpeg",
+        "url" : "http://cdn.radio-t.com/rt_podcast457.mp3"
+      } ],
+      "groups" : [ ]
+    },
     "pubDate" : 1439664000000,
     "title" : "Радио-Т 457"
   } ],
@@ -48,6 +80,33 @@
   "lastBuildDate" : 1439862754000,
   "link" : "http://www.radio-t.com/",
   "managingEditor" : "noemail@noemail.org (podcast@radio-t.com)",
+  "media" : {
+    "backLinks" : [ ],
+    "categories" : [ {
+      "scheme" : "http://www.itunes.com/dtds/podcast-1.0.dtd",
+      "value" : "Technology/Tech News\n        "
+    } ],
+    "comments" : [ ],
+    "copyright" : {
+      "value" : "Creative Commons - Attribution, Noncommercial, No Derivative Works 3.0\n            License.\n        "
+    },
+    "credits" : [ {
+      "value" : "Umputun, Bobuk, Gray, Ksenks"
+    } ],
+    "keywords" : [ "hitech", "russian", "radiot", "tech", "news", "радио" ],
+    "prices" : [ ],
+    "rating" : {
+      "value" : "nonadult"
+    },
+    "responses" : [ ],
+    "restrictions" : [ ],
+    "scenes" : [ ],
+    "subTitles" : [ ],
+    "texts" : [ ],
+    "thumbnails" : [ {
+      "url" : "http://www.radio-t.com/images/cover.jpg"
+    } ]
+  },
   "skipDays" : [ ],
   "skipHours" : [ ],
   "title" : "Радио-Т"

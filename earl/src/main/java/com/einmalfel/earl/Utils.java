@@ -4,6 +4,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.einmalfel.earl.tools.NPTParser;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -21,7 +23,7 @@ import java.util.TimeZone;
 
 class Utils {
   static final String ATOM_NAMESPACE = "http://www.w3.org/2005/Atom";
-
+  static final String MEDIA_NAMESPACE = "http://search.yahoo.com/mrss/";
   static final String ITUNES_NAMESPACE = "http://www.itunes.com/dtds/podcast-1.0.dtd";
 
   private static final String TAG = "E.UTL";
@@ -93,6 +95,16 @@ class Utils {
     }
   }
 
+  @Nullable
+  static Integer parseRFC2326NPT(@NonNull String string) {
+    try {
+      return (int) new NPTParser(string).parse();
+    } catch (ParseException exception) {
+      Log.w(TAG, "Failed to parse media:rating time", exception);
+      return null;
+    }
+  }
+
   private static DateFormat[] itunesDurationFormats = null;
 
   static void setupItunesDateFormats() {
@@ -125,6 +137,20 @@ class Utils {
     }
     // if none of formats match, this could be an integer value in seconds
     return tryParseInt(dateString);
+  }
+
+  @Nullable
+  static Integer parseMediaRssTime(@NonNull String time) {
+    // MRSS spec doesn't always clarify which time format is used.
+    // In examples it looks quite like itunes duration.
+    Integer result = Utils.parseItunesDuration(time);
+    if (result == null) {
+      result = Utils.parseRFC2326NPT(time);
+    } else {
+      // Itunes duration is in [s]
+      result *= 1000;
+    }
+    return result;
   }
 
   /**
