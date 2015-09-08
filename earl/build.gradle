@@ -32,3 +32,58 @@ dependencies {
     androidTestCompile 'com.fasterxml.jackson.core:jackson-databind:2.6.1'
     compile 'com.android.support:support-annotations:23.0.0'
 }
+
+/////////////////////////////////
+// bintray configuration below //
+
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+// bintray username and API key come from this file
+if (file('local.gradle').exists())
+    apply from: 'local.gradle'
+
+group = 'com.einmalfel'
+version = '1.0.0'
+
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+
+task generateJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task generateJavadocsJar(type: Jar, dependsOn: generateJavadocs) {
+    from generateJavadocs.destinationDir
+    classifier 'javadoc'
+}
+
+artifacts {
+    archives generateJavadocsJar, generateSourcesJar
+}
+
+bintray {
+    pkg {
+        repo = 'maven'
+        name = project.name
+        desc = 'Easy Android RSS Library'
+        issueTrackerUrl = 'https://github.com/einmalfel/Earl/issues'
+        licenses = ["LGPL-3.0"]
+        vcsUrl = 'https://github.com/einmalfel/Earl.git'
+        websiteUrl = 'https://github.com/einmalfel/Earl'
+        publicDownloadNumbers = false
+        labels = ['Android', 'RSS', 'Atom', 'syndication', 'parser', 'library']
+
+        version {
+            name = project.version
+            released = new Date()
+            desc = 'Initial version'
+            vcsTag = project.version
+        }
+
+    }
+    configurations = ['archives']
+}
