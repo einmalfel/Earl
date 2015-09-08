@@ -132,7 +132,7 @@ class Utils {
     for (DateFormat format : itunesDurationFormats) {
       try {
         Date date = format.parse(dateString);
-        return (int)(date.getTime() / 1000);
+        return (int) (date.getTime() / 1000);
       } catch (ParseException ignored) {}
     }
     // if none of formats match, this could be an integer value in seconds
@@ -199,7 +199,7 @@ class Utils {
       try {
         return Integer.valueOf(string);
       } catch (NumberFormatException exception) {
-        Log.w(TAG, "Error parsing integer value '" + string, exception);
+        Log.w(TAG, "Error parsing integer value '" + string + "'", exception);
         return null;
       }
     }
@@ -235,7 +235,7 @@ class Utils {
       try {
         return new URL(string);
       } catch (MalformedURLException exception) {
-        Log.w(TAG, "Error parsing url value '" + string, exception);
+        Log.w(TAG, "Error parsing url value '" + string + "'", exception);
         return null;
       }
     }
@@ -262,7 +262,7 @@ class Utils {
       try {
         return new URI(string);
       } catch (URISyntaxException exception) {
-        Log.w(TAG, "Error parsing uri value '" + string, exception);
+        Log.w(TAG, "Error parsing uri value '" + string + "'", exception);
         return null;
       }
     }

@@ -36,9 +36,9 @@ public class EarlParserTest extends AndroidTestCase {
   public void testNPRNews() throws Exception {
     InputStream sample = getContext().getAssets().open("samples/NPR news.xml");
     InputStream reference = getContext().getAssets().open("references/NPR news.json");
-        assertEquals(
-            objectToJson(EarlParser.parseOrThrow(sample, 0)),
-            new Scanner(reference, "UTF-8").useDelimiter("\\A").next());
+    assertEquals(
+        objectToJson(EarlParser.parseOrThrow(sample, 0)),
+        new Scanner(reference, "UTF-8").useDelimiter("\\A").next());
   }
 
   public void testAtomPodcast() throws Exception {

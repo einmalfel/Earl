@@ -21,7 +21,7 @@ public class EarlParser {
 
   /**
    * @param inputStream - stream to read feed from
-   * @param maxItems - stop parsing after reading this much feed items
+   * @param maxItems    - stop parsing after reading this much feed items
    * @return parsed RSSFeed or AtomFeed, depending on input stream or null if parsing fails
    */
   @Nullable
@@ -35,7 +35,7 @@ public class EarlParser {
 
   /**
    * @param inputStream - stream to read feed from. Will be closed in this function
-   * @param maxItems - stop parsing after reading this much feed items
+   * @param maxItems    - stop parsing after reading this much feed items
    * @return parsed RSSFeed or AtomFeed, depending on input stream
    * @throws XmlPullParserException
    * @throws IOException

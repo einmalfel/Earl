@@ -47,7 +47,7 @@ public class ItunesFeed {
           try {
             map.put(ST.valueOf(tagName), parser.nextText());
           } catch (IllegalArgumentException ignored) {
-            Log.w(TAG, "Unknown Itunes tag " + tagName + " skipping..");
+            Log.w(TAG, "Unknown Itunes feed tag " + tagName + " skipping..");
             Utils.skipTag(parser);
           }
       }

@@ -19,7 +19,8 @@ public class ItunesOwner {
   public final String eMail;
 
   @NonNull
-  static ItunesOwner read(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException{
+  static ItunesOwner read(@NonNull XmlPullParser parser)
+      throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, null, XML_TAG);
     String name = null;
     String eMail = null;

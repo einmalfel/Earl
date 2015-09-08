@@ -2,16 +2,12 @@ package com.einmalfel.earl;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
-
-import com.einmalfel.earl.tools.NPTParser;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.net.URL;
-import java.text.ParseException;
 
 public class MediaThumbnail {
   static final String XML_TAG = "thumbnail";

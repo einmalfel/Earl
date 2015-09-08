@@ -203,9 +203,10 @@ public class RSSItem implements Item {
       return itunes.author;
     }
     if (media != null && !media.credits.isEmpty()) {
-      for (MediaCredit credit : media.credits) if ("author".equalsIgnoreCase(credit.role)) {
-        return credit.value;
-      }
+      for (MediaCredit credit : media.credits)
+        if ("author".equalsIgnoreCase(credit.role)) {
+          return credit.value;
+        }
       return media.credits.get(0).value;
     }
     return null;

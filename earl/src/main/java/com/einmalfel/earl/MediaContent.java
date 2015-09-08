@@ -53,7 +53,7 @@ public class MediaContent extends MediaCommon {
     String channels = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "channels");
     String duration = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "duration");
     String height = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "height");
-    String width = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "width");    
+    String width = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "width");
     return new MediaContent(url == null ? null : Utils.tryParseUrl(url),
                             fileSize == null ? null : Utils.tryParseInt(fileSize),
                             parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),

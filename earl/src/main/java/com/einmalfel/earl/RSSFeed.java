@@ -124,7 +124,7 @@ public class RSSFeed implements Feed {
             break;
           default:
             try {
-               map.put(ST.valueOf(tagName), parser.nextText());
+              map.put(ST.valueOf(tagName), parser.nextText());
             } catch (IllegalArgumentException ignored) {
               Log.w(TAG, "Unknown RSS feed tag " + tagName);
               Utils.skipTag(parser);
@@ -274,9 +274,10 @@ public class RSSFeed implements Feed {
       return itunes.owner.name;
     }
     if (media != null && !media.credits.isEmpty()) {
-      for (MediaCredit credit : media.credits) if ("author".equalsIgnoreCase(credit.role)) {
-        return credit.value;
-      }
+      for (MediaCredit credit : media.credits)
+        if ("author".equalsIgnoreCase(credit.role)) {
+          return credit.value;
+        }
       return media.credits.get(0).value;
     }
     return null;
