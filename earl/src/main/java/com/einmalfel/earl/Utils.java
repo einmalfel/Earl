@@ -26,7 +26,7 @@ class Utils {
   static final String MEDIA_NAMESPACE = "http://search.yahoo.com/mrss/";
   static final String ITUNES_NAMESPACE = "http://www.itunes.com/dtds/podcast-1.0.dtd";
 
-  private static final String TAG = "E.UTL";
+  private static final String TAG = "Earl.Utils";
   private static final DateFormat rfc822DateTimeFormat = new SimpleDateFormat(
       "EEE, dd MMM yyyy HH:mm:ss Z", Locale.US);
 

@@ -10,7 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class MediaItem extends MediaCommon {
-  private static final String TAG = "E.MCM";
+  private static final String TAG = "Earl.MediaItem";
 
   static class MediaItemBuilder {
     private List<MediaGroup> groups = new LinkedList<>();

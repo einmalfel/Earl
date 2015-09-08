@@ -13,7 +13,7 @@ import java.util.List;
 
 public class MediaGroup extends MediaCommon {
   static final String XML_TAG = "group";
-  private static final String TAG = "E.MGR";
+  private static final String TAG = "Earl.MediaGroup";
 
   @NonNull
   public final List<MediaContent> contents;

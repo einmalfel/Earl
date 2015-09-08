@@ -16,7 +16,7 @@ import java.util.List;
 
 public class AtomFeed extends AtomCommonAttributes implements Feed {
   static final String XML_TAG = "feed";
-  private static final String TAG = "E.AFD";
+  private static final String TAG = "Earl.AtomFeed";
 
   @NonNull
   public final URI id;

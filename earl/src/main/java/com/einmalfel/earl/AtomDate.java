@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.Date;
 
 public class AtomDate extends AtomCommonAttributes {
-  private static final String TAG = "E.ADT";
+  private static final String TAG = "Earl.AtomDate";
 
   @NonNull
   public final Date date;

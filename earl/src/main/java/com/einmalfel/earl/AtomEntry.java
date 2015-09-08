@@ -16,7 +16,7 @@ import java.util.List;
 
 public class AtomEntry extends AtomCommonAttributes implements Item {
   static final String XML_TAG = "entry";
-  private static final String TAG = "E.AET";
+  private static final String TAG = "Earl.AtomEntry";
 
   @NonNull
   public final URI id;

@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class RSSImage {
   static final String XML_TAG = "image";
-  private static final String TAG = "E.RSI";
+  private static final String TAG = "Earl.RSSImage";
 
   private enum ST {title, description, link, url, width, height}
 

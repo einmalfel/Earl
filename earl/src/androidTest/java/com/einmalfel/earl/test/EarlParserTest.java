@@ -15,7 +15,7 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 public class EarlParserTest extends AndroidTestCase {
-  private static final String TAG = "E.TST";
+  private static final String TAG = "Earl.EarlParserTest";
 
   public void testRadioT() throws Exception {
     InputStream sample = getContext().getAssets().open("samples/radio-t-pruned.xml");

@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.net.URI;
 
 public class AtomPerson extends AtomCommonAttributes {
-  private static final String TAG = "E.APN";
+  private static final String TAG = "Earl.AtomPerson";
 
   @NonNull
   public final String name;

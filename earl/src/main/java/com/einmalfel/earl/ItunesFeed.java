@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ItunesFeed {
-  private static final String TAG = "E.ITF";
+  private static final String TAG = "Earl.ItunesFeed";
 
   private enum ST {author, block, explicit, complete, subtitle, summary}
 

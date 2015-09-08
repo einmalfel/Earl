@@ -19,7 +19,7 @@ import java.util.Map;
 public class RSSFeed implements Feed {
   static final String XML_TAG = "channel";
 
-  private static final String TAG = "E.RSF";
+  private static final String TAG = "Earl.RSSFeed";
 
   private enum ST {
     title, link, description, language, copyright, managingEditor, webMaster, pubDate,

@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class RSSTextInput {
   static final String XML_TAG = "textInput";
-  private static final String TAG = "E.RTI";
+  private static final String TAG = "Earl.RSSTextInput";
 
   private enum ST {title, description, name, link}
 

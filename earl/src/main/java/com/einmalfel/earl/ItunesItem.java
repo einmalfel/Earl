@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ItunesItem {
-  private static final String TAG = "E.ITI";
+  private static final String TAG = "Earl.ItunesItem";
 
   private enum ST {author, block, duration, explicit, isClosedCaptioned, order, subtitle, summary}
 

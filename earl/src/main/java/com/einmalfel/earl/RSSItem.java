@@ -18,7 +18,7 @@ import java.util.Map;
 
 public class RSSItem implements Item {
   static final String XML_TAG = "item";
-  private static final String TAG = "E.RIT";
+  private static final String TAG = "Earl.RSSItem";
 
   private enum ST {title, link, description, author, comments, pubDate}
 

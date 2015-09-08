@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class MediaScene {
   static final String XML_TAG = "scene";
-  private static final String TAG = "E.MSC";
+  private static final String TAG = "Earl.MediaScene";
 
   @Nullable
   public final String sceneTitle;

@@ -15,7 +15,7 @@ import java.text.ParseException;
 
 public class MediaThumbnail {
   static final String XML_TAG = "thumbnail";
-  private static final String TAG = "E.MTH";
+  private static final String TAG = "Earl.MediaThumbnail";
 
   @NonNull
   public final URL url;

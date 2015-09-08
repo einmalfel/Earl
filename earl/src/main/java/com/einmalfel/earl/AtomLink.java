@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.net.URI;
 
 public class AtomLink extends AtomCommonAttributes implements Enclosure {
-  private static final String TAG = "E.ALK";
+  private static final String TAG = "Earl.AtomLink";
   static final String XML_TAG = "link";
 
   @NonNull

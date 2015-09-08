@@ -17,7 +17,7 @@ import java.util.zip.DataFormatException;
  * TODO: extensions: podfm, mrss, creativecommons, feedburner
  */
 public class EarlParser {
-  private static final String TAG = "E.PSR";
+  private static final String TAG = "Earl.EarlParser";
 
   /**
    * @param inputStream - stream to read feed from

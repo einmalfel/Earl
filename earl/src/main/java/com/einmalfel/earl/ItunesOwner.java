@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class ItunesOwner {
   static final String XML_TAG = "owner";
-  private static final String TAG = "E.ITO";
+  private static final String TAG = "Earl.ItunesOwner";
 
   @Nullable
   public final String name;

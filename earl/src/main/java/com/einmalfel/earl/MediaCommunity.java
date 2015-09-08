@@ -15,7 +15,7 @@ import java.util.List;
 
 public class MediaCommunity {
   static final String XML_TAG = "community";
-  private static final String TAG = "E.MCM";
+  private static final String TAG = "Earl.MediaCommunity";
 
   public static class StarRating {
     static final String XML_TAG = "starRating";
