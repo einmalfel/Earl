@@ -10,7 +10,7 @@ Earl is available on `jcenter`. Just add a dependency in your `build.gradle` fil
 
 `compile 'com.einmalfel:earl:1.0.0'`
 
-Simle example:
+Simple example:
 ```
 InputStream inputStream = new URL(link).openConnection().getInputStream();
 Feed feed = EarlParser.parseOrThrow(inputStream, 0);
@@ -21,7 +21,7 @@ for (Item item : feed.getItems()) {
 }
 ```
 
-More coplex example:
+More complex example:
 ```
 /** @return a set of keywords assigned to all items of given feed */
 Set<String> getFeedKeywords(URL feedLink) {
