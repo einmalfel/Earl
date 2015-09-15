@@ -1,3 +1,5 @@
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Earl-green.svg?style=flat)](https://android-arsenal.com/details/1/2490)
+
 ### Features
  * Earl parses both Atom and RSS 1.0/2.0
  * Supports RSS extensions (Itunes and Media RSS for now)
