@@ -27,12 +27,13 @@ public class RSSCloud {
   static RSSCloud read(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
     String port = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "port");
+    String domain = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "domain");
+    String path = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "path");
+    String procedure = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "registerProcedure");
+    String protocol = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "protocol");
+    parser.next();
     return new RSSCloud(
-        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "domain"),
-        port == null ? null : Utils.tryParseInt(port),
-        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "path"),
-        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "registerProcedure"),
-        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "protocol"));
+        domain, port == null ? null : Utils.tryParseInt(port), path, procedure, protocol);
   }
 
   public RSSCloud(@Nullable String domain, @Nullable Integer port, @Nullable String path,
