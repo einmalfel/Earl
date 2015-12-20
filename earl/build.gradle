@@ -6,8 +6,8 @@ android {
     defaultConfig {
         minSdkVersion 8
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 1001000
+        versionName "1.0.1"
     }
     buildTypes {
         release {
@@ -44,7 +44,7 @@ if (file('local.gradle').exists())
     apply from: 'local.gradle'
 
 group = 'com.einmalfel'
-version = '1.0.0'
+version = '1.0.1'
 
 task generateSourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
