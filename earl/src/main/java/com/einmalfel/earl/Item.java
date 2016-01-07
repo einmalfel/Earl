@@ -26,6 +26,9 @@ public interface Item {
   @Nullable
   String getAuthor();
 
+  @Nullable
+  String getId();
+
   @NonNull
   List<? extends Enclosure> getEnclosures();
 }

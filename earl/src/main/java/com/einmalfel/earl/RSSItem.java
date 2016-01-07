@@ -217,4 +217,10 @@ public class RSSItem implements Item {
   public List<? extends Enclosure> getEnclosures() {
     return enclosures;
   }
+
+  @Nullable
+  @Override
+  public String getId() {
+    return guid == null ? null : guid.value;
+  }
 }

@@ -222,4 +222,10 @@ public class AtomEntry extends AtomCommonAttributes implements Item {
     }
     return result;
   }
+
+  @NonNull
+  @Override
+  public String getId() {
+    return id.toString();
+  }
 }
