@@ -198,6 +198,9 @@ public class AtomEntry extends AtomCommonAttributes implements Item {
   @Nullable
   @Override
   public String getImageLink() {
+    for (AtomLink link : links) {
+      if (link.getType() != null && link.getType().equals("image/jpeg")) return link.getLink();
+    }
     return null;
   }
 
