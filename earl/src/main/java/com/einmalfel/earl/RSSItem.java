@@ -111,7 +111,7 @@ public class RSSItem implements Item {
         map.containsKey(ST.comments) ? Utils.tryParseUrl(map.remove(ST.comments)) : null,
         enclosures,
         guid,
-        map.containsKey(ST.pubDate) ? Utils.parseRFC822Date(map.remove(ST.pubDate)) : null,
+        map.containsKey(ST.pubDate) ? Utils.parseDate(map.remove(ST.pubDate)) : null,
         source,
         itunesBuilder == null ? null : itunesBuilder.build(),
         mediaBuilder == null ? null : mediaBuilder.build());

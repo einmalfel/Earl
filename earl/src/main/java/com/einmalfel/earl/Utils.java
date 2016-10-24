@@ -29,13 +29,35 @@ class Utils {
   private static final String TAG = "Earl.Utils";
   private static final DateFormat rfc822DateTimeFormat = new SimpleDateFormat(
       "EEE, dd MMM yyyy HH:mm:ss Z", Locale.US);
+  private static final DateFormat rfc8601DateTimeFormat = new SimpleDateFormat(
+      "yyyy-MM-ddTHH:mm:ssZZZZZ", Locale.US);
 
   @Nullable
-  static Date parseRFC822Date(@NonNull String dateString) {
+  static Date parseDate(@NonNull String dateString) {
+    Date date = parseRFC822Date(dateString);
+    if(null == date) {
+      date = parseRFC8601Date(dateString);
+    }
+    if(null == date) {
+      Log.w(TAG, "Malformed date " + dateString);
+    }
+    return date;
+  }
+
+  @Nullable
+  private static Date parseRFC822Date(@NonNull String dateString) {
     try {
       return rfc822DateTimeFormat.parse(dateString);
     } catch (ParseException exception) {
-      Log.w(TAG, "Malformed date " + dateString);
+      return null;
+    }
+  }
+
+  @Nullable
+  private static Date parseRFC8601Date(@NonNull String dateString) {
+    try {
+      return rfc8601DateTimeFormat.parse(dateString);
+    } catch (ParseException exception) {
       return null;
     }
   }

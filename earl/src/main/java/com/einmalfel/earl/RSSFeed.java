@@ -158,9 +158,9 @@ public class RSSFeed implements Feed {
         map.remove(ST.copyright),
         map.remove(ST.managingEditor),
         map.remove(ST.webMaster),
-        map.containsKey(ST.pubDate) ? Utils.parseRFC822Date(map.remove(ST.pubDate)) : null,
+        map.containsKey(ST.pubDate) ? Utils.parseDate(map.remove(ST.pubDate)) : null,
         map.containsKey(ST.lastBuildDate) ? Utils
-            .parseRFC822Date(map.remove(ST.lastBuildDate)) : null,
+            .parseDate(map.remove(ST.lastBuildDate)) : null,
         categories,
         map.remove(ST.generator),
         map.containsKey(ST.docs) ? Utils.tryParseUrl(map.remove(ST.docs)) : null,
