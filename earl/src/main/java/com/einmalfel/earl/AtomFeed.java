@@ -162,23 +162,23 @@ public class AtomFeed extends AtomCommonAttributes implements Feed {
       return null;
     }
     for (AtomLink link : links)
-      if (link.type != null && "alternate".equals(link.type)) {
+      if ("alternate".equals(link.rel)) {
         return link.href.toString();
       }
     for (AtomLink link : links)
-      if (link.type != null && "via".equals(link.type)) {
+      if ("via".equals(link.rel)) {
         return link.href.toString();
       }
     for (AtomLink link : links)
-      if (link.type != null && "related".equals(link.type)) {
+      if ("related".equals(link.rel)) {
         return link.href.toString();
       }
     for (AtomLink link : links)
-      if (link.type == null) {
+      if (link.rel == null) {
         return link.href.toString();
       }
     for (AtomLink link : links)
-      if (link.type != null && !"enclosure".equals(link.type) && !"self".equals(link.type)) {
+      if (link.rel != null && !"enclosure".equals(link.rel) && !"self".equals(link.rel)) {
         return link.href.toString();
       }
     return links.get(0).href.toString();
