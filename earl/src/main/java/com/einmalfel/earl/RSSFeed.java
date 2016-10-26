@@ -70,6 +70,8 @@ public class RSSFeed implements Feed {
   public final ItunesFeed itunes;
   @Nullable
   public final MediaCommon media;
+  @Nullable
+  public final RdfFeed rdf;
 
   @NonNull
   static RSSFeed read(@NonNull XmlPullParser parser, int maxItems)
@@ -86,6 +88,7 @@ public class RSSFeed implements Feed {
     List<String> skipDays = new LinkedList<>();
     ItunesFeed.ItunesFeedBuilder itunesBuilder = null;
     MediaCommon.MediaCommonBuilder mediaBuilder = null;
+    RdfFeed.RdfFeedBuilder rdfBuilder = null;
 
     while (parser.nextTag() == XmlPullParser.START_TAG && (maxItems < 1 || items
         .size() < maxItems)) {
@@ -143,6 +146,11 @@ public class RSSFeed implements Feed {
           Log.w(TAG, "Unknown mrss tag on feed level");
           Utils.skipTag(parser);
         }
+      } else if (Utils.RDF_NAMESPACE.equalsIgnoreCase(namespace)) {
+        if (rdfBuilder == null) {
+          rdfBuilder = new RdfFeed.RdfFeedBuilder();
+        }
+        rdfBuilder.parseTag(parser);
       } else {
         Log.w(TAG, "Unknown RSS feed extension " + parser.getNamespace());
         Utils.skipTag(parser);
@@ -173,7 +181,8 @@ public class RSSFeed implements Feed {
         skipDays,
         items,
         itunesBuilder == null ? null : itunesBuilder.build(),
-        mediaBuilder == null ? null : mediaBuilder.build());
+        mediaBuilder == null ? null : mediaBuilder.build(),
+        rdfBuilder == null ? null : rdfBuilder.build());
   }
 
   public RSSFeed(@NonNull String title, @NonNull URL link, @NonNull String description,
@@ -185,7 +194,8 @@ public class RSSFeed implements Feed {
                  @Nullable Integer ttl, @Nullable String rating, @Nullable RSSImage image,
                  @Nullable RSSTextInput textInput, @NonNull List<Integer> skipHours,
                  @NonNull List<String> skipDays, @NonNull List<RSSItem> items,
-                 @Nullable ItunesFeed itunes, @Nullable MediaCommon media) {
+                 @Nullable ItunesFeed itunes, @Nullable MediaCommon media,
+                 @Nullable RdfFeed rdf) {
     this.title = title;
     this.link = link;
     this.description = description;
@@ -208,6 +218,7 @@ public class RSSFeed implements Feed {
     this.items = Collections.unmodifiableList(items);
     this.itunes = itunes;
     this.media = media;
+    this.rdf = rdf;
   }
 
   @Nullable
@@ -231,7 +242,7 @@ public class RSSFeed implements Feed {
   @NonNull
   @Override
   public String getDescription() {
-    return description;
+    return description == null && rdf != null ? rdf.contentEncoded : description;
   }
 
   @Nullable
