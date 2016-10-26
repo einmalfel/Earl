@@ -22,19 +22,39 @@
         },
         "tags" : [ "news: 5", " abc:3" ]
       },
+      "contents" : [ {
+        "backLinks" : [ ],
+        "bitrate" : 128,
+        "categories" : [ ],
+        "comments" : [ ],
+        "credits" : [ ],
+        "expression" : "full",
+        "fileSize" : 2000,
+        "keywords" : [ ],
+        "prices" : [ ],
+        "responses" : [ ],
+        "restrictions" : [ ],
+        "scenes" : [ ],
+        "subTitles" : [ ],
+        "texts" : [ ],
+        "thumbnails" : [ ],
+        "type" : "video/quicktime",
+        "url" : "http://www.foo.com/video.mov"
+      } ],
       "credits" : [ ],
       "embed" : {
         "height" : 323,
         "url" : "http://www.foo.com/player.swf",
         "values" : {
-          "flashVars" : "\n                    id=12345&vid=678912i&lang=en-us&intl=us&thumbUrl=http://www.foo.com/thumbnail.jpg\n                ",
           "allowFullScreen" : "true",
+          "flashVars" : "\n                    id=12345&vid=678912i&lang=en-us&intl=us&thumbUrl=http://www.foo.com/thumbnail.jpg\n                ",
           "height" : "323",
           "type" : "application/x-shockwave-flash",
           "width" : "512"
         },
         "width" : 512
       },
+      "groups" : [ ],
       "keywords" : [ ],
       "license" : {
         "href" : "http://www.licensehost.com/license",
@@ -76,27 +96,7 @@
         "type" : "application/smil"
       } ],
       "texts" : [ ],
-      "thumbnails" : [ ],
-      "contents" : [ {
-        "backLinks" : [ ],
-        "categories" : [ ],
-        "comments" : [ ],
-        "credits" : [ ],
-        "keywords" : [ ],
-        "prices" : [ ],
-        "responses" : [ ],
-        "restrictions" : [ ],
-        "scenes" : [ ],
-        "subTitles" : [ ],
-        "texts" : [ ],
-        "thumbnails" : [ ],
-        "bitrate" : 128,
-        "expression" : "full",
-        "fileSize" : 2000,
-        "type" : "video/quicktime",
-        "url" : "http://www.foo.com/video.mov"
-      } ],
-      "groups" : [ ]
+      "thumbnails" : [ ]
     },
     "pubDate" : 998957336000
   } ],
