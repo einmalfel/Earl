@@ -135,9 +135,11 @@ class Utils {
       if (string.endsWith("Z")) {
         string = string.replace("Z", "+00:00");
       } else {
+        char timezoneSign = string.contains("+") ? '+' : '-';
+
         //step one, split off the timezone.
-        String firstPart = string.substring(0, string.lastIndexOf('-'));
-        String secondPart = string.substring(string.lastIndexOf('-'));
+        String firstPart = string.substring(0, string.lastIndexOf(timezoneSign));
+        String secondPart = string.substring(string.lastIndexOf(timezoneSign));
 
         //step two, remove the colon from the timezone offset
         secondPart = secondPart.substring(0, secondPart.indexOf(':')) + secondPart
