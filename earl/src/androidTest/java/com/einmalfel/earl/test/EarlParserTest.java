@@ -65,6 +65,14 @@ public class EarlParserTest extends AndroidTestCase {
         new Scanner(reference, "UTF-8").useDelimiter("\\A").next());
   }
 
+  public void testIso8601dates() throws Exception {
+    InputStream sample = getContext().getAssets().open("samples/iso8601dates.xml");
+    InputStream reference = getContext().getAssets().open("references/iso8601dates.json");
+    assertEquals(
+        objectToJson(EarlParser.parseOrThrow(sample, 0)),
+        new Scanner(reference, "UTF-8").useDelimiter("\\A").next());
+  }
+
   private String objectToJson(Object object) throws JsonProcessingException {
     return new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT)
                              .setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.NONE)

@@ -1,0 +1,106 @@
+{
+  "authors" : [ {
+    "email" : "noreply@blogger.com",
+    "name" : "Aniamaluje",
+    "uri" : "http://www.blogger.com/profile/10282415353768209435"
+  } ],
+  "categories" : [ {
+    "term" : "wszystkie"
+  }, {
+    "term" : "inne"
+  } ],
+  "contributors" : [ ],
+  "entries" : [ {
+    "authors" : [ {
+      "email" : "noreply@blogger.com",
+      "name" : "Aniamaluje",
+      "uri" : "http://www.blogger.com/profile/10282415353768209435"
+    } ],
+    "categories" : [ {
+      "scheme" : "http://www.blogger.com/atom/ns#",
+      "term" : "BLOG"
+    }, {
+      "scheme" : "http://www.blogger.com/atom/ns#",
+      "term" : "dzieci"
+    }, {
+      "scheme" : "http://www.blogger.com/atom/ns#",
+      "term" : "inne"
+    }, {
+      "scheme" : "http://www.blogger.com/atom/ns#",
+      "term" : "myśli"
+    } ],
+    "content" : {
+      "type" : "html",
+      "value" : "<div dir=\"ltr\" style=\"text-align: left;\" trbidi=\"on\"><div\n            style=\"text-align: center;\"><div class=\"separator\" style=\"clear: both; text-align:\n            justify;\"><a\n            href=\"https://3.bp.blogspot.com/--FtqOllnn6A/WBDR9uZlqTI/AAAAAAAAqIc/V8jBKTBw974qGh7nbopBn74vv3DYv1JHQCLcB/s1600/letme.jpg\"\n            imageanchor=\"1\" style=\"margin-left: 1em; margin-right: 1em;\"><img border=\"0\"\n            src=\"https://3.bp.blogspot.com/--FtqOllnn6A/WBDR9uZlqTI/AAAAAAAAqIc/V8jBKTBw974qGh7nbopBn74vv3DYv1JHQCLcB/s1600/letme.jpg\"></a></div><div\n            style=\"text-align: justify;\">Rzecz działa się w zerówce. Panie ogłosiły konkurs, na\n            najstaranniej wykonane szlaczki. Nagroda? Symboliczna. Medal w postaci wyciętego z bloku\n            technicznego misia. Każde dziecko dostało po kartce A4 z wzorami i miało całość\n            dokończyć. Jedna z dziewczynek usiadła  wdomu i zaczęła te szlaczki ćwiczyć, żeby\n            przypału nie było. Po wielu próbach i ominiętym odcinku ulubionej kreskówki (sztuka\n            wymaga poświęceń), zdecydowała się dokończyć wzór &quot;na czysto&quot;.\n            Widziałam te szlaczki na własne oczy - wyglądały perfekcyjnie. Gdy dumna oddała w\n            zerówce kartkę na konkurs, spodziewała się pochwały i docenienia trudu, który w to\n            włożyła. Otrzymała dyskwalifikację za oszustwo. Bo przecież &quot;sześcioletnie\n            dziecko nie mogło tak starannie wykonać szlaczków&quot;.</div><div\n            style=\"text-align: justify;\"></div></div></div><a\n            href=\"http://www.aniamaluje.com/2016/10/kamiesz-to-na-pewno-nie-jest.html#more\">Czytaj\n            dalej »</a><img\n            src=\"http://feeds.feedburner.com/~r/AniaMaluje-BlogUrodowy/~4/jv3VTPZJBUQ\" height=\"1\"\n            width=\"1\" alt=\"\"/>"
+    },
+    "contributors" : [ ],
+    "id" : "tag:blogger.com,1999:blog-3538531450758840466.post-4191051457060268222",
+    "links" : [ {
+      "href" : "http://www.aniamaluje.com/feeds/4191051457060268222/comments/default",
+      "rel" : "replies",
+      "title" : "Komentarze do posta",
+      "type" : "application/atom+xml"
+    }, {
+      "href" : "http://www.aniamaluje.com/2016/10/kamiesz-to-na-pewno-nie-jest.html#comment-form",
+      "rel" : "replies",
+      "title" : "Komentarze (0)",
+      "type" : "text/html"
+    }, {
+      "href" : "http://www.blogger.com/feeds/3538531450758840466/posts/default/4191051457060268222",
+      "rel" : "edit",
+      "type" : "application/atom+xml"
+    }, {
+      "href" : "http://www.blogger.com/feeds/3538531450758840466/posts/default/4191051457060268222",
+      "rel" : "self",
+      "type" : "application/atom+xml"
+    }, {
+      "href" : "http://feedproxy.google.com/~r/AniaMaluje-BlogUrodowy/~3/jv3VTPZJBUQ/kamiesz-to-na-pewno-nie-jest.html",
+      "rel" : "alternate",
+      "title" : "\"Kłamiesz, to na pewno nie jest samodzielna praca!\"",
+      "type" : "text/html"
+    } ],
+    "published" : {
+      "date" : 1477503900003
+    },
+    "title" : {
+      "type" : "text",
+      "value" : "\"Kłamiesz, to na pewno nie jest samodzielna praca!\""
+    },
+    "updated" : {
+      "date" : 1477507102139
+    }
+  } ],
+  "generator" : {
+    "uri" : "http://www.blogger.com",
+    "value" : "Blogger",
+    "version" : "http://www.blogger.com"
+  },
+  "id" : "tag:blogger.com,1999:blog-3538531450758840466",
+  "links" : [ {
+    "href" : "http://www.aniamaluje.com/",
+    "rel" : "alternate",
+    "type" : "text/html"
+  }, {
+    "href" : "http://www.blogger.com/feeds/3538531450758840466/posts/default?start-index=26&max-results=25&redirect=false",
+    "rel" : "next",
+    "type" : "application/atom+xml"
+  }, {
+    "href" : "http://feeds.feedburner.com/AniaMaluje-BlogUrodowy",
+    "rel" : "self",
+    "type" : "application/atom+xml"
+  }, {
+    "href" : "http://pubsubhubbub.appspot.com/",
+    "rel" : "hub"
+  } ],
+  "subtitle" : {
+    "type" : "html",
+    "value" : "Aniamaluje to blog lifestyle, którego osią jest zdrowie i rozwój osobisty.\n        Od sierpnia połączył się ze stroną urodową i poszerzył tematykę o fryzury, makijaż i modę\n    "
+  },
+  "title" : {
+    "type" : "text",
+    "value" : "Aniamaluje"
+  },
+  "updated" : {
+    "date" : 1477507102107
+  }
+}
