@@ -19,7 +19,7 @@ public class AtomDate extends AtomCommonAttributes {
   @NonNull
   static AtomDate read(XmlPullParser parser) throws XmlPullParserException, IOException {
     AtomCommonAttributes atomCommonAttributes = new AtomCommonAttributes(parser);
-    Date date = Utils.parseRFC3339Date(parser.nextText());
+    Date date = Utils.parseDate(parser.nextText());
     if (date == null) {
       Log.w(TAG, "Replacing date with 0");
       date = new Date(0);

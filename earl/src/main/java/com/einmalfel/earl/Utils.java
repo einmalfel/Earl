@@ -29,15 +29,86 @@ class Utils {
   private static final String TAG = "Earl.Utils";
   private static final DateFormat rfc822DateTimeFormat = new SimpleDateFormat(
       "EEE, dd MMM yyyy HH:mm:ss Z", Locale.US);
+  private static final DateFormat rfc8601DateTimeFormat = new SimpleDateFormat(
+      "yyyy-MM-dd'T'HH:mm:ss.SSSz", Locale.US);
+
+  /**
+   * One single function to parse all types of date strings. Due to the non-standard nature of
+   * users of the Internet, let alone developers, standards are easily broken by developers and
+   * we have to try our best at figuring out what those dates are.
+   *
+   * @param dateString date (as string) to parse
+   * @return parsed date on success, NULL otherwise
+   */
+  @Nullable
+  static Date parseDate(@NonNull String dateString) {
+    Date date = parseRFC822Date(dateString);
+    if(null == date) {
+      date = parseRFC8601Date(dateString);
+    }
+    if(null == date) {
+      date = parseRFC3339Date(dateString);
+    }
+    if(null == date) {
+      Log.w(TAG, "Malformed date " + dateString);
+    }
+    return date;
+  }
 
   @Nullable
-  static Date parseRFC822Date(@NonNull String dateString) {
+  private static Date parseRFC822Date(@NonNull String dateString) {
     try {
       return rfc822DateTimeFormat.parse(dateString);
     } catch (ParseException exception) {
-      Log.w(TAG, "Malformed date " + dateString);
       return null;
     }
+  }
+
+  @Nullable
+  private static Date parseRFC8601Date(@NonNull String dateString) {
+    try {
+      return rfc8601DateTimeFormat.parse(patchRFC8601Date(dateString));
+    } catch(ParseException exception) {
+      return null;
+    }
+  }
+
+  /**
+   * Patches the specified date due to non-standardization when it comes to RFC 8601. In particular,
+   * this will normalize the string so that our {@link DateFormat} could work properly and parse
+   * the date. We need this to support pre-1.7 Java versions.
+   *
+   * The function supports these formats:
+   *
+   * 2016-01-01T01:01:01.001Z
+   * 2016-01-01T0101:01.001Z
+   * 2016-01-01T01:01:01.001+01:01
+   * 2016-01-01T0101:01.001+01:01
+   *
+   * @param dateString date (as string) to parse
+   * @return patched date
+   */
+  @NonNull
+  private static String patchRFC8601Date(@NonNull String dateString) {
+    final int dateLength = dateString.length();
+    if(19 < dateLength) {
+      // If zero time, add TZ indicator.
+      if(dateString.endsWith("Z")) {
+        dateString = dateString.substring(0, dateLength - 1) + "GMT-00:00";
+      } else if(!dateString.substring(0, dateLength - 9).startsWith("GMT")) {
+        // Prefix "+01:00" with "GMT" so it the formatter can work properly.
+        String preTimeZone = dateString.substring(0, dateLength - 6);
+        String timeZone = dateString.substring(dateLength - 6, dateLength);
+        dateString = preTimeZone + "GMT" + timeZone;
+      }
+
+      // Detect if there a colon missing between hour and minute.
+      if(':' != dateString.charAt(13)) {
+        // Insert a colon between hour and minute.
+        dateString = dateString.substring(0, 13) + ":" + dateString.substring(13);
+      }
+    }
+    return dateString;
   }
 
   private static DateFormat RFC3339;
@@ -58,7 +129,7 @@ class Utils {
    * based on: http://cokere.com/RFC3339Date.txt
    */
   @Nullable
-  public static java.util.Date parseRFC3339Date(@NonNull String string) {
+  private static java.util.Date parseRFC3339Date(@NonNull String string) {
     if (RFC3339 == null) {
       setupRFC3339();
     }
@@ -90,7 +161,6 @@ class Utils {
       }
       return date;
     } catch (ParseException exception) {
-      Log.w(TAG, "Failed to parse RFC3339 string " + string, exception);
       return null;
     }
   }
