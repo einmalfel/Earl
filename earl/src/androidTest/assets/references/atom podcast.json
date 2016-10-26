@@ -35,7 +35,7 @@
       "value" : "Atom 1.0"
     },
     "updated" : {
-      "date" : 1121414400000
+      "date" : 1121428800000
     }
   } ],
   "id" : "http://www.example.org/myfeed",
@@ -49,6 +49,6 @@
     "value" : "My Podcast Feed"
   },
   "updated" : {
-    "date" : 1121414400000
+    "date" : 1121428800000
   }
 }

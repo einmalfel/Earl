@@ -111,15 +111,10 @@ class Utils {
     return dateString;
   }
 
-  private static DateFormat RFC3339;
-  private static DateFormat RFC3339Ms;
   private static DateFormat RFC3339Tz;
   private static DateFormat RFC3339TzMs;
 
   static void setupRFC3339() {
-    RFC3339 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US);
-    RFC3339Ms = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'", Locale.US);
-    RFC3339Ms.setLenient(true);
     RFC3339Tz = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ", Locale.US);
     RFC3339TzMs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ", Locale.US);
     RFC3339TzMs.setLenient(true);
@@ -130,7 +125,7 @@ class Utils {
    */
   @Nullable
   private static java.util.Date parseRFC3339Date(@NonNull String string) {
-    if (RFC3339 == null) {
+    if (RFC3339Tz == null) {
       setupRFC3339();
     }
     try {
@@ -138,22 +133,18 @@ class Utils {
 
       //if there is no time zone, we don't need to do any special parsing.
       if (string.endsWith("Z")) {
-        try {
-          date = RFC3339.parse(string);
-        } catch (java.text.ParseException pe) {//try again with optional decimals
-          date = RFC3339Ms.parse(string);
-        }
-        return date;
+        string = string.replace("Z", "+00:00");
+      } else {
+        //step one, split off the timezone.
+        String firstPart = string.substring(0, string.lastIndexOf('-'));
+        String secondPart = string.substring(string.lastIndexOf('-'));
+
+        //step two, remove the colon from the timezone offset
+        secondPart = secondPart.substring(0, secondPart.indexOf(':')) + secondPart
+            .substring(secondPart.indexOf(':') + 1);
+        string = firstPart + secondPart;
       }
 
-      //step one, split off the timezone.
-      String firstPart = string.substring(0, string.lastIndexOf('-'));
-      String secondPart = string.substring(string.lastIndexOf('-'));
-
-      //step two, remove the colon from the timezone offset
-      secondPart = secondPart.substring(0, secondPart.indexOf(':')) + secondPart
-          .substring(secondPart.indexOf(':') + 1);
-      string = firstPart + secondPart;
       try {
         date = RFC3339Tz.parse(string);
       } catch (java.text.ParseException pe) {//try again with optional decimals
