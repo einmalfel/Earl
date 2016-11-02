@@ -47,7 +47,7 @@ public class RSSItem implements Item {
   @Nullable
   public final MediaItem media;
   @Nullable
-  public final RdfItem rdfItem;
+  public final RdfFeed rdfFeed;
 
   @NonNull
   static RSSItem read(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
@@ -59,7 +59,7 @@ public class RSSItem implements Item {
     RSSSource source = null;
     ItunesItem.ItunesItemBuilder itunesBuilder = null;
     MediaItem.MediaItemBuilder mediaBuilder = null;
-    RdfItem.RdfItemBuilder rdfBuilder = null;
+    RdfFeed.RdfFeedBuilder rdfBuilder = null;
     while (parser.nextTag() == XmlPullParser.START_TAG) {
       String namespace = parser.getNamespace();
       if (XmlPullParser.NO_NAMESPACE.equals(namespace)) {
@@ -100,7 +100,7 @@ public class RSSItem implements Item {
         }
       } else if (Utils.RDF_NAMESPACE.equalsIgnoreCase(namespace)) {
         if (rdfBuilder == null) {
-          rdfBuilder = new RdfItem.RdfItemBuilder();
+          rdfBuilder = new RdfFeed.RdfFeedBuilder();
         }
         rdfBuilder.parseTag(parser);
       } else {
@@ -131,7 +131,7 @@ public class RSSItem implements Item {
                  @Nullable URL comments, @NonNull List<RSSEnclosure> enclosures,
                  @Nullable RSSGuid guid, @Nullable Date pubDate, @Nullable RSSSource source,
                  @Nullable ItunesItem itunes, @Nullable MediaItem media,
-                 @Nullable RdfItem rdfItem) {
+                 @Nullable RdfFeed rdfFeed) {
     this.title = title;
     this.link = link;
     this.description = description;
@@ -144,7 +144,7 @@ public class RSSItem implements Item {
     this.source = source;
     this.itunes = itunes;
     this.media = media;
-    this.rdfItem = rdfItem;
+    this.rdfFeed = rdfFeed;
   }
 
   @Nullable
@@ -180,8 +180,8 @@ public class RSSItem implements Item {
     if (description != null) {
       return description;
     }
-    if (rdfItem != null && rdfItem.contentEncoded != null) {
-      return rdfItem.contentEncoded;
+    if (rdfFeed != null && rdfFeed.contentEncoded != null) {
+      return rdfFeed.contentEncoded;
     }
     if (itunes != null && itunes.subtitle != null) {
       return itunes.subtitle;
@@ -196,7 +196,7 @@ public class RSSItem implements Item {
   }
 
   public String getContentEncoded() {
-    return rdfItem == null ? null : rdfItem.contentEncoded;
+    return rdfFeed == null ? null : rdfFeed.contentEncoded;
   }
 
   @Nullable

@@ -1,11 +1,3 @@
-/*
- * This file is part of Fineswap Android App.
- * Copyright (C) Fineswap AS. All rights reserved.
- *
- * THIS IS PROPRIETARY SOFTWARE AND IS OWNED BY FINESWAP AS.
- * DO NOT DISTRIBUTE! DO NOT MODIFY! DO NOT COPY!
- */
-
 package com.einmalfel.earl;
 
 import android.support.annotation.NonNull;
