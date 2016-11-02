@@ -35,7 +35,7 @@ public class RdfFeed {
     @NonNull
     RdfFeed build() {
       return new RdfFeed(
-          map.containsKey(ST.encoded) ? map.remove(ST.encoded) : null);
+          map.remove(ST.encoded));
     }
   }
 

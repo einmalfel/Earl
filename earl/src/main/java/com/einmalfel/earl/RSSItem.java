@@ -195,6 +195,7 @@ public class RSSItem implements Item {
     return null;
   }
 
+  @Nullable
   public String getContentEncoded() {
     return rdfFeed == null ? null : rdfFeed.contentEncoded;
   }
