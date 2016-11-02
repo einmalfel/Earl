@@ -47,7 +47,7 @@ public class RSSItem implements Item {
   @Nullable
   public final MediaItem media;
   @Nullable
-  public final RdfFeed rdfFeed;
+  public final Content content;
 
   @NonNull
   static RSSItem read(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
@@ -59,7 +59,7 @@ public class RSSItem implements Item {
     RSSSource source = null;
     ItunesItem.ItunesItemBuilder itunesBuilder = null;
     MediaItem.MediaItemBuilder mediaBuilder = null;
-    RdfFeed.RdfFeedBuilder rdfBuilder = null;
+    Content.ContentBuilder contentBuilder = null;
     while (parser.nextTag() == XmlPullParser.START_TAG) {
       String namespace = parser.getNamespace();
       if (XmlPullParser.NO_NAMESPACE.equals(namespace)) {
@@ -98,11 +98,11 @@ public class RSSItem implements Item {
           Log.w(TAG, "Unknown mrss tag on item level");
           Utils.skipTag(parser);
         }
-      } else if (Utils.RDF_NAMESPACE.equalsIgnoreCase(namespace)) {
-        if (rdfBuilder == null) {
-          rdfBuilder = new RdfFeed.RdfFeedBuilder();
+      } else if (Utils.CONTENT_NAMESPACE.equalsIgnoreCase(namespace)) {
+        if (contentBuilder == null) {
+          contentBuilder = new Content.ContentBuilder();
         }
-        rdfBuilder.parseTag(parser);
+        contentBuilder.parseTag(parser);
       } else {
         Log.w(TAG, "Unknown namespace in RSS item " + parser.getNamespace());
         Utils.skipTag(parser);
@@ -123,7 +123,7 @@ public class RSSItem implements Item {
         source,
         itunesBuilder == null ? null : itunesBuilder.build(),
         mediaBuilder == null ? null : mediaBuilder.build(),
-        rdfBuilder == null ? null : rdfBuilder.build());
+        contentBuilder == null ? null : contentBuilder.build());
   }
 
   public RSSItem(@Nullable String title, @Nullable URL link, @Nullable String description,
@@ -131,7 +131,7 @@ public class RSSItem implements Item {
                  @Nullable URL comments, @NonNull List<RSSEnclosure> enclosures,
                  @Nullable RSSGuid guid, @Nullable Date pubDate, @Nullable RSSSource source,
                  @Nullable ItunesItem itunes, @Nullable MediaItem media,
-                 @Nullable RdfFeed rdfFeed) {
+                 @Nullable Content content) {
     this.title = title;
     this.link = link;
     this.description = description;
@@ -144,7 +144,7 @@ public class RSSItem implements Item {
     this.source = source;
     this.itunes = itunes;
     this.media = media;
-    this.rdfFeed = rdfFeed;
+    this.content = content;
   }
 
   @Nullable
@@ -180,8 +180,8 @@ public class RSSItem implements Item {
     if (description != null) {
       return description;
     }
-    if (rdfFeed != null && rdfFeed.contentEncoded != null) {
-      return rdfFeed.contentEncoded;
+    if (content != null && content.encoded != null) {
+      return content.encoded;
     }
     if (itunes != null && itunes.subtitle != null) {
       return itunes.subtitle;
@@ -197,7 +197,7 @@ public class RSSItem implements Item {
 
   @Nullable
   public String getContentEncoded() {
-    return rdfFeed == null ? null : rdfFeed.contentEncoded;
+    return content == null ? null : content.encoded;
   }
 
   @Nullable

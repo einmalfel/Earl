@@ -11,12 +11,12 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RdfFeed {
-  private static final String TAG = "Earl.RdfFeed";
+public class Content {
+  private static final String TAG = "Earl.Content";
 
   private enum ST {encoded}
 
-  static class RdfFeedBuilder {
+  static class ContentBuilder {
     final Map<ST, String> map = new HashMap<>();
 
     void parseTag(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
@@ -26,23 +26,23 @@ public class RdfFeed {
           try {
             map.put(ST.valueOf(tagName), parser.nextText());
           } catch (IllegalArgumentException ignored) {
-            Log.w(TAG, "Unknown RDF feed tag '" + tagName + "', skipping..");
+            Log.w(TAG, "Unknown Content feed tag '" + tagName + "', skipping..");
             Utils.skipTag(parser);
           }
       }
     }
 
     @NonNull
-    RdfFeed build() {
-      return new RdfFeed(
+    Content build() {
+      return new Content(
           map.remove(ST.encoded));
     }
   }
 
   @Nullable
-  public final String contentEncoded;
+  public final String encoded;
 
-  public RdfFeed(@Nullable String contentEncoded) {
-    this.contentEncoded = contentEncoded;
+  public Content(@Nullable String encoded) {
+    this.encoded = encoded;
   }
 }

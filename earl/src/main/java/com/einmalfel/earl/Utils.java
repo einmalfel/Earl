@@ -25,7 +25,7 @@ class Utils {
   static final String ATOM_NAMESPACE = "http://www.w3.org/2005/Atom";
   static final String MEDIA_NAMESPACE = "http://search.yahoo.com/mrss/";
   static final String ITUNES_NAMESPACE = "http://www.itunes.com/dtds/podcast-1.0.dtd";
-  static final String RDF_NAMESPACE = "http://purl.org/rss/1.0/modules/content/";
+  static final String CONTENT_NAMESPACE = "http://purl.org/rss/1.0/modules/content/";
 
   private static final String TAG = "Earl.Utils";
   private static final DateFormat rfc822DateTimeFormat = new SimpleDateFormat(
