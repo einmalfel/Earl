@@ -28,16 +28,16 @@ public class Content {
       }
     }
 
-    @NonNull
+    @Nullable
     Content build() {
-      return new Content(encodedValue);
+      return encodedValue == null ? null : new Content(encodedValue);
     }
   }
 
-  @Nullable
+  @NonNull
   public final String encoded;
 
-  public Content(@Nullable String encoded) {
+  public Content(@NonNull String encoded) {
     this.encoded = encoded;
   }
 }
