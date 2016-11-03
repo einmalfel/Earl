@@ -29,7 +29,7 @@ class Utils {
   private static final String TAG = "Earl.Utils";
   private static final DateFormat rfc822DateTimeFormat = new SimpleDateFormat(
       "EEE, dd MMM yyyy HH:mm:ss Z", Locale.US);
-  private static final DateFormat rfc8601DateTimeFormat = new SimpleDateFormat(
+  private static final DateFormat iso8601DateTimeFormat = new SimpleDateFormat(
       "yyyy-MM-dd'T'HH:mm:ss.SSSz", Locale.US);
 
   /**
@@ -44,7 +44,7 @@ class Utils {
   static Date parseDate(@NonNull String dateString) {
     Date date = parseRFC822Date(dateString);
     if(null == date) {
-      date = parseRFC8601Date(dateString);
+      date = parseISO8601Date(dateString);
     }
     if(null == date) {
       date = parseRFC3339Date(dateString);
@@ -65,16 +65,16 @@ class Utils {
   }
 
   @Nullable
-  private static Date parseRFC8601Date(@NonNull String dateString) {
+  private static Date parseISO8601Date(@NonNull String dateString) {
     try {
-      return rfc8601DateTimeFormat.parse(patchRFC8601Date(dateString));
+      return iso8601DateTimeFormat.parse(patchISO8601Date(dateString));
     } catch(ParseException exception) {
       return null;
     }
   }
 
   /**
-   * Patches the specified date due to non-standardization when it comes to RFC 8601. In particular,
+   * Patches the specified date due to non-standardization when it comes to ISO 8601. In particular,
    * this will normalize the string so that our {@link DateFormat} could work properly and parse
    * the date. We need this to support pre-1.7 Java versions.
    *
@@ -89,7 +89,7 @@ class Utils {
    * @return patched date
    */
   @NonNull
-  private static String patchRFC8601Date(@NonNull String dateString) {
+  private static String patchISO8601Date(@NonNull String dateString) {
     final int dateLength = dateString.length();
     if(19 < dateLength) {
       // If zero time, add TZ indicator.
