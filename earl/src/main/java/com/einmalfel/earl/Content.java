@@ -8,34 +8,29 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Content {
   private static final String TAG = "Earl.Content";
 
-  private enum ST {encoded}
-
   static class ContentBuilder {
-    final Map<ST, String> map = new HashMap<>();
+    // this is the only tag specified in latest standard draft, see
+    // http://web.resource.org/rss/1.0/modules/content/
+    private static final String ENCODED_TAG = "encoded";
+    private String encodedValue;
 
     void parseTag(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
       String tagName = parser.getName();
-      switch (tagName) {
-        default:
-          try {
-            map.put(ST.valueOf(tagName), parser.nextText());
-          } catch (IllegalArgumentException ignored) {
-            Log.w(TAG, "Unknown Content feed tag '" + tagName + "', skipping..");
-            Utils.skipTag(parser);
-          }
+      if (tagName.equals(ENCODED_TAG)) {
+        encodedValue = parser.nextText();
+      } else {
+        Log.w(TAG, "Unknown Content feed tag '" + tagName + "', skipping..");
+        Utils.skipTag(parser);
       }
     }
 
     @NonNull
     Content build() {
-      return new Content(
-          map.remove(ST.encoded));
+      return new Content(encodedValue);
     }
   }
 
