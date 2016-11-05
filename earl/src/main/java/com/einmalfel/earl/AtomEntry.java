@@ -204,7 +204,8 @@ public class AtomEntry extends AtomCommonAttributes implements Item {
   @Override
   public String getImageLink() {
     for (AtomLink link : links) {
-      if (link.getType() != null && link.getType().equals("image/jpeg")) {
+      String type = link.getType();
+      if (type != null && type.startsWith("image/")) {
         return link.getLink();
       }
     }
