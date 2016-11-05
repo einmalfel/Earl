@@ -180,7 +180,7 @@ public class RSSItem implements Item {
     if (description != null) {
       return description;
     }
-    if (content != null && content.encoded != null) {
+    if (content != null) {
       return content.encoded;
     }
     if (itunes != null && itunes.subtitle != null) {
