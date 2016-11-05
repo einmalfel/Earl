@@ -46,6 +46,8 @@ public class RSSItem implements Item {
   public final ItunesItem itunes;
   @Nullable
   public final MediaItem media;
+  @Nullable
+  public final Content content;
 
   @NonNull
   static RSSItem read(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
@@ -57,6 +59,7 @@ public class RSSItem implements Item {
     RSSSource source = null;
     ItunesItem.ItunesItemBuilder itunesBuilder = null;
     MediaItem.MediaItemBuilder mediaBuilder = null;
+    Content.ContentBuilder contentBuilder = null;
     while (parser.nextTag() == XmlPullParser.START_TAG) {
       String namespace = parser.getNamespace();
       if (XmlPullParser.NO_NAMESPACE.equals(namespace)) {
@@ -95,6 +98,11 @@ public class RSSItem implements Item {
           Log.w(TAG, "Unknown mrss tag on item level");
           Utils.skipTag(parser);
         }
+      } else if (Utils.CONTENT_NAMESPACE.equalsIgnoreCase(namespace)) {
+        if (contentBuilder == null) {
+          contentBuilder = new Content.ContentBuilder();
+        }
+        contentBuilder.parseTag(parser);
       } else {
         Log.w(TAG, "Unknown namespace in RSS item " + parser.getNamespace());
         Utils.skipTag(parser);
@@ -114,14 +122,16 @@ public class RSSItem implements Item {
         map.containsKey(ST.pubDate) ? Utils.parseDate(map.remove(ST.pubDate)) : null,
         source,
         itunesBuilder == null ? null : itunesBuilder.build(),
-        mediaBuilder == null ? null : mediaBuilder.build());
+        mediaBuilder == null ? null : mediaBuilder.build(),
+        contentBuilder == null ? null : contentBuilder.build());
   }
 
   public RSSItem(@Nullable String title, @Nullable URL link, @Nullable String description,
                  @Nullable String author, @NonNull List<RSSCategory> categories,
                  @Nullable URL comments, @NonNull List<RSSEnclosure> enclosures,
                  @Nullable RSSGuid guid, @Nullable Date pubDate, @Nullable RSSSource source,
-                 @Nullable ItunesItem itunes, @Nullable MediaItem media) {
+                 @Nullable ItunesItem itunes, @Nullable MediaItem media,
+                 @Nullable Content content) {
     this.title = title;
     this.link = link;
     this.description = description;
@@ -134,6 +144,7 @@ public class RSSItem implements Item {
     this.source = source;
     this.itunes = itunes;
     this.media = media;
+    this.content = content;
   }
 
   @Nullable
@@ -169,6 +180,9 @@ public class RSSItem implements Item {
     if (description != null) {
       return description;
     }
+    if (content != null && content.encoded != null) {
+      return content.encoded;
+    }
     if (itunes != null && itunes.subtitle != null) {
       return itunes.subtitle;
     }
@@ -179,6 +193,11 @@ public class RSSItem implements Item {
       return media.description.value;
     }
     return null;
+  }
+
+  @Nullable
+  public String getContentEncoded() {
+    return content == null ? null : content.encoded;
   }
 
   @Nullable
