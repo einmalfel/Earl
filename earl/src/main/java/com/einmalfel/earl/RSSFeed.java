@@ -2,6 +2,7 @@ package com.einmalfel.earl;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.util.Log;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -242,7 +243,7 @@ public class RSSFeed implements Feed {
   @NonNull
   @Override
   public String getDescription() {
-    return description == null && content != null ? content.encoded : description;
+    return TextUtils.isEmpty(description) && content != null ? content.encoded : description;
   }
 
   @Nullable
