@@ -23,9 +23,9 @@ public class ItunesItem {
   private enum ST {author, block, duration, explicit, isClosedCaptioned, order, subtitle, summary}
 
   static class ItunesItemBuilder {
-    final Map<ST, String> map = new HashMap<>();
-    URL image;
-    List<String> keywords;
+    private final Map<ST, String> map = new HashMap<>();
+    private URL image;
+    private List<String> keywords;
 
     void parseTag(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
       String tagName = parser.getName();

@@ -24,7 +24,7 @@ public class ItunesCategory {
     String value = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "text");
     List<ItunesCategory> subCategories = new LinkedList<>();
     while (parser.nextTag() != XmlPullParser.END_TAG) {
-      subCategories.add(ItunesCategory.read(parser));
+      subCategories.add(read(parser));
     }
     return new ItunesCategory(Utils.nonNullString(value), subCategories);
   }

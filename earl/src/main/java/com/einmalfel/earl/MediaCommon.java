@@ -20,32 +20,30 @@ public class MediaCommon {
     private MediaTitle title;
     private MediaTitle description;
     private List<String> keywords;
-    private List<MediaThumbnail> thumbnails = new LinkedList<>();
-    private List<MediaCategory> categories = new LinkedList<>();
+    private final List<MediaThumbnail> thumbnails = new LinkedList<>();
+    private final List<MediaCategory> categories = new LinkedList<>();
     private MediaHash hash;
     private MediaPlayer player;
-    private List<MediaCredit> credits = new LinkedList<>();
+    private final List<MediaCredit> credits = new LinkedList<>();
     private MediaCopyright copyright;
-    private List<MediaText> texts = new LinkedList<>();
-    private List<MediaRestriction> restrictions = new LinkedList<>();
+    private final List<MediaText> texts = new LinkedList<>();
+    private final List<MediaRestriction> restrictions = new LinkedList<>();
     private MediaCommunity community;
-    private List<String> comments = new LinkedList<>();
+    private final List<String> comments = new LinkedList<>();
     private MediaEmbed embed;
-    private List<String> responses = new LinkedList<>();
-    private List<URL> backLinks = new LinkedList<>();
+    private final List<String> responses = new LinkedList<>();
+    private final List<URL> backLinks = new LinkedList<>();
     private MediaStatus status;
-    private List<MediaPrice> prices = new LinkedList<>();
+    private final List<MediaPrice> prices = new LinkedList<>();
     private MediaLicense license;
-    private List<MediaSubTitle> subTitles = new LinkedList<>();
+    private final List<MediaSubTitle> subTitles = new LinkedList<>();
     private MediaPeerLink peerLink;
     private MediaLocation location;
     private MediaRights rights;
-    private List<MediaScene> scenes = new LinkedList<>();
+    private final List<MediaScene> scenes = new LinkedList<>();
 
     /**
      * @return true if builder has consumed the tag
-     * @throws XmlPullParserException
-     * @throws IOException
      */
     boolean parseTag(XmlPullParser parser) throws XmlPullParserException, IOException {
       switch (parser.getName()) {

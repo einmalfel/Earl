@@ -21,11 +21,11 @@ public class ItunesFeed {
   private enum ST {author, block, explicit, complete, subtitle, summary}
 
   static class ItunesFeedBuilder {
-    final Map<ST, String> map = new HashMap<>();
-    final List<ItunesCategory> categories = new LinkedList<>();
-    ItunesOwner owner;
-    URL image;
-    URL newFeedURL;
+    private final Map<ST, String> map = new HashMap<>();
+    private final List<ItunesCategory> categories = new LinkedList<>();
+    private ItunesOwner owner;
+    private URL image;
+    private URL newFeedURL;
 
     void parseTag(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
       String tagName = parser.getName();

@@ -21,7 +21,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-class Utils {
+final class Utils {
   static final String ATOM_NAMESPACE = "http://www.w3.org/2005/Atom";
   static final String MEDIA_NAMESPACE = "http://search.yahoo.com/mrss/";
   static final String ITUNES_NAMESPACE = "http://www.itunes.com/dtds/podcast-1.0.dtd";
@@ -32,6 +32,8 @@ class Utils {
       "EEE, dd MMM yyyy HH:mm:ss Z", Locale.US);
   private static final DateFormat iso8601DateTimeFormat = new SimpleDateFormat(
       "yyyy-MM-dd'T'HH:mm:ss.SSSz", Locale.US);
+
+  private Utils() {}
 
   /**
    * One single function to parse all types of date strings. Due to the non-standard nature of
@@ -44,13 +46,13 @@ class Utils {
   @Nullable
   static Date parseDate(@NonNull String dateString) {
     Date date = parseRFC822Date(dateString);
-    if(null == date) {
+    if (null == date) {
       date = parseISO8601Date(dateString);
     }
-    if(null == date) {
+    if (null == date) {
       date = parseRFC3339Date(dateString);
     }
-    if(null == date) {
+    if (null == date) {
       Log.w(TAG, "Malformed date " + dateString);
     }
     return date;
@@ -60,7 +62,7 @@ class Utils {
   private static Date parseRFC822Date(@NonNull String dateString) {
     try {
       return rfc822DateTimeFormat.parse(dateString);
-    } catch (ParseException exception) {
+    } catch (ParseException ignored) {
       return null;
     }
   }
@@ -69,15 +71,15 @@ class Utils {
   private static Date parseISO8601Date(@NonNull String dateString) {
     try {
       return iso8601DateTimeFormat.parse(patchISO8601Date(dateString));
-    } catch(ParseException exception) {
+    } catch (ParseException ignored) {
       return null;
     }
   }
 
   /**
-   * Patches the specified date due to non-standardization when it comes to ISO 8601. In particular,
-   * this will normalize the string so that our {@link DateFormat} could work properly and parse
-   * the date. We need this to support pre-1.7 Java versions.
+   * Patches the specified date due to non-standardization when it comes to ISO 8601. In
+   * particular, this will normalize the string so that our {@link DateFormat} could work properly
+   * and parse the date. We need this to support pre-1.7 Java versions.
    *
    * The function supports these formats:
    *
@@ -92,11 +94,11 @@ class Utils {
   @NonNull
   private static String patchISO8601Date(@NonNull String dateString) {
     final int dateLength = dateString.length();
-    if(19 < dateLength) {
+    if (19 < dateLength) {
       // If zero time, add TZ indicator.
-      if(dateString.endsWith("Z")) {
+      if (dateString.endsWith("Z")) {
         dateString = dateString.substring(0, dateLength - 1) + "GMT-00:00";
-      } else if(!dateString.substring(0, dateLength - 9).startsWith("GMT")) {
+      } else if (!dateString.substring(0, dateLength - 9).startsWith("GMT")) {
         // Prefix "+01:00" with "GMT" so it the formatter can work properly.
         String preTimeZone = dateString.substring(0, dateLength - 6);
         String timeZone = dateString.substring(dateLength - 6, dateLength);
@@ -104,7 +106,7 @@ class Utils {
       }
 
       // Detect if there a colon missing between hour and minute.
-      if(':' != dateString.charAt(13)) {
+      if (':' != dateString.charAt(13)) {
         // Insert a colon between hour and minute.
         dateString = dateString.substring(0, 13) + ":" + dateString.substring(13);
       }
@@ -115,7 +117,7 @@ class Utils {
   private static DateFormat RFC3339Tz;
   private static DateFormat RFC3339TzMs;
 
-  static void setupRFC3339() {
+  private static void setupRFC3339() {
     RFC3339Tz = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ", Locale.US);
     RFC3339TzMs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ", Locale.US);
     RFC3339TzMs.setLenient(true);
@@ -125,13 +127,11 @@ class Utils {
    * based on: http://cokere.com/RFC3339Date.txt
    */
   @Nullable
-  private static java.util.Date parseRFC3339Date(@NonNull String string) {
+  private static Date parseRFC3339Date(@NonNull String string) {
     if (RFC3339Tz == null) {
       setupRFC3339();
     }
     try {
-      Date date;
-
       //if there is no time zone, we don't need to do any special parsing.
       if (string.endsWith("Z")) {
         string = string.replace("Z", "+00:00");
@@ -149,12 +149,11 @@ class Utils {
       }
 
       try {
-        date = RFC3339Tz.parse(string);
-      } catch (java.text.ParseException pe) {//try again with optional decimals
-        date = RFC3339TzMs.parse(string);
+        return RFC3339Tz.parse(string);
+      } catch (ParseException ignored) { // try again with optional decimals
+        return RFC3339TzMs.parse(string);
       }
-      return date;
-    } catch (ParseException exception) {
+    } catch (ParseException ignored) {
       return null;
     }
   }
@@ -169,10 +168,10 @@ class Utils {
     }
   }
 
-  private static DateFormat[] itunesDurationFormats = null;
+  private static DateFormat[] itunesDurationFormats;
 
   static void setupItunesDateFormats() {
-    itunesDurationFormats = new DateFormat[]{
+    itunesDurationFormats = new DateFormat[] {
         new SimpleDateFormat("HH:mm:ss", Locale.US),
         new SimpleDateFormat("H:mm:ss", Locale.US),
         new SimpleDateFormat("mm:ss", Locale.US),
@@ -197,9 +196,10 @@ class Utils {
       try {
         Date date = format.parse(dateString);
         return (int) (date.getTime() / 1000);
-      } catch (ParseException ignored) {}
+      } catch (ParseException ignored) {
+        // ignore exceptions: if date won't match any format, test if it is integer value in seconds
+      }
     }
-    // if none of formats match, this could be an integer value in seconds
     return tryParseInt(dateString);
   }
 
@@ -207,9 +207,9 @@ class Utils {
   static Integer parseMediaRssTime(@NonNull String time) {
     // MRSS spec doesn't always clarify which time format is used.
     // In examples it looks quite like itunes duration.
-    Integer result = Utils.parseItunesDuration(time);
+    Integer result = parseItunesDuration(time);
     if (result == null) {
-      result = Utils.parseRFC2326NPT(time);
+      result = parseRFC2326NPT(time);
     } else {
       // Itunes duration is in [s]
       result *= 1000;
@@ -220,14 +220,11 @@ class Utils {
   /**
    * Fast-forward parser to the end of current tag (last tag whose START_TAG we passed),
    * skipping all nested tags.
-   *
-   * @throws XmlPullParserException
-   * @throws IOException
    */
   static void finishTag(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
     while (parser.getEventType() != XmlPullParser.END_TAG) {
       if (parser.getEventType() == XmlPullParser.START_TAG) {
-        Utils.skipTag(parser);
+        skipTag(parser);
       }
       parser.next();
     }
@@ -239,7 +236,7 @@ class Utils {
    */
   static void skipTag(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
     if (parser.getEventType() != XmlPullParser.START_TAG) {
-      throw new IllegalStateException();
+      throw new IllegalStateException("Unexpected parser event " + parser.getEventType());
     }
     int depth = 1;
     while (depth != 0) {
@@ -250,6 +247,7 @@ class Utils {
         case XmlPullParser.START_TAG:
           depth++;
           break;
+        default: // ignore other tags
       }
     }
   }
@@ -257,13 +255,12 @@ class Utils {
   @Nullable
   static Integer tryParseInt(@Nullable String string) {
     if (string == null) {
-      Log.w(TAG, "Null value while parsing integer", new NullPointerException());
       return null;
     } else {
       try {
         return Integer.valueOf(string);
       } catch (NumberFormatException exception) {
-        Log.w(TAG, "Error parsing integer value '" + string + "'", exception);
+        Log.w(TAG, "Error parsing integer value '" + string + '\'', exception);
         return null;
       }
     }
@@ -271,12 +268,15 @@ class Utils {
 
   @NonNull
   static Integer nonNullInt(@Nullable String string) {
-    Integer result = tryParseInt(string);
-    if (result == null) {
-      Log.w(TAG, "Malformed integer string replaced with '-1'");
+    if (string == null) {
+      Log.w(TAG, "Unexpectedly got null string. -1 returned", new NullPointerException());
       return -1;
-    } else {
-      return result;
+    }
+    try {
+      return Integer.valueOf(string);
+    } catch (NumberFormatException exception) {
+      Log.w(TAG, "Malformed integer string replaced with '-1'", exception);
+      return -1;
     }
   }
 
@@ -299,7 +299,7 @@ class Utils {
       try {
         return new URL(string);
       } catch (MalformedURLException exception) {
-        Log.w(TAG, "Error parsing url value '" + string + "'", exception);
+        Log.w(TAG, "Error parsing url value '" + string + '\'', exception);
         return null;
       }
     }
@@ -312,7 +312,9 @@ class Utils {
       Log.w(TAG, "Malformed URL replaced with 'http://'");
       try {
         result = new URL("http://");
-      } catch (MalformedURLException ignored) {throw new AssertionError("Should never get here");}
+      } catch (MalformedURLException ignored) {
+        throw new AssertionError("Should never get here");
+      }
     }
     return result;
   }
@@ -326,7 +328,7 @@ class Utils {
       try {
         return new URI(string);
       } catch (URISyntaxException exception) {
-        Log.w(TAG, "Error parsing uri value '" + string + "'", exception);
+        Log.w(TAG, "Error parsing uri value '" + string + '\'', exception);
         return null;
       }
     }
@@ -339,7 +341,9 @@ class Utils {
       Log.w(TAG, "Malformed URI replaced with 'http://'");
       try {
         result = new URI("http:///");
-      } catch (URISyntaxException ignored) {throw new AssertionError("Should never get here");}
+      } catch (URISyntaxException ignored) {
+        throw new AssertionError("Should never get here");
+      }
     }
     return result;
   }

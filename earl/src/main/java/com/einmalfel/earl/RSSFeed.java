@@ -286,10 +286,11 @@ public class RSSFeed implements Feed {
       return itunes.owner.name;
     }
     if (media != null && !media.credits.isEmpty()) {
-      for (MediaCredit credit : media.credits)
+      for (MediaCredit credit : media.credits) {
         if ("author".equalsIgnoreCase(credit.role)) {
           return credit.value;
         }
+      }
       return media.credits.get(0).value;
     }
     return null;

@@ -154,26 +154,31 @@ public class AtomEntry extends AtomCommonAttributes implements Item {
     if (links.isEmpty()) {
       return null;
     }
-    for (AtomLink link : links)
+    for (AtomLink link : links) {
       if ("alternate".equals(link.rel)) {
         return link.href.toString();
       }
-    for (AtomLink link : links)
+    }
+    for (AtomLink link : links) {
       if ("via".equals(link.rel)) {
         return link.href.toString();
       }
-    for (AtomLink link : links)
+    }
+    for (AtomLink link : links) {
       if ("related".equals(link.rel)) {
         return link.href.toString();
       }
-    for (AtomLink link : links)
+    }
+    for (AtomLink link : links) {
       if (link.rel == null) {
         return link.href.toString();
       }
-    for (AtomLink link : links)
+    }
+    for (AtomLink link : links) {
       if (link.rel != null && !"enclosure".equals(link.rel) && !"self".equals(link.rel)) {
         return link.href.toString();
       }
+    }
     return links.get(0).href.toString();
   }
 
@@ -199,7 +204,9 @@ public class AtomEntry extends AtomCommonAttributes implements Item {
   @Override
   public String getImageLink() {
     for (AtomLink link : links) {
-      if (link.getType() != null && link.getType().equals("image/jpeg")) return link.getLink();
+      if (link.getType() != null && link.getType().equals("image/jpeg")) {
+        return link.getLink();
+      }
     }
     return null;
   }

@@ -16,8 +16,8 @@ import java.util.zip.DataFormatException;
  * TODO: atom in rss, like in radio-t feed
  * TODO: extensions: podfm, mrss, creativecommons, feedburner
  */
-public class EarlParser {
-  private static final String TAG = "Earl.EarlParser";
+public final class EarlParser {
+  private EarlParser() {}
 
   /**
    * @param inputStream - stream to read feed from
@@ -28,7 +28,7 @@ public class EarlParser {
   public static Feed parse(@NonNull InputStream inputStream, int maxItems) {
     try {
       return parseOrThrow(inputStream, maxItems);
-    } catch (Exception ignore) {
+    } catch (IOException | XmlPullParserException | DataFormatException ignored) {
       return null;
     }
   }
@@ -37,9 +37,6 @@ public class EarlParser {
    * @param inputStream - stream to read feed from. Will be closed in this function
    * @param maxItems    - stop parsing after reading this much feed items
    * @return parsed RSSFeed or AtomFeed, depending on input stream
-   * @throws XmlPullParserException
-   * @throws IOException
-   * @throws DataFormatException
    */
   @NonNull
   public static Feed parseOrThrow(@NonNull InputStream inputStream, int maxItems)
@@ -49,18 +46,19 @@ public class EarlParser {
       parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, true);
       parser.setInput(inputStream, null);
       while (parser.next() != XmlPullParser.END_DOCUMENT) {
-        if (parser.getEventType() == XmlPullParser.START_TAG)
+        if (parser.getEventType() == XmlPullParser.START_TAG) {
           switch (parser.getName()) {
             case RSSFeed.XML_TAG:
               return RSSFeed.read(parser, maxItems);
             case AtomFeed.XML_TAG:
               return AtomFeed.read(parser, maxItems);
+            default: // ignore other tags
           }
+        }
       }
     } finally {
       inputStream.close();
     }
     throw new DataFormatException("No syndication feeds found in given stream");
   }
-
 }

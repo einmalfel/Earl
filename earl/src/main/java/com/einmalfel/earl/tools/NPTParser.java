@@ -22,7 +22,7 @@ public class NPTParser {
 
   public NPTParser(String text) {
     this.text = text;
-    this.length = text.length();
+    length = text.length();
     currentIndex = -1;
     next();
   }
@@ -32,21 +32,20 @@ public class NPTParser {
     int first = parseNumber();
 
     if (current == ':') {
-      int hours = first;
       next();
       long minutes = parseNumber();
       assertCurrentIs(':');
       next();
       long seconds = parseNumber();
-      ms = ((((hours * 60l) + minutes) * 60l) + seconds) * 1000l;
+      ms = ((((first * 60L) + minutes) * 60L) + seconds) * 1000L;
     } else {
-      ms = first * 1000l;
+      ms = first * 1000L;
     }
     if (current == '.') {
       next();
       int exp = 100;
       for (int i = 0; i <= 3 && isDigit(); next(), i++, exp /= 10) {
-        ms += exp * digitValue();
+        ms += (long) exp * digitValue();
       }
       // Ignore extra fraction which can't be stored
       parseNumber();
@@ -72,18 +71,14 @@ public class NPTParser {
     return current >= '0' && current <= '9';
   }
 
-  private void assertCurrentIs(char c) throws ParseException {
-    if (c != current) {
+  private void assertCurrentIs(char character) throws ParseException {
+    if (character != current) {
       throw new ParseException("Unexpected character", currentIndex);
     }
   }
 
   private void next() {
     currentIndex++;
-    if (currentIndex >= length) {
-      current = EOF;
-    } else {
-      current = text.charAt(currentIndex);
-    }
+    current = currentIndex >= length ? EOF : text.charAt(currentIndex);
   }
 }

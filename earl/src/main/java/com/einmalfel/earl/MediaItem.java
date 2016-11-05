@@ -13,9 +13,9 @@ public class MediaItem extends MediaCommon {
   private static final String TAG = "Earl.MediaItem";
 
   static class MediaItemBuilder {
-    private List<MediaGroup> groups = new LinkedList<>();
-    private List<MediaContent> contents = new LinkedList<>();
-    private MediaCommonBuilder builder = new MediaCommonBuilder();
+    private final List<MediaGroup> groups = new LinkedList<>();
+    private final List<MediaContent> contents = new LinkedList<>();
+    private final MediaCommonBuilder builder = new MediaCommonBuilder();
 
     boolean parseTag(XmlPullParser parser) throws XmlPullParserException, IOException {
       String tagName = parser.getName();
