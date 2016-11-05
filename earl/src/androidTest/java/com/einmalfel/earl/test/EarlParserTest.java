@@ -1,7 +1,10 @@
 package com.einmalfel.earl.test;
 
-import android.test.AndroidTestCase;
-import android.util.Log;
+import static android.support.test.InstrumentationRegistry.getContext;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+import android.support.annotation.NonNull;
 
 import com.einmalfel.earl.EarlParser;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
@@ -12,69 +15,60 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Scanner;
+import java.util.zip.DataFormatException;
 
-public class EarlParserTest extends AndroidTestCase {
-  private static final String TAG = "Earl.EarlParserTest";
+@RunWith(Parameterized.class)
+public class EarlParserTest {
+  @NonNull
+  private final String sampleXmlAsset;
+  @NonNull
+  private final String referenceJsonAsset;
 
-  public void testRadioT() throws Exception {
-    InputStream sample = getContext().getAssets().open("samples/radio-t-pruned.xml");
-    InputStream reference = getContext().getAssets().open("references/radio-t-pruned.json");
-    assertEquals(
-        objectToJson(EarlParser.parseOrThrow(sample, 0)),
-        new Scanner(reference, "UTF-8").useDelimiter("\\A").next());
+  public EarlParserTest(@NonNull String sampleXmlAsset,
+                        @NonNull String referenceJsonAsset) {
+    this.sampleXmlAsset = sampleXmlAsset;
+    this.referenceJsonAsset = referenceJsonAsset;
   }
 
-  public void testBlogTalkRadio() throws Exception {
-    InputStream sample = getContext().getAssets().open("samples/blogtalkradio.xml");
-    InputStream reference = getContext().getAssets().open("references/blogtalkradio.json");
-    assertEquals(
-        objectToJson(EarlParser.parseOrThrow(sample, 0)),
-        new Scanner(reference, "UTF-8").useDelimiter("\\A").next());
+  @Parameterized.Parameters
+  public static Collection<String[]> fixtureData() {
+    return Arrays.asList(new String[][] {
+        {"samples/radio-t-pruned.xml", "references/radio-t-pruned.json"},
+        {"samples/blogtalkradio.xml", "references/blogtalkradio.json"},
+        {"samples/CBC news.xml", "references/CBC news.json"},
+        {"samples/NPR news.xml", "references/NPR news.json"},
+        {"samples/atom podcast.xml", "references/atom podcast.json"},
+        {"samples/media-rss.xml", "references/media-rss.json"},
+        {"samples/iso8601dates.xml", "references/iso8601dates.json"},
+        });
   }
 
-  public void testCBCNews() throws Exception {
-    InputStream sample = getContext().getAssets().open("samples/CBC news.xml");
-    InputStream reference = getContext().getAssets().open("references/CBC news.json");
-    assertEquals(
-        objectToJson(EarlParser.parseOrThrow(sample, 0)),
-        new Scanner(reference, "UTF-8").useDelimiter("\\A").next());
+  @Test
+  public void doTest()
+      throws IOException, XmlPullParserException, DataFormatException {
+    InputStream sampleXmlStream = getContext().getAssets().open(sampleXmlAsset);
+    InputStream referenceJsonStream = getContext().getAssets().open(referenceJsonAsset);
+    Scanner scanner = new Scanner(referenceJsonStream, "UTF-8");
+    try {
+      assertThat(objectToJson(EarlParser.parseOrThrow(sampleXmlStream, 0)),
+                 is(scanner.useDelimiter("\\A").next()));
+    } finally {
+      scanner.close();
+    }
   }
 
-  public void testNPRNews() throws Exception {
-    InputStream sample = getContext().getAssets().open("samples/NPR news.xml");
-    InputStream reference = getContext().getAssets().open("references/NPR news.json");
-    assertEquals(
-        objectToJson(EarlParser.parseOrThrow(sample, 0)),
-        new Scanner(reference, "UTF-8").useDelimiter("\\A").next());
-  }
-
-  public void testAtomPodcast() throws Exception {
-    InputStream sample = getContext().getAssets().open("samples/atom podcast.xml");
-    InputStream reference = getContext().getAssets().open("references/atom podcast.json");
-    assertEquals(
-        objectToJson(EarlParser.parseOrThrow(sample, 0)),
-        new Scanner(reference, "UTF-8").useDelimiter("\\A").next());
-  }
-
-  public void testMediaRSS() throws Exception {
-    InputStream sample = getContext().getAssets().open("samples/media-rss.xml");
-    InputStream reference = getContext().getAssets().open("references/media-rss.json");
-    assertEquals(
-        objectToJson(EarlParser.parseOrThrow(sample, 0)),
-        new Scanner(reference, "UTF-8").useDelimiter("\\A").next());
-  }
-
-  public void testIso8601dates() throws Exception {
-    InputStream sample = getContext().getAssets().open("samples/iso8601dates.xml");
-    InputStream reference = getContext().getAssets().open("references/iso8601dates.json");
-    assertEquals(
-        objectToJson(EarlParser.parseOrThrow(sample, 0)),
-        new Scanner(reference, "UTF-8").useDelimiter("\\A").next());
-  }
-
-  private String objectToJson(Object object) throws JsonProcessingException {
+  @NonNull
+  private static String objectToJson(@NonNull Object object) throws JsonProcessingException {
     return new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT)
                              .setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.NONE)
                              .setSerializationInclusion(JsonInclude.Include.NON_NULL)

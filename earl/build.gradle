@@ -8,6 +8,7 @@ android {
         targetSdkVersion 25
         versionCode 1010000
         versionName "1.1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -30,6 +31,8 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile 'com.fasterxml.jackson.core:jackson-databind:2.8.4'
+    androidTestCompile 'junit:junit:4.12'
+    androidTestCompile 'com.android.support.test:runner:0.5'
     compile 'com.android.support:support-annotations:25.0.0'
 }
 
