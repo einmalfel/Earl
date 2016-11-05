@@ -8,7 +8,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 public class RSSTextInput {
@@ -29,7 +29,7 @@ public class RSSTextInput {
   @NonNull
   static RSSTextInput read(@NonNull XmlPullParser parser)
       throws IOException, XmlPullParserException {
-    Map<ST, String> map = new HashMap<>();
+    Map<ST, String> map = new EnumMap<>(ST.class);
     while (parser.nextTag() == XmlPullParser.START_TAG) {
       try {
         map.put(ST.valueOf(parser.getName()), parser.nextText());

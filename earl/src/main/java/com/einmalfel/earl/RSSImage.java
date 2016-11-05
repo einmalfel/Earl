@@ -9,7 +9,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 public class RSSImage {
@@ -34,7 +34,7 @@ public class RSSImage {
   @NonNull
   static RSSImage read(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
-    Map<ST, String> map = new HashMap<>();
+    Map<ST, String> map = new EnumMap<>(ST.class);
     while (parser.nextTag() == XmlPullParser.START_TAG) {
       try {
         map.put(ST.valueOf(parser.getName()), parser.nextText());

@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -23,7 +23,7 @@ public class ItunesItem {
   private enum ST {author, block, duration, explicit, isClosedCaptioned, order, subtitle, summary}
 
   static class ItunesItemBuilder {
-    private final Map<ST, String> map = new HashMap<>();
+    private final Map<ST, String> map = new EnumMap<>(ST.class);
     private URL image;
     private List<String> keywords;
 

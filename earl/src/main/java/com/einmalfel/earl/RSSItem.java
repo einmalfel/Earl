@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -52,7 +52,7 @@ public class RSSItem implements Item {
   @NonNull
   static RSSItem read(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
-    Map<ST, String> map = new HashMap<>(5);
+    Map<ST, String> map = new EnumMap<>(ST.class);
     List<RSSEnclosure> enclosures = new LinkedList<>();
     List<RSSCategory> categories = new LinkedList<>();
     RSSGuid guid = null;

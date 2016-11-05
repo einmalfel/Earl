@@ -10,7 +10,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +21,7 @@ public class ItunesFeed {
   private enum ST {author, block, explicit, complete, subtitle, summary}
 
   static class ItunesFeedBuilder {
-    private final Map<ST, String> map = new HashMap<>();
+    private final Map<ST, String> map = new EnumMap<>(ST.class);
     private final List<ItunesCategory> categories = new LinkedList<>();
     private ItunesOwner owner;
     private URL image;

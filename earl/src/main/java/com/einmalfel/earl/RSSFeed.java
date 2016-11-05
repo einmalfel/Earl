@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -79,7 +79,7 @@ public class RSSFeed implements Feed {
       throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
 
-    Map<ST, String> map = new HashMap<>(5);
+    Map<ST, String> map = new EnumMap<>(ST.class);
     List<RSSItem> items = new LinkedList<>();
     List<RSSCategory> categories = new LinkedList<>();
     RSSCloud cloud = null;
