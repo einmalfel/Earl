@@ -32,6 +32,26 @@ final class Utils {
       "EEE, dd MMM yyyy HH:mm:ss Z", Locale.US);
   private static final DateFormat iso8601DateTimeFormat = new SimpleDateFormat(
       "yyyy-MM-dd'T'HH:mm:ss.SSSz", Locale.US);
+  private static final DateFormat RFC3339Tz = new SimpleDateFormat(
+      "yyyy-MM-dd'T'HH:mm:ssZ", Locale.US);
+  private static final DateFormat RFC3339TzMs = new SimpleDateFormat(
+      "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ", Locale.US);
+  private static final DateFormat[] itunesDurationFormats = {
+      new SimpleDateFormat("HH:mm:ss", Locale.US),
+      new SimpleDateFormat("H:mm:ss", Locale.US),
+      new SimpleDateFormat("mm:ss", Locale.US),
+      new SimpleDateFormat("m:ss", Locale.US),
+      };
+
+  static {
+    RFC3339TzMs.setLenient(true);
+
+    TimeZone utc = TimeZone.getTimeZone("UTC");
+    for (DateFormat format : itunesDurationFormats) {
+      format.setTimeZone(utc);
+    }
+  }
+
 
   private Utils() {}
 
@@ -114,23 +134,11 @@ final class Utils {
     return dateString;
   }
 
-  private static DateFormat RFC3339Tz;
-  private static DateFormat RFC3339TzMs;
-
-  private static void setupRFC3339() {
-    RFC3339Tz = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ", Locale.US);
-    RFC3339TzMs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ", Locale.US);
-    RFC3339TzMs.setLenient(true);
-  }
-
   /**
    * based on: http://cokere.com/RFC3339Date.txt
    */
   @Nullable
   private static Date parseRFC3339Date(@NonNull String string) {
-    if (RFC3339Tz == null) {
-      setupRFC3339();
-    }
     try {
       //if there is no time zone, we don't need to do any special parsing.
       if (string.endsWith("Z")) {
@@ -168,30 +176,12 @@ final class Utils {
     }
   }
 
-  private static DateFormat[] itunesDurationFormats;
-
-  static void setupItunesDateFormats() {
-    itunesDurationFormats = new DateFormat[] {
-        new SimpleDateFormat("HH:mm:ss", Locale.US),
-        new SimpleDateFormat("H:mm:ss", Locale.US),
-        new SimpleDateFormat("mm:ss", Locale.US),
-        new SimpleDateFormat("m:ss", Locale.US),};
-
-    TimeZone utc = TimeZone.getTimeZone("UTC");
-    for (DateFormat format : itunesDurationFormats) {
-      format.setTimeZone(utc);
-    }
-  }
-
   /**
    * @param dateString time string to parse
    * @return episode duration in seconds or null if parsing fails
    */
   @Nullable
   static Integer parseItunesDuration(@NonNull String dateString) {
-    if (itunesDurationFormats == null) {
-      setupItunesDateFormats();
-    }
     for (DateFormat format : itunesDurationFormats) {
       try {
         Date date = format.parse(dateString);
