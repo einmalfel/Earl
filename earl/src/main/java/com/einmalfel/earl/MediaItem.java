@@ -6,6 +6,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -45,7 +46,7 @@ public class MediaItem extends MediaCommon {
   public MediaItem(@NonNull List<MediaGroup> groups, @NonNull List<MediaContent> contents,
                    @NonNull MediaCommon common) {
     super(common);
-    this.groups = groups;
-    this.contents = contents;
+    this.groups = Collections.unmodifiableList(groups);
+    this.contents = Collections.unmodifiableList(contents);
   }
 }
