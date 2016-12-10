@@ -29,18 +29,18 @@ final class Utils {
 
   private static final String TAG = "Earl.Utils";
   private static final DateFormat rfc822DateTimeFormat = new SimpleDateFormat(
-      "EEE, dd MMM yyyy HH:mm:ss Z", Locale.US);
+      "EEE, dd MMM yyyy HH:mm:ss Z", Locale.ENGLISH);
   private static final DateFormat iso8601DateTimeFormat = new SimpleDateFormat(
-      "yyyy-MM-dd'T'HH:mm:ss.SSSz", Locale.US);
+      "yyyy-MM-dd'T'HH:mm:ss.SSSz", Locale.ENGLISH);
   private static final DateFormat RFC3339Tz = new SimpleDateFormat(
-      "yyyy-MM-dd'T'HH:mm:ssZ", Locale.US);
+      "yyyy-MM-dd'T'HH:mm:ssZ", Locale.ENGLISH);
   private static final DateFormat RFC3339TzMs = new SimpleDateFormat(
-      "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ", Locale.US);
+      "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ", Locale.ENGLISH);
   private static final DateFormat[] itunesDurationFormats = {
-      new SimpleDateFormat("HH:mm:ss", Locale.US),
-      new SimpleDateFormat("H:mm:ss", Locale.US),
-      new SimpleDateFormat("mm:ss", Locale.US),
-      new SimpleDateFormat("m:ss", Locale.US),
+      new SimpleDateFormat("HH:mm:ss", Locale.ENGLISH),
+      new SimpleDateFormat("H:mm:ss", Locale.ENGLISH),
+      new SimpleDateFormat("mm:ss", Locale.ENGLISH),
+      new SimpleDateFormat("m:ss", Locale.ENGLISH),
       };
 
   static {
