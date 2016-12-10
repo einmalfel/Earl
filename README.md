@@ -10,7 +10,7 @@
 ### Usage
 Earl is available on `jcenter`. Just add a dependency in your `build.gradle` file:
 
-`compile 'com.einmalfel:earl:1.0.0'`
+`compile 'com.einmalfel:earl:1.2.0'`
 
 Simple example:
 ```
