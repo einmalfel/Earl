@@ -41,6 +41,8 @@ public final class AtomFeed extends AtomCommonAttributes implements Feed {
 	@Nullable
 	public final URI icon;
 	@Nullable
+	public final AtomDate published;
+	@Nullable
 	public final URI logo;
 	@Nullable
 	public final AtomText rights;
@@ -65,6 +67,7 @@ public final class AtomFeed extends AtomCommonAttributes implements Feed {
 		AtomText rights = null;
 		AtomText subtitle = null;
 		String id = null;
+		AtomDate published = null;
 		URI icon = null;
 		URI logo = null;
 		AtomDate updated = null;
@@ -104,6 +107,9 @@ public final class AtomFeed extends AtomCommonAttributes implements Feed {
 						break;
 					case "id":
 						id = parser.nextText();
+						break;
+					case "published":
+						published = AtomDate.read(parser);
 						break;
 					case "icon":
 						icon = Utils.tryParseUri(parser.nextText());
@@ -145,7 +151,7 @@ public final class AtomFeed extends AtomCommonAttributes implements Feed {
 		}
 		return new AtomFeed(
 		atomCommonAttributes, Utils.nonNullUri(id), title, updated, authors,
-		contributors, generator, icon, logo, rights, subtitle, links, categories,
+		contributors, generator, icon, logo, rights, subtitle, links, published, categories,
 		mediaBuilder == null ? null : mediaBuilder.build(), entries);
 	}
 
@@ -155,10 +161,11 @@ public final class AtomFeed extends AtomCommonAttributes implements Feed {
 	                @NonNull List<AtomPerson> contributors, @Nullable AtomGenerator generator,
 	                @Nullable URI icon, @Nullable URI logo, @Nullable AtomText rights,
 	                @Nullable AtomText subtitle, @NonNull List<AtomLink> links,
-	                @NonNull List<AtomCategory> categories,
+	                @Nullable AtomDate published, @NonNull List<AtomCategory> categories,
 	                @Nullable MediaCommon media, @NonNull List<AtomEntry> entries) {
 		super(atomCommonAttributes);
 		this.id = id;
+		this.published = published;
 		this.title = title;
 		this.updated = updated;
 		this.authors = Collections.unmodifiableList(authors);
@@ -208,9 +215,15 @@ public final class AtomFeed extends AtomCommonAttributes implements Feed {
 		return links.get(0).href.toString();
 	}
 
-	@NonNull
+	@Nullable
 	@Override
 	public Date getPublicationDate() {
+		return published.date;
+	}
+
+	@Nullable
+	@Override
+	public Date getUpdatedDate() {
 		return updated.date;
 	}
 

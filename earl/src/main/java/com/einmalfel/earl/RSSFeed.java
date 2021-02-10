@@ -241,6 +241,12 @@ public final class RSSFeed implements Feed {
 		return pubDate;
 	}
 
+	@Nullable
+	@Override
+	public Date getUpdatedDate() {
+		return null;
+	}
+
 	@NonNull
 	@Override
 	public String getTitle() {

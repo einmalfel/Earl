@@ -13,6 +13,9 @@ public interface Feed {
 	@Nullable
 	Date getPublicationDate();
 
+	@Nullable
+	Date getUpdatedDate();
+
 	@NonNull
 	String getTitle();
 
