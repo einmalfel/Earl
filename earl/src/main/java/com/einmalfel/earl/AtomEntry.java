@@ -42,6 +42,8 @@ public final class AtomEntry extends AtomCommonAttributes implements Item {
 	public final AtomFeed source;
 	@Nullable
 	public final AtomText rights;
+	@Nullable
+	public final MediaCommon media;
 
 	@NonNull
 	static AtomEntry read(XmlPullParser parser)
@@ -60,10 +62,12 @@ public final class AtomEntry extends AtomCommonAttributes implements Item {
 		String id = null;
 		AtomDate updated = null;
 		AtomDate published = null;
+		MediaCommon.MediaCommonBuilder mediaBuilder = null;
 
 		AtomCommonAttributes atomCommonAttributes = new AtomCommonAttributes(parser);
 		while (parser.nextTag() == XmlPullParser.START_TAG) {
-			if (Utils.ATOM_NAMESPACE.equalsIgnoreCase(parser.getNamespace())) {
+			final String namespace = parser.getNamespace();
+			if (Utils.ATOM_NAMESPACE.equalsIgnoreCase(namespace)) {
 				switch (parser.getName()) {
 					case AtomLink.XML_TAG:
 						links.add(AtomLink.read(parser));
@@ -105,6 +109,14 @@ public final class AtomEntry extends AtomCommonAttributes implements Item {
 						Log.w(TAG, "Unknown tag in Atom entry " + parser.getName());
 						Utils.skipTag(parser);
 				}
+			} else if (Utils.MEDIA_NAMESPACE.equalsIgnoreCase(namespace)) {
+				if (mediaBuilder == null) {
+					mediaBuilder = new MediaCommon.MediaCommonBuilder();
+				}
+				if (!mediaBuilder.parseTag(parser)) {
+					Log.w(TAG, "Unknown mrss tag on feed level");
+					Utils.skipTag(parser);
+				}
 			} else {
 				Log.w(TAG, "Unknown namespace in Atom item " + parser.getNamespace());
 				Utils.skipTag(parser);
@@ -123,7 +135,7 @@ public final class AtomEntry extends AtomCommonAttributes implements Item {
 
 		return new AtomEntry(
 		atomCommonAttributes, Utils.nonNullUri(id), title, updated, authors, content, links,
-		summary, categories, contributors, published, source, rights);
+		summary, categories, contributors, published, source, rights, mediaBuilder == null ? null : mediaBuilder.build());
 	}
 
 	public AtomEntry(@Nullable AtomCommonAttributes atomCommonAttributes, @NonNull URI id,
@@ -132,7 +144,7 @@ public final class AtomEntry extends AtomCommonAttributes implements Item {
 	                 @NonNull List<AtomLink> links, @Nullable AtomText summary,
 	                 @NonNull List<AtomCategory> categories, @NonNull List<AtomPerson> contributors,
 	                 @Nullable AtomDate published, @Nullable AtomFeed source,
-	                 @Nullable AtomText rights) {
+	                 @Nullable AtomText rights, @Nullable MediaCommon media) {
 		super(atomCommonAttributes);
 		this.id = id;
 		this.title = title;
@@ -146,6 +158,7 @@ public final class AtomEntry extends AtomCommonAttributes implements Item {
 		this.published = published;
 		this.source = source;
 		this.rights = rights;
+		this.media = media;
 	}
 
 	@Nullable
@@ -209,7 +222,9 @@ public final class AtomEntry extends AtomCommonAttributes implements Item {
 				return link.getLink();
 			}
 		}
-		return null;
+		if (media != null && !media.thumbnails.isEmpty()) {
+			return media.thumbnails.get(0).url.toString();
+		} else return null;
 	}
 
 	@Nullable
@@ -217,6 +232,13 @@ public final class AtomEntry extends AtomCommonAttributes implements Item {
 	public String getAuthor() {
 		if (authors.isEmpty()) {
 			return contributors.isEmpty() ? null : contributors.get(0).name;
+		} else if (media != null && !media.credits.isEmpty()) {
+			for (MediaCredit credit : media.credits) {
+				if ("author".equalsIgnoreCase(credit.role)) {
+					return credit.value;
+				}
+			}
+			return media.credits.get(0).value;
 		} else {
 			return authors.get(0).name;
 		}
