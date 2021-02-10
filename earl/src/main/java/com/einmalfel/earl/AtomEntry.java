@@ -226,8 +226,8 @@ public final class AtomEntry extends AtomCommonAttributes implements Item {
 			return media.thumbnails.get(0).url.toString();
 		} else if (media != null && !media.contents.isEmpty() && !media.contents.get(0).thumbnails.isEmpty()) {
 			return media.contents.get(0).thumbnails.get(0).url.toString();
-		} else if (media != null && !media.groups.isEmpty() && !media.groups.get(0).contents.isEmpty() && !media.groups.get(0).contents.get(0).thumbnails.isEmpty()) {
-			return media.groups.get(0).contents.get(0).thumbnails.get(0).url.toString();
+		} else if (media != null && !media.groups.isEmpty() && !media.groups.get(0).thumbnails.isEmpty()) {
+			return media.groups.get(0).thumbnails.get(0).url.toString();
 		} else return null;
 	}
 
