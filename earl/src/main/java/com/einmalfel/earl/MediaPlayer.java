@@ -1,7 +1,7 @@
 package com.einmalfel.earl;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -9,7 +9,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.net.URL;
 
-public class MediaPlayer {
+public final class MediaPlayer {
   static final String XML_TAG = "player";
 
   @NonNull
@@ -20,11 +20,11 @@ public class MediaPlayer {
   public final Integer width;
 
   @NonNull
-  static MediaPlayer read(XmlPullParser parser) throws XmlPullParserException, IOException {
+  static MediaPlayer read(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
     parser.require(XmlPullParser.START_TAG, null, XML_TAG);
-    String width = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "width");
-    String height = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "height");
-    MediaPlayer result = new MediaPlayer(
+    final String width = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "width");
+    final String height = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "height");
+    final MediaPlayer result = new MediaPlayer(
         Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url")),
         width == null ? null : Utils.tryParseInt(width),
         height == null ? null : Utils.tryParseInt(height));

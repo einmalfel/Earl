@@ -1,7 +1,7 @@
 package com.einmalfel.earl;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -9,7 +9,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.net.URL;
 
-public class MediaContent extends MediaCommon {
+public final class MediaContent extends MediaCommon {
   static final String XML_TAG = "content";
 
   @Nullable
@@ -42,18 +42,18 @@ public class MediaContent extends MediaCommon {
   public final String lang;
 
   @NonNull
-  static MediaContent read(XmlPullParser parser) throws XmlPullParserException, IOException {
+  static MediaContent read(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
     parser.require(XmlPullParser.START_TAG, null, XML_TAG);
-    String url = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url");
-    String fileSize = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "fileSize");
-    String isDefault = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "isDefault");
-    String bitrate = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "bitrate");
-    String framerate = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "framerate");
-    String samplingrate = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "samplingrate");
-    String channels = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "channels");
-    String duration = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "duration");
-    String height = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "height");
-    String width = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "width");
+    final String url = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url");
+    final String fileSize = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "fileSize");
+    final String isDefault = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "isDefault");
+    final String bitrate = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "bitrate");
+    final String framerate = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "framerate");
+    final String samplingrate = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "samplingrate");
+    final String channels = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "channels");
+    final String duration = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "duration");
+    final String height = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "height");
+    final String width = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "width");
     return new MediaContent(url == null ? null : Utils.tryParseUrl(url),
                             fileSize == null ? null : Utils.tryParseInt(fileSize),
                             parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),

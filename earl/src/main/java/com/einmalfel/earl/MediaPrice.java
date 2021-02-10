@@ -1,14 +1,14 @@
 package com.einmalfel.earl;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 
-public class MediaPrice {
+public final class MediaPrice {
   static final String XML_TAG = "price";
 
   @Nullable
@@ -22,7 +22,7 @@ public class MediaPrice {
 
   @NonNull
   static MediaPrice read(XmlPullParser parser) throws XmlPullParserException, IOException {
-    MediaPrice result = new MediaPrice(
+    final MediaPrice result = new MediaPrice(
         parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
         parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "info"),
         parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "price"),

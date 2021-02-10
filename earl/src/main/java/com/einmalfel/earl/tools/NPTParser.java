@@ -1,5 +1,7 @@
 package com.einmalfel.earl.tools;
 
+import androidx.annotation.NonNull;
+
 import java.text.ParseException;
 
 /**
@@ -20,7 +22,7 @@ public class NPTParser {
 
   private static final char EOF = '\0';
 
-  public NPTParser(String text) {
+  public NPTParser(@NonNull String text) {
     this.text = text;
     length = text.length();
     currentIndex = -1;
