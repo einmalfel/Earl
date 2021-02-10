@@ -62,7 +62,7 @@ public final class AtomEntry extends AtomCommonAttributes implements Item {
 		String id = null;
 		AtomDate updated = null;
 		AtomDate published = null;
-		MediaCommon.MediaCommonBuilder mediaBuilder = null;
+		MediaItem.MediaItemBuilder mediaBuilder = null;
 
 		AtomCommonAttributes atomCommonAttributes = new AtomCommonAttributes(parser);
 		while (parser.nextTag() == XmlPullParser.START_TAG) {
@@ -111,7 +111,7 @@ public final class AtomEntry extends AtomCommonAttributes implements Item {
 				}
 			} else if (Utils.MEDIA_NAMESPACE.equalsIgnoreCase(namespace)) {
 				if (mediaBuilder == null) {
-					mediaBuilder = new MediaCommon.MediaCommonBuilder();
+					mediaBuilder = new MediaItem.MediaItemBuilder();
 				}
 				if (!mediaBuilder.parseTag(parser)) {
 					Log.w(TAG, "Unknown mrss tag on feed level");

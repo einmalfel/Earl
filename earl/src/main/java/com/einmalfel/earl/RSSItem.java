@@ -63,57 +63,57 @@ public final class RSSItem implements Item {
 		Content.ContentBuilder contentBuilder = null;
 		while (parser.nextTag() == XmlPullParser.START_TAG) {
 			final String namespace = parser.getNamespace();
-          if (XmlPullParser.NO_NAMESPACE.equals(namespace)) {
-            final String tagName = parser.getName();
-            switch (tagName) {
-              case RSSEnclosure.XML_TAG:
-                enclosures.add(RSSEnclosure.read(parser));
-                break;
-              case RSSCategory.XML_TAG:
-                categories.add(RSSCategory.read(parser));
-                break;
-              case RSSSource.XML_TAG:
-                source = RSSSource.read(parser);
-                break;
-              case RSSGuid.XML_TAG:
-                guid = RSSGuid.read(parser);
-                break;
-              default:
-                try {
-                  map.put(ST.valueOf(tagName), parser.nextText());
-                } catch (IllegalArgumentException ignored) {
-                  Log.w(TAG, "Unknown RSS item tag " + tagName);
-                  Utils.skipTag(parser);
-                }
-            }
-          } else {
-            if (Utils.ITUNES_NAMESPACE.equalsIgnoreCase(namespace)) {
-              if (itunesBuilder == null) {
-                itunesBuilder = new ItunesItem.ItunesItemBuilder();
-              }
-              itunesBuilder.parseTag(parser);
-            } else {
-              if (Utils.MEDIA_NAMESPACE.equalsIgnoreCase(namespace)) {
-                if (mediaBuilder == null) {
-                  mediaBuilder = new MediaItem.MediaItemBuilder();
-                }
-                if (!mediaBuilder.parseTag(parser)) {
-                  Log.w(TAG, "Unknown mrss tag on item level");
-                  Utils.skipTag(parser);
-                }
-              } else {
-                if (Utils.CONTENT_NAMESPACE.equalsIgnoreCase(namespace)) {
-                  if (contentBuilder == null) {
-                    contentBuilder = new Content.ContentBuilder();
-                  }
-                  contentBuilder.parseTag(parser);
-                } else {
-                  Log.w(TAG, "Unknown namespace in RSS item " + parser.getNamespace());
-                  Utils.skipTag(parser);
-                }
-              }
-            }
-          }
+			if (XmlPullParser.NO_NAMESPACE.equals(namespace)) {
+				final String tagName = parser.getName();
+				switch (tagName) {
+					case RSSEnclosure.XML_TAG:
+						enclosures.add(RSSEnclosure.read(parser));
+						break;
+					case RSSCategory.XML_TAG:
+						categories.add(RSSCategory.read(parser));
+						break;
+					case RSSSource.XML_TAG:
+						source = RSSSource.read(parser);
+						break;
+					case RSSGuid.XML_TAG:
+						guid = RSSGuid.read(parser);
+						break;
+					default:
+						try {
+							map.put(ST.valueOf(tagName), parser.nextText());
+						} catch (IllegalArgumentException ignored) {
+							Log.w(TAG, "Unknown RSS item tag " + tagName);
+							Utils.skipTag(parser);
+						}
+				}
+			} else {
+				if (Utils.ITUNES_NAMESPACE.equalsIgnoreCase(namespace)) {
+					if (itunesBuilder == null) {
+						itunesBuilder = new ItunesItem.ItunesItemBuilder();
+					}
+					itunesBuilder.parseTag(parser);
+				} else {
+					if (Utils.MEDIA_NAMESPACE.equalsIgnoreCase(namespace)) {
+						if (mediaBuilder == null) {
+							mediaBuilder = new MediaItem.MediaItemBuilder();
+						}
+						if (!mediaBuilder.parseTag(parser)) {
+							Log.w(TAG, "Unknown mrss tag on item level");
+							Utils.skipTag(parser);
+						}
+					} else {
+						if (Utils.CONTENT_NAMESPACE.equalsIgnoreCase(namespace)) {
+							if (contentBuilder == null) {
+								contentBuilder = new Content.ContentBuilder();
+							}
+							contentBuilder.parseTag(parser);
+						} else {
+							Log.w(TAG, "Unknown namespace in RSS item " + parser.getNamespace());
+							Utils.skipTag(parser);
+						}
+					}
+				}
+			}
 			Utils.finishTag(parser);
 		}
 
