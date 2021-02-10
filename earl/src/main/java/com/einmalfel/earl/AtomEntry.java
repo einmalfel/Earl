@@ -43,7 +43,7 @@ public final class AtomEntry extends AtomCommonAttributes implements Item {
 	@Nullable
 	public final AtomText rights;
 	@Nullable
-	public final MediaCommon media;
+	public final MediaItem media;
 
 	@NonNull
 	static AtomEntry read(XmlPullParser parser)
@@ -144,7 +144,7 @@ public final class AtomEntry extends AtomCommonAttributes implements Item {
 	                 @NonNull List<AtomLink> links, @Nullable AtomText summary,
 	                 @NonNull List<AtomCategory> categories, @NonNull List<AtomPerson> contributors,
 	                 @Nullable AtomDate published, @Nullable AtomFeed source,
-	                 @Nullable AtomText rights, @Nullable MediaCommon media) {
+	                 @Nullable AtomText rights, @Nullable MediaItem media) {
 		super(atomCommonAttributes);
 		this.id = id;
 		this.title = title;
