@@ -27,7 +27,6 @@ final class Utils {
 	static final String MEDIA_NAMESPACE = "http://search.yahoo.com/mrss/";
 	static final String ITUNES_NAMESPACE = "http://www.itunes.com/dtds/podcast-1.0.dtd";
 	static final String CONTENT_NAMESPACE = "http://purl.org/rss/1.0/modules/content/";
-	static final String YOUTUBE_NAMESPACE = "http://www.youtube.com/xml/schemas/2015";
 
 	private static final String TAG = "Earl.Utils";
 	private static final DateFormat rfc822DateTimeFormat = new SimpleDateFormat(
@@ -67,12 +66,13 @@ final class Utils {
 	 */
 	@Nullable
 	static Date parseDate(@NonNull String dateString) {
-		Date date = parseRFC822Date(dateString);
+		final String trimmedDate = dateString.trim();
+		Date date = parseRFC822Date(trimmedDate);
 		if (null == date) {
-			date = parseISO8601Date(dateString);
+			date = parseISO8601Date(trimmedDate);
 		}
 		if (null == date) {
-			date = parseRFC3339Date(dateString);
+			date = parseRFC3339Date(trimmedDate);
 		}
 		if (null == date) {
 			Log.w(TAG, "Malformed date " + dateString);
