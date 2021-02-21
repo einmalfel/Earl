@@ -19,17 +19,17 @@ public final class AtomDate extends AtomCommonAttributes {
 
   @NonNull
   static AtomDate read(XmlPullParser parser) throws XmlPullParserException, IOException {
-	final AtomCommonAttributes atomCommonAttributes = new AtomCommonAttributes(parser);
-	Date date = Utils.parseDate(parser.nextText());
-	if (date == null) {
-	  Log.w(TAG, "Replacing date with 0");
-	  date = new Date(0);
-	}
-	return new AtomDate(atomCommonAttributes, date);
+    final AtomCommonAttributes atomCommonAttributes = new AtomCommonAttributes(parser);
+    Date date = Utils.parseDate(parser.nextText());
+    if (date == null) {
+      Log.w(TAG, "Replacing date with 0");
+      date = new Date(0);
+    }
+    return new AtomDate(atomCommonAttributes, date);
   }
 
   public AtomDate(@Nullable AtomCommonAttributes source, @NonNull Date date) {
-	super(source);
-	this.date = date;
+    super(source);
+    this.date = date;
   }
 }

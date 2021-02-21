@@ -21,28 +21,28 @@ public final class ItunesOwner {
 
   @NonNull
   static ItunesOwner read(@NonNull XmlPullParser parser)
-  throws IOException, XmlPullParserException {
-	parser.require(XmlPullParser.START_TAG, null, XML_TAG);
-	String name = null;
-	String eMail = null;
-	while (parser.nextTag() == XmlPullParser.START_TAG) {
-	  switch (parser.getName()) {
-		case "name":
-		  name = parser.nextText();
-		  break;
-		case "email":
-		  eMail = parser.nextText();
-		  break;
-		default:
-		  Log.w(TAG, "Unexpected owner tag " + parser.getName());
-	  }
-	  Utils.finishTag(parser);
-	}
-	return new ItunesOwner(name, eMail);
+    throws IOException, XmlPullParserException {
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
+    String name = null;
+    String eMail = null;
+    while (parser.nextTag() == XmlPullParser.START_TAG) {
+      switch (parser.getName()) {
+        case "name":
+          name = parser.nextText();
+          break;
+        case "email":
+          eMail = parser.nextText();
+          break;
+        default:
+          Log.w(TAG, "Unexpected owner tag " + parser.getName());
+      }
+      Utils.finishTag(parser);
+    }
+    return new ItunesOwner(name, eMail);
   }
 
   public ItunesOwner(@Nullable String name, @Nullable String eMail) {
-	this.name = name;
-	this.eMail = eMail;
+    this.name = name;
+    this.eMail = eMail;
   }
 }

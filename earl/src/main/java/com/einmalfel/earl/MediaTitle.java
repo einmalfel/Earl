@@ -16,12 +16,12 @@ public final class MediaTitle {
 
   @NonNull
   static MediaTitle read(XmlPullParser parser) throws XmlPullParserException, IOException {
-	return new MediaTitle(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
-	parser.nextText());
+    return new MediaTitle(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
+      parser.nextText());
   }
 
   public MediaTitle(@Nullable String type, @NonNull String value) {
-	this.type = type;
-	this.value = value;
+    this.type = type;
+    this.value = value;
   }
 }

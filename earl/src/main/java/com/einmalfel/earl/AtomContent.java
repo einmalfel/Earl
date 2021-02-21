@@ -17,15 +17,16 @@ public final class AtomContent extends AtomText {
 
   @NonNull
   static AtomContent read(XmlPullParser parser) throws XmlPullParserException, IOException {
-	parser.require(XmlPullParser.START_TAG, null, XML_TAG);
-	final String srcString = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "src");
-	return new AtomContent(
-	srcString == null ? null : Utils.tryParseUri(srcString),
-	AtomText.read(parser));
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
+    final String srcString = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "src");
+    return new AtomContent(
+      srcString == null ? null : Utils.tryParseUri(srcString),
+      AtomText.read(parser)
+    );
   }
 
   public AtomContent(@Nullable URI src, @NonNull AtomText atomText) {
-	super(atomText);
-	this.src = src;
+    super(atomText);
+    this.src = src;
   }
 }

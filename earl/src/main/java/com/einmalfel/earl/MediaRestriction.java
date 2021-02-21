@@ -20,16 +20,16 @@ public final class MediaRestriction {
 
   @NonNull
   static MediaRestriction read(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
-	return new MediaRestriction(
-	parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "relationship"),
-	parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
-	parser.nextText());
+    return new MediaRestriction(
+      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "relationship"),
+      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
+      parser.nextText());
   }
 
   public MediaRestriction(@Nullable String relationship, @Nullable String type,
-						  @NonNull String value) {
-	this.relationship = relationship;
-	this.type = type;
-	this.value = value;
+                          @NonNull String value) {
+    this.relationship = relationship;
+    this.type = type;
+    this.value = value;
   }
 }

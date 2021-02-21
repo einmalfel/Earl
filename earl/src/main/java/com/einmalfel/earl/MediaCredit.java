@@ -21,16 +21,16 @@ public final class MediaCredit {
 
   @NonNull
   static MediaCredit read(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
-	parser.require(XmlPullParser.START_TAG, null, XML_TAG);
-	final String scheme = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "scheme");
-	return new MediaCredit(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "scheme"),
-	scheme == null ? null : Utils.tryParseUri(scheme),
-	parser.nextText());
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
+    final String scheme = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "scheme");
+    return new MediaCredit(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "scheme"),
+      scheme == null ? null : Utils.tryParseUri(scheme),
+      parser.nextText());
   }
 
   public MediaCredit(@Nullable String role, @Nullable URI scheme, @NonNull String value) {
-	this.role = role;
-	this.scheme = scheme;
-	this.value = value;
+    this.role = role;
+    this.scheme = scheme;
+    this.value = value;
   }
 }

@@ -21,27 +21,27 @@ public final class MediaGroup extends MediaCommon {
 
   @NonNull
   static MediaGroup read(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
-	parser.require(XmlPullParser.START_TAG, null, XML_TAG);
-	final List<MediaContent> contents = new LinkedList<>();
-	final MediaCommonBuilder builder = new MediaCommonBuilder();
-	while (parser.nextTag() == XmlPullParser.START_TAG) {
-	  final String tagName = parser.getName();
-	  if (MediaContent.XML_TAG.equals(tagName)) {
-		contents.add(MediaContent.read(parser));
-	  } else {
-		if (!builder.parseTag(parser)) {
-		  Log.w(TAG, "Unexpected tag found in media:group: " + tagName);
-		  Utils.skipTag(parser);
-		}
-	  }
-	  Utils.finishTag(parser);
-	}
-	return new MediaGroup(builder.build(), contents);
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
+    final List<MediaContent> contents = new LinkedList<>();
+    final MediaCommonBuilder builder = new MediaCommonBuilder();
+    while (parser.nextTag() == XmlPullParser.START_TAG) {
+      final String tagName = parser.getName();
+      if (MediaContent.XML_TAG.equals(tagName)) {
+        contents.add(MediaContent.read(parser));
+      } else {
+        if (!builder.parseTag(parser)) {
+          Log.w(TAG, "Unexpected tag found in media:group: " + tagName);
+          Utils.skipTag(parser);
+        }
+      }
+      Utils.finishTag(parser);
+    }
+    return new MediaGroup(builder.build(), contents);
   }
 
   public MediaGroup(@NonNull MediaCommon common,
-					@NonNull List<MediaContent> contents) {
-	super(common);
-	this.contents = Collections.unmodifiableList(contents);
+                    @NonNull List<MediaContent> contents) {
+    super(common);
+    this.contents = Collections.unmodifiableList(contents);
   }
 }

@@ -25,41 +25,41 @@ public final class MediaScene {
 
   @NonNull
   static MediaScene read(XmlPullParser parser) throws XmlPullParserException, IOException {
-	parser.require(XmlPullParser.START_TAG, null, XML_TAG);
-	String sceneTitle = null;
-	String sceneDescription = null;
-	Integer sceneStartTime = null;
-	Integer sceneEndTime = null;
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
+    String sceneTitle = null;
+    String sceneDescription = null;
+    Integer sceneStartTime = null;
+    Integer sceneEndTime = null;
 
-	while (parser.nextTag() == XmlPullParser.START_TAG) {
-	  switch (parser.getName()) {
-		case "sceneTitle":
-		  sceneTitle = parser.nextText();
-		  break;
-		case "sceneDescription":
-		  sceneDescription = parser.nextText();
-		  break;
-		case "sceneStartTime":
-		  sceneStartTime = Utils.parseMediaRssTime(parser.nextText());
-		  break;
-		case "sceneEndTime":
-		  sceneEndTime = Utils.parseMediaRssTime(parser.nextText());
-		  break;
-		default:
-		  Log.w(TAG, "Unexpected tag inside media:scene: " + parser.getName());
-		  Utils.skipTag(parser);
-	  }
-	  Utils.finishTag(parser);
-	}
+    while (parser.nextTag() == XmlPullParser.START_TAG) {
+      switch (parser.getName()) {
+        case "sceneTitle":
+          sceneTitle = parser.nextText();
+          break;
+        case "sceneDescription":
+          sceneDescription = parser.nextText();
+          break;
+        case "sceneStartTime":
+          sceneStartTime = Utils.parseMediaRssTime(parser.nextText());
+          break;
+        case "sceneEndTime":
+          sceneEndTime = Utils.parseMediaRssTime(parser.nextText());
+          break;
+        default:
+          Log.w(TAG, "Unexpected tag inside media:scene: " + parser.getName());
+          Utils.skipTag(parser);
+      }
+      Utils.finishTag(parser);
+    }
 
-	return new MediaScene(sceneTitle, sceneDescription, sceneStartTime, sceneEndTime);
+    return new MediaScene(sceneTitle, sceneDescription, sceneStartTime, sceneEndTime);
   }
 
   public MediaScene(@Nullable String sceneTitle, @Nullable String sceneDescription,
-					@Nullable Integer sceneStartTime, @Nullable Integer sceneEndTime) {
-	this.sceneTitle = sceneTitle;
-	this.sceneDescription = sceneDescription;
-	this.sceneStartTime = sceneStartTime;
-	this.sceneEndTime = sceneEndTime;
+                    @Nullable Integer sceneStartTime, @Nullable Integer sceneEndTime) {
+    this.sceneTitle = sceneTitle;
+    this.sceneDescription = sceneDescription;
+    this.sceneStartTime = sceneStartTime;
+    this.sceneEndTime = sceneEndTime;
   }
 }

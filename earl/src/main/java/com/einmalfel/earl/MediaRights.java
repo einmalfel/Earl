@@ -15,14 +15,14 @@ public final class MediaRights {
 
   @NonNull
   static MediaRights read(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
-	parser.require(XmlPullParser.START_TAG, null, XML_TAG);
-	MediaRights result = new MediaRights(
-	Utils.nonNullString(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "status")));
-	parser.nextTag();
-	return result;
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
+    MediaRights result = new MediaRights(
+      Utils.nonNullString(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "status")));
+    parser.nextTag();
+    return result;
   }
 
   public MediaRights(@NonNull String status) {
-	this.status = status;
+    this.status = status;
   }
 }

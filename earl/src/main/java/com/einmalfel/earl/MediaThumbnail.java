@@ -27,24 +27,24 @@ public final class MediaThumbnail {
 
   @NonNull
   static MediaThumbnail read(XmlPullParser parser) throws XmlPullParserException, IOException {
-	parser.require(XmlPullParser.START_TAG, null, XML_TAG);
-	final String width = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "width");
-	final String height = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "height");
-	final String time = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "time");
-	final MediaThumbnail result = new MediaThumbnail(
-	Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url")),
-	width == null ? null : Utils.tryParseInt(width),
-	height == null ? null : Utils.tryParseInt(height),
-	time == null ? null : Utils.parseRFC2326NPT(time));
-	parser.nextTag();
-	return result;
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
+    final String width = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "width");
+    final String height = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "height");
+    final String time = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "time");
+    final MediaThumbnail result = new MediaThumbnail(
+      Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url")),
+      width == null ? null : Utils.tryParseInt(width),
+      height == null ? null : Utils.tryParseInt(height),
+      time == null ? null : Utils.parseRFC2326NPT(time));
+    parser.nextTag();
+    return result;
   }
 
   public MediaThumbnail(@NonNull URL url, @Nullable Integer width, @Nullable Integer height,
-						@Nullable Integer time) {
-	this.url = url;
-	this.width = width;
-	this.height = height;
-	this.time = time;
+                        @Nullable Integer time) {
+    this.url = url;
+    this.width = width;
+    this.height = height;
+    this.time = time;
   }
 }

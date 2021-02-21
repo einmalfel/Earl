@@ -28,11 +28,11 @@ public final class EarlParser {
    */
   @Nullable
   public static Feed parse(@NonNull InputStream inputStream, int maxItems) {
-	try {
-	  return parseOrThrow(inputStream, maxItems);
-	} catch (IOException | XmlPullParserException | DataFormatException ignored) {
-	  return null;
-	}
+    try {
+      return parseOrThrow(inputStream, maxItems);
+    } catch (IOException | XmlPullParserException | DataFormatException ignored) {
+      return null;
+    }
   }
 
   /**
@@ -42,25 +42,25 @@ public final class EarlParser {
    */
   @NonNull
   public static Feed parseOrThrow(@NonNull InputStream inputStream, int maxItems)
-  throws XmlPullParserException, IOException, DataFormatException {
-	try {
-	  final XmlPullParser parser = Xml.newPullParser();
-	  parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, true);
-	  parser.setInput(inputStream, null);
-	  while (parser.next() != XmlPullParser.END_DOCUMENT) {
-		if (parser.getEventType() == XmlPullParser.START_TAG) {
-		  switch (parser.getName()) {
-			case RSSFeed.XML_TAG:
-			  return RSSFeed.read(parser, maxItems);
-			case AtomFeed.XML_TAG:
-			  return AtomFeed.read(parser, maxItems);
-			default: // ignore other tags
-		  }
-		}
-	  }
-	} finally {
-	  inputStream.close();
-	}
-	throw new DataFormatException("No syndication feeds found in given stream");
+    throws XmlPullParserException, IOException, DataFormatException {
+    try {
+      final XmlPullParser parser = Xml.newPullParser();
+      parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, true);
+      parser.setInput(inputStream, null);
+      while (parser.next() != XmlPullParser.END_DOCUMENT) {
+        if (parser.getEventType() == XmlPullParser.START_TAG) {
+          switch (parser.getName()) {
+            case RSSFeed.XML_TAG:
+              return RSSFeed.read(parser, maxItems);
+            case AtomFeed.XML_TAG:
+              return AtomFeed.read(parser, maxItems);
+            default: // ignore other tags
+          }
+        }
+      }
+    } finally {
+      inputStream.close();
+    }
+    throw new DataFormatException("No syndication feeds found in given stream");
   }
 }

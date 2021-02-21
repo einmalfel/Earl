@@ -21,16 +21,16 @@ public final class MediaCategory {
 
   @NonNull
   static MediaCategory read(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
-	parser.require(XmlPullParser.START_TAG, null, XML_TAG);
-	final String scheme = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "scheme");
-	return new MediaCategory(scheme == null ? null : Utils.tryParseUri(scheme),
-	parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "label"),
-	parser.nextText());
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
+    final String scheme = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "scheme");
+    return new MediaCategory(scheme == null ? null : Utils.tryParseUri(scheme),
+      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "label"),
+      parser.nextText());
   }
 
   public MediaCategory(@Nullable URI scheme, @Nullable String label, @NonNull String value) {
-	this.scheme = scheme;
-	this.label = label;
-	this.value = value;
+    this.scheme = scheme;
+    this.label = label;
+    this.value = value;
   }
 }

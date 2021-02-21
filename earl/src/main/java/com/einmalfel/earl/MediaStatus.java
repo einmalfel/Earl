@@ -18,15 +18,15 @@ public final class MediaStatus {
 
   @NonNull
   static MediaStatus read(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
-	final MediaStatus result = new MediaStatus(
-	parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "state"),
-	parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "reason"));
-	parser.nextTag();
-	return result;
+    final MediaStatus result = new MediaStatus(
+      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "state"),
+      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "reason"));
+    parser.nextTag();
+    return result;
   }
 
   public MediaStatus(@Nullable String state, @Nullable String reason) {
-	this.state = state;
-	this.reason = reason;
+    this.state = state;
+    this.reason = reason;
   }
 }

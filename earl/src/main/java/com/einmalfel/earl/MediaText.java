@@ -24,23 +24,23 @@ public final class MediaText {
 
   @NonNull
   static MediaText read(XmlPullParser parser) throws XmlPullParserException, IOException {
-	parser.require(XmlPullParser.START_TAG, null, XML_TAG);
-	final String start = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "start");
-	final String end = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "end");
-	return new MediaText(
-	parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
-	parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "lang"),
-	start == null ? null : Utils.parseRFC2326NPT(start),
-	end == null ? null : Utils.parseRFC2326NPT(end),
-	parser.nextText());
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
+    final String start = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "start");
+    final String end = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "end");
+    return new MediaText(
+      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
+      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "lang"),
+      start == null ? null : Utils.parseRFC2326NPT(start),
+      end == null ? null : Utils.parseRFC2326NPT(end),
+      parser.nextText());
   }
 
   public MediaText(@Nullable String type, @Nullable String lang, @Nullable Integer start,
-				   @Nullable Integer end, @NonNull String value) {
-	this.type = type;
-	this.lang = lang;
-	this.start = start;
-	this.end = end;
-	this.value = value;
+                   @Nullable Integer end, @NonNull String value) {
+    this.type = type;
+    this.lang = lang;
+    this.start = start;
+    this.end = end;
+    this.value = value;
   }
 }

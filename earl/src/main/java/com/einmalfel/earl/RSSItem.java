@@ -52,202 +52,202 @@ public final class RSSItem implements Item {
 
   @NonNull
   static RSSItem read(@NonNull XmlPullParser parser) throws IOException, XmlPullParserException {
-	parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
-	final Map<ST, String> map = new EnumMap<>(ST.class);
-	final List<RSSEnclosure> enclosures = new LinkedList<>();
-	final List<RSSCategory> categories = new LinkedList<>();
-	RSSGuid guid = null;
-	RSSSource source = null;
-	ItunesItem.ItunesItemBuilder itunesBuilder = null;
-	MediaItem.MediaItemBuilder mediaBuilder = null;
-	Content.ContentBuilder contentBuilder = null;
-	while (parser.nextTag() == XmlPullParser.START_TAG) {
-	  final String namespace = parser.getNamespace();
-	  if (XmlPullParser.NO_NAMESPACE.equals(namespace)) {
-		final String tagName = parser.getName();
-		switch (tagName) {
-		  case RSSEnclosure.XML_TAG:
-			enclosures.add(RSSEnclosure.read(parser));
-			break;
-		  case RSSCategory.XML_TAG:
-			categories.add(RSSCategory.read(parser));
-			break;
-		  case RSSSource.XML_TAG:
-			source = RSSSource.read(parser);
-			break;
-		  case RSSGuid.XML_TAG:
-			guid = RSSGuid.read(parser);
-			break;
-		  default:
-			try {
-			  map.put(ST.valueOf(tagName), parser.nextText());
-			} catch (IllegalArgumentException ignored) {
-			  Log.w(TAG, "Unknown RSS item tag " + tagName);
-			  Utils.skipTag(parser);
-			}
-		}
-	  } else {
-		if (Utils.ITUNES_NAMESPACE.equalsIgnoreCase(namespace)) {
-		  if (itunesBuilder == null) {
-			itunesBuilder = new ItunesItem.ItunesItemBuilder();
-		  }
-		  itunesBuilder.parseTag(parser);
-		} else {
-		  if (Utils.MEDIA_NAMESPACE.equalsIgnoreCase(namespace)) {
-			if (mediaBuilder == null) {
-			  mediaBuilder = new MediaItem.MediaItemBuilder();
-			}
-			if (!mediaBuilder.parseTag(parser)) {
-			  Log.w(TAG, "Unknown mrss tag on item level");
-			  Utils.skipTag(parser);
-			}
-		  } else {
-			if (Utils.CONTENT_NAMESPACE.equalsIgnoreCase(namespace)) {
-			  if (contentBuilder == null) {
-				contentBuilder = new Content.ContentBuilder();
-			  }
-			  contentBuilder.parseTag(parser);
-			} else {
-			  Log.w(TAG, "Unknown namespace in RSS item " + parser.getNamespace());
-			  Utils.skipTag(parser);
-			}
-		  }
-		}
-	  }
-	  Utils.finishTag(parser);
-	}
+    parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
+    final Map<ST, String> map = new EnumMap<>(ST.class);
+    final List<RSSEnclosure> enclosures = new LinkedList<>();
+    final List<RSSCategory> categories = new LinkedList<>();
+    RSSGuid guid = null;
+    RSSSource source = null;
+    ItunesItem.ItunesItemBuilder itunesBuilder = null;
+    MediaItem.MediaItemBuilder mediaBuilder = null;
+    Content.ContentBuilder contentBuilder = null;
+    while (parser.nextTag() == XmlPullParser.START_TAG) {
+      final String namespace = parser.getNamespace();
+      if (XmlPullParser.NO_NAMESPACE.equals(namespace)) {
+        final String tagName = parser.getName();
+        switch (tagName) {
+          case RSSEnclosure.XML_TAG:
+            enclosures.add(RSSEnclosure.read(parser));
+            break;
+          case RSSCategory.XML_TAG:
+            categories.add(RSSCategory.read(parser));
+            break;
+          case RSSSource.XML_TAG:
+            source = RSSSource.read(parser);
+            break;
+          case RSSGuid.XML_TAG:
+            guid = RSSGuid.read(parser);
+            break;
+          default:
+            try {
+              map.put(ST.valueOf(tagName), parser.nextText());
+            } catch (IllegalArgumentException ignored) {
+              Log.w(TAG, "Unknown RSS item tag " + tagName);
+              Utils.skipTag(parser);
+            }
+        }
+      } else {
+        if (Utils.ITUNES_NAMESPACE.equalsIgnoreCase(namespace)) {
+          if (itunesBuilder == null) {
+            itunesBuilder = new ItunesItem.ItunesItemBuilder();
+          }
+          itunesBuilder.parseTag(parser);
+        } else {
+          if (Utils.MEDIA_NAMESPACE.equalsIgnoreCase(namespace)) {
+            if (mediaBuilder == null) {
+              mediaBuilder = new MediaItem.MediaItemBuilder();
+            }
+            if (!mediaBuilder.parseTag(parser)) {
+              Log.w(TAG, "Unknown mrss tag on item level");
+              Utils.skipTag(parser);
+            }
+          } else {
+            if (Utils.CONTENT_NAMESPACE.equalsIgnoreCase(namespace)) {
+              if (contentBuilder == null) {
+                contentBuilder = new Content.ContentBuilder();
+              }
+              contentBuilder.parseTag(parser);
+            } else {
+              Log.w(TAG, "Unknown namespace in RSS item " + parser.getNamespace());
+              Utils.skipTag(parser);
+            }
+          }
+        }
+      }
+      Utils.finishTag(parser);
+    }
 
-	return new RSSItem(
-	map.remove(ST.title),
-	map.containsKey(ST.link) ? Utils.tryParseUrl(map.remove(ST.link)) : null,
-	map.remove(ST.description),
-	map.remove(ST.author),
-	categories,
-	map.containsKey(ST.comments) ? Utils.tryParseUrl(map.remove(ST.comments)) : null,
-	enclosures,
-	guid,
-	map.containsKey(ST.pubDate) ? Utils.parseDate(map.remove(ST.pubDate)) : null,
-	source,
-	itunesBuilder == null ? null : itunesBuilder.build(),
-	mediaBuilder == null ? null : mediaBuilder.build(),
-	contentBuilder == null ? null : contentBuilder.build());
+    return new RSSItem(
+      map.remove(ST.title),
+      map.containsKey(ST.link) ? Utils.tryParseUrl(map.remove(ST.link)) : null,
+      map.remove(ST.description),
+      map.remove(ST.author),
+      categories,
+      map.containsKey(ST.comments) ? Utils.tryParseUrl(map.remove(ST.comments)) : null,
+      enclosures,
+      guid,
+      map.containsKey(ST.pubDate) ? Utils.parseDate(map.remove(ST.pubDate)) : null,
+      source,
+      itunesBuilder == null ? null : itunesBuilder.build(),
+      mediaBuilder == null ? null : mediaBuilder.build(),
+      contentBuilder == null ? null : contentBuilder.build());
   }
 
   public RSSItem(@Nullable String title, @Nullable URL link, @Nullable String description,
-				 @Nullable String author, @NonNull List<RSSCategory> categories,
-				 @Nullable URL comments, @NonNull List<RSSEnclosure> enclosures,
-				 @Nullable RSSGuid guid, @Nullable Date pubDate, @Nullable RSSSource source,
-				 @Nullable ItunesItem itunes, @Nullable MediaItem media,
-				 @Nullable Content content) {
-	this.title = title;
-	this.link = link;
-	this.description = description;
-	this.author = author;
-	this.categories = Collections.unmodifiableList(categories);
-	this.comments = comments;
-	this.enclosures = Collections.unmodifiableList(enclosures);
-	this.guid = guid;
-	this.pubDate = pubDate;
-	this.source = source;
-	this.itunes = itunes;
-	this.media = media;
-	this.content = content;
+                 @Nullable String author, @NonNull List<RSSCategory> categories,
+                 @Nullable URL comments, @NonNull List<RSSEnclosure> enclosures,
+                 @Nullable RSSGuid guid, @Nullable Date pubDate, @Nullable RSSSource source,
+                 @Nullable ItunesItem itunes, @Nullable MediaItem media,
+                 @Nullable Content content) {
+    this.title = title;
+    this.link = link;
+    this.description = description;
+    this.author = author;
+    this.categories = Collections.unmodifiableList(categories);
+    this.comments = comments;
+    this.enclosures = Collections.unmodifiableList(enclosures);
+    this.guid = guid;
+    this.pubDate = pubDate;
+    this.source = source;
+    this.itunes = itunes;
+    this.media = media;
+    this.content = content;
   }
 
   @Nullable
   @Override
   public String getLink() {
-	return link == null ? null : link.toString();
+    return link == null ? null : link.toString();
   }
 
   @Nullable
   @Override
   public Date getPublicationDate() {
-	return pubDate;
+    return pubDate;
   }
 
   @Nullable
   @Override
   public String getTitle() {
-	if (title != null) {
-	  return title;
-	}
-	if (media != null && media.title != null) {
-	  return media.title.value;
-	}
-	if (itunes != null && itunes.subtitle != null) {
-	  return itunes.subtitle;
-	}
-	return null;
+    if (title != null) {
+      return title;
+    }
+    if (media != null && media.title != null) {
+      return media.title.value;
+    }
+    if (itunes != null && itunes.subtitle != null) {
+      return itunes.subtitle;
+    }
+    return null;
   }
 
   @Nullable
   @Override
   public String getDescription() {
-	if (description != null) {
-	  return description;
-	}
-	if (content != null) {
-	  return content.encoded;
-	}
-	if (itunes != null && itunes.subtitle != null) {
-	  return itunes.subtitle;
-	}
-	if (itunes != null && itunes.summary != null) {
-	  return itunes.summary;
-	}
-	if (media != null && media.description != null) {
-	  return media.description.value;
-	}
-	return null;
+    if (description != null) {
+      return description;
+    }
+    if (content != null) {
+      return content.encoded;
+    }
+    if (itunes != null && itunes.subtitle != null) {
+      return itunes.subtitle;
+    }
+    if (itunes != null && itunes.summary != null) {
+      return itunes.summary;
+    }
+    if (media != null && media.description != null) {
+      return media.description.value;
+    }
+    return null;
   }
 
   @Nullable
   public String getContentEncoded() {
-	return content == null ? null : content.encoded;
+    return content == null ? null : content.encoded;
   }
 
   @Nullable
   @Override
   public String getImageLink() {
-	if (itunes != null && itunes.image != null) {
-	  return itunes.image.toString();
-	}
-	if (media != null && !media.thumbnails.isEmpty()) {
-	  return media.thumbnails.get(0).url.toString();
-	}
-	return null;
+    if (itunes != null && itunes.image != null) {
+      return itunes.image.toString();
+    }
+    if (media != null && !media.thumbnails.isEmpty()) {
+      return media.thumbnails.get(0).url.toString();
+    }
+    return null;
   }
 
   @Nullable
   @Override
   public String getAuthor() {
-	if (author != null) {
-	  return author;
-	}
-	if (itunes != null && itunes.author != null) {
-	  return itunes.author;
-	}
-	if (media != null && !media.credits.isEmpty()) {
-	  for (MediaCredit credit : media.credits) {
-		if ("author".equalsIgnoreCase(credit.role)) {
-		  return credit.value;
-		}
-	  }
-	  return media.credits.get(0).value;
-	}
-	return null;
+    if (author != null) {
+      return author;
+    }
+    if (itunes != null && itunes.author != null) {
+      return itunes.author;
+    }
+    if (media != null && !media.credits.isEmpty()) {
+      for (MediaCredit credit : media.credits) {
+        if ("author".equalsIgnoreCase(credit.role)) {
+          return credit.value;
+        }
+      }
+      return media.credits.get(0).value;
+    }
+    return null;
   }
 
   @NonNull
   @Override
   public List<? extends Enclosure> getEnclosures() {
-	return enclosures;
+    return enclosures;
   }
 
   @Nullable
   @Override
   public String getId() {
-	return guid == null ? null : guid.value;
+    return guid == null ? null : guid.value;
   }
 }

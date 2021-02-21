@@ -21,23 +21,23 @@ public final class AtomCategory extends AtomCommonAttributes {
 
   @NonNull
   static AtomCategory read(XmlPullParser parser)
-  throws XmlPullParserException, IOException {
-	parser.require(XmlPullParser.START_TAG, null, XML_TAG);
-	final String schemeString = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "scheme");
-	final AtomCategory result = new AtomCategory(
-	new AtomCommonAttributes(parser),
-	Utils.nonNullString(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "term")),
-	schemeString == null ? null : Utils.tryParseUri(schemeString),
-	parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "label"));
-	parser.nextTag();
-	return result;
+    throws XmlPullParserException, IOException {
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
+    final String schemeString = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "scheme");
+    final AtomCategory result = new AtomCategory(
+      new AtomCommonAttributes(parser),
+      Utils.nonNullString(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "term")),
+      schemeString == null ? null : Utils.tryParseUri(schemeString),
+      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "label"));
+    parser.nextTag();
+    return result;
   }
 
   public AtomCategory(@Nullable AtomCommonAttributes atomCommonAttributes, @NonNull String term,
-					  @Nullable URI scheme, @Nullable String label) {
-	super(atomCommonAttributes);
-	this.term = term;
-	this.scheme = scheme;
-	this.label = label;
+                      @Nullable URI scheme, @Nullable String label) {
+    super(atomCommonAttributes);
+    this.term = term;
+    this.scheme = scheme;
+    this.label = label;
   }
 }

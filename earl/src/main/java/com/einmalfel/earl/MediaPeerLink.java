@@ -19,16 +19,16 @@ public final class MediaPeerLink {
 
   @NonNull
   static MediaPeerLink read(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
-	parser.require(XmlPullParser.START_TAG, null, XML_TAG);
-	final MediaPeerLink result = new MediaPeerLink(
-	parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
-	Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "href")));
-	parser.nextTag();
-	return result;
+    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
+    final MediaPeerLink result = new MediaPeerLink(
+      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
+      Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "href")));
+    parser.nextTag();
+    return result;
   }
 
   public MediaPeerLink(@Nullable String type, @NonNull URL href) {
-	this.type = type;
-	this.href = href;
+    this.type = type;
+    this.href = href;
   }
 }

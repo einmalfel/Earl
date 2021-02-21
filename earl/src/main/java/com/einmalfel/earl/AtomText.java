@@ -16,23 +16,23 @@ public class AtomText extends AtomCommonAttributes {
 
   @NonNull
   static AtomText read(@NonNull XmlPullParser parser)
-  throws XmlPullParserException, IOException {
-	return new AtomText(
-	new AtomCommonAttributes(parser),
-	parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
-	parser.nextText());
+    throws XmlPullParserException, IOException {
+    return new AtomText(
+      new AtomCommonAttributes(parser),
+      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
+      parser.nextText());
   }
 
   public AtomText(@Nullable AtomCommonAttributes atomCommonAttributes, @Nullable String type,
-				  @NonNull String value) {
-	super(atomCommonAttributes);
-	this.type = type;
-	this.value = value;
+                  @NonNull String value) {
+    super(atomCommonAttributes);
+    this.type = type;
+    this.value = value;
   }
 
   AtomText(@NonNull AtomText source) {
-	super(source);
-	this.type = source.type;
-	this.value = source.value;
+    super(source);
+    this.type = source.type;
+    this.value = source.value;
   }
 }
