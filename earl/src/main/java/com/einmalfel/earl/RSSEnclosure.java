@@ -9,48 +9,48 @@ import java.io.IOException;
 import java.net.URL;
 
 public final class RSSEnclosure implements Enclosure {
-	static final String XML_TAG = "enclosure";
+  static final String XML_TAG = "enclosure";
 
-	@NonNull
-	public final URL url;
-	@NonNull
-	public final Integer length;
-	@NonNull
-	public final String type;
+  @NonNull
+  public final URL url;
+  @NonNull
+  public final Integer length;
+  @NonNull
+  public final String type;
 
-	@NonNull
-	static RSSEnclosure read(@NonNull XmlPullParser parser)
-	throws IOException, XmlPullParserException {
-		parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
-		final RSSEnclosure result = new RSSEnclosure(
-		Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url")),
-		Utils.nonNullInt(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "length")),
-		Utils.nonNullString(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type")));
-		parser.nextText();
-		return result;
-	}
+  @NonNull
+  static RSSEnclosure read(@NonNull XmlPullParser parser)
+  throws IOException, XmlPullParserException {
+	parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
+	final RSSEnclosure result = new RSSEnclosure(
+	Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url")),
+	Utils.nonNullInt(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "length")),
+	Utils.nonNullString(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type")));
+	parser.nextText();
+	return result;
+  }
 
-	public RSSEnclosure(@NonNull URL url, @NonNull Integer length, @NonNull String type) {
-		this.url = url;
-		this.length = length;
-		this.type = type;
-	}
+  public RSSEnclosure(@NonNull URL url, @NonNull Integer length, @NonNull String type) {
+	this.url = url;
+	this.length = length;
+	this.type = type;
+  }
 
-	@NonNull
-	@Override
-	public String getLink() {
-		return url.toString();
-	}
+  @NonNull
+  @Override
+  public String getLink() {
+	return url.toString();
+  }
 
-	@NonNull
-	@Override
-	public Integer getLength() {
-		return length;
-	}
+  @NonNull
+  @Override
+  public Integer getLength() {
+	return length;
+  }
 
-	@NonNull
-	@Override
-	public String getType() {
-		return type;
-	}
+  @NonNull
+  @Override
+  public String getType() {
+	return type;
+  }
 }

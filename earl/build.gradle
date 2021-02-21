@@ -27,8 +27,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestImplementation 'com.fasterxml.jackson.core:jackson-databind:2.11.1'
-    androidTestImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'com.fasterxml.jackson.core:jackson-databind:2.12.1'
+    androidTestImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     implementation 'androidx.annotation:annotation:1.1.0'
 }

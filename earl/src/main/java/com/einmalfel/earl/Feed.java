@@ -7,30 +7,30 @@ import java.util.Date;
 import java.util.List;
 
 public interface Feed {
-	@Nullable
-	String getLink();
+  @Nullable
+  String getLink();
 
-	@Nullable
-	Date getPublicationDate();
+  @Nullable
+  Date getPublicationDate();
 
-	@Nullable
-	Date getUpdatedDate();
+  @Nullable
+  Date getUpdatedDate();
 
-	@NonNull
-	String getTitle();
+  @NonNull
+  String getTitle();
 
-	@Nullable
-	String getDescription();
+  @Nullable
+  String getDescription();
 
-	@Nullable
-	String getCopyright();
+  @Nullable
+  String getCopyright();
 
-	@Nullable
-	String getImageLink();
+  @Nullable
+  String getImageLink();
 
-	@Nullable
-	String getAuthor();
+  @Nullable
+  String getAuthor();
 
-	@NonNull
-	List<? extends Item> getItems();
+  @NonNull
+  List<? extends Item> getItems();
 }

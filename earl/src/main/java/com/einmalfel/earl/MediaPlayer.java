@@ -21,20 +21,20 @@ public final class MediaPlayer {
 
   @NonNull
   static MediaPlayer read(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
-    parser.require(XmlPullParser.START_TAG, null, XML_TAG);
-    final String width = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "width");
-    final String height = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "height");
-    final MediaPlayer result = new MediaPlayer(
-        Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url")),
-        width == null ? null : Utils.tryParseInt(width),
-        height == null ? null : Utils.tryParseInt(height));
-    parser.nextTag();
-    return result;
+	parser.require(XmlPullParser.START_TAG, null, XML_TAG);
+	final String width = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "width");
+	final String height = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "height");
+	final MediaPlayer result = new MediaPlayer(
+	Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url")),
+	width == null ? null : Utils.tryParseInt(width),
+	height == null ? null : Utils.tryParseInt(height));
+	parser.nextTag();
+	return result;
   }
 
   public MediaPlayer(@NonNull URL url, @Nullable Integer height, @Nullable Integer width) {
-    this.url = url;
-    this.height = height;
-    this.width = width;
+	this.url = url;
+	this.height = height;
+	this.width = width;
   }
 }
