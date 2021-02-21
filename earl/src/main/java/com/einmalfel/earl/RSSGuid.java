@@ -21,7 +21,7 @@ public final class RSSGuid {
     parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
     final String permalink = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "isPermalink");
     return new RSSGuid(Utils.nonNullString(parser.nextText()),
-      permalink == null ? null : Boolean.valueOf(permalink));
+        permalink == null ? null : Boolean.valueOf(permalink));
   }
 
   public RSSGuid(@NonNull String value, @Nullable Boolean isPermalink) {

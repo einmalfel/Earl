@@ -28,17 +28,17 @@ public final class AtomLink extends AtomCommonAttributes implements Enclosure {
 
   @NonNull
   static AtomLink read(@NonNull XmlPullParser parser)
-    throws XmlPullParserException, IOException {
+      throws XmlPullParserException, IOException {
     parser.require(XmlPullParser.START_TAG, null, XML_TAG);
     final String length = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "length");
     final AtomLink result = new AtomLink(
-      new AtomCommonAttributes(parser),
-      Utils.nonNullUri(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "href")),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "rel"),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "hreflang"),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "title"),
-      length == null ? null : Utils.tryParseInt(length));
+        new AtomCommonAttributes(parser),
+        Utils.nonNullUri(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "href")),
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "rel"),
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "hreflang"),
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "title"),
+        length == null ? null : Utils.tryParseInt(length));
     parser.nextTag();
     return result;
   }

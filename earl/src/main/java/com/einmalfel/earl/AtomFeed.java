@@ -53,7 +53,7 @@ public final class AtomFeed extends AtomCommonAttributes implements Feed {
 
   @NonNull
   static AtomFeed read(XmlPullParser parser, int maxItm) throws IOException,
-    XmlPullParserException {
+      XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, null, XML_TAG);
 
     final List<AtomEntry> entries = new LinkedList<>();
@@ -150,9 +150,9 @@ public final class AtomFeed extends AtomCommonAttributes implements Feed {
       updated = new AtomDate(null, new Date(0));
     }
     return new AtomFeed(
-      atomCommonAttributes, Utils.nonNullUri(id), title, updated, authors,
-      contributors, generator, icon, logo, rights, subtitle, links, published, categories,
-      mediaBuilder == null ? null : mediaBuilder.build(), entries);
+        atomCommonAttributes, Utils.nonNullUri(id), title, updated, authors,
+        contributors, generator, icon, logo, rights, subtitle, links, published, categories,
+        mediaBuilder == null ? null : mediaBuilder.build(), entries);
   }
 
   public AtomFeed(@Nullable AtomCommonAttributes atomCommonAttributes, @NonNull URI id,

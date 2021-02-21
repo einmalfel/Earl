@@ -72,17 +72,17 @@ public final class MediaCommunity {
           final String min = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "min");
           final String max = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "max");
           starRating = new StarRating(
-            parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "average"),
-            count == null ? null : Utils.tryParseInt(count),
-            min == null ? null : Utils.tryParseInt(min),
-            max == null ? null : Utils.tryParseInt(max));
+              parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "average"),
+              count == null ? null : Utils.tryParseInt(count),
+              min == null ? null : Utils.tryParseInt(min),
+              max == null ? null : Utils.tryParseInt(max));
           parser.nextTag();
           break;
         case Statistics.XML_TAG:
           final String views = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "views");
           final String favorites = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "favorites");
           statistics = new Statistics(views == null ? null : Utils.tryParseInt(views),
-            favorites == null ? null : Utils.tryParseInt(favorites));
+              favorites == null ? null : Utils.tryParseInt(favorites));
           parser.nextTag();
           break;
         case "tags":
@@ -96,7 +96,7 @@ public final class MediaCommunity {
     }
 
     return new MediaCommunity(starRating, statistics,
-      tags == null ? new LinkedList<String>() : tags);
+        tags == null ? new LinkedList<String>() : tags);
   }
 
   public MediaCommunity(@Nullable StarRating starRating, @Nullable Statistics statistics,

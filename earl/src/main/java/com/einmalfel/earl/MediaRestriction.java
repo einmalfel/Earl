@@ -21,9 +21,9 @@ public final class MediaRestriction {
   @NonNull
   static MediaRestriction read(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
     return new MediaRestriction(
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "relationship"),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
-      parser.nextText());
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "relationship"),
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
+        parser.nextText());
   }
 
   public MediaRestriction(@Nullable String relationship, @Nullable String type,

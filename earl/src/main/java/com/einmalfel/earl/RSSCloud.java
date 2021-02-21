@@ -34,7 +34,7 @@ public final class RSSCloud {
     final String protocol = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "protocol");
     parser.next();
     return new RSSCloud(
-      domain, port == null ? null : Utils.tryParseInt(port), path, procedure, protocol);
+        domain, port == null ? null : Utils.tryParseInt(port), path, procedure, protocol);
   }
 
   public RSSCloud(@Nullable String domain, @Nullable Integer port, @Nullable String path,

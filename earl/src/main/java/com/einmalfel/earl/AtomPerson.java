@@ -23,7 +23,7 @@ public final class AtomPerson extends AtomCommonAttributes {
 
   @NonNull
   static AtomPerson read(@NonNull XmlPullParser parser)
-    throws XmlPullParserException, IOException {
+      throws XmlPullParserException, IOException {
     final AtomCommonAttributes atomCommonAttributes = new AtomCommonAttributes(parser);
     String name = null;
     URI uri = null;

@@ -57,16 +57,16 @@ public final class ItunesFeed {
     @NonNull
     ItunesFeed build() {
       return new ItunesFeed(
-        map.remove(ST.author),
-        map.containsKey(ST.block) ? ("yes".equals(map.remove(ST.block))) : null,
-        categories,
-        image,
-        map.remove(ST.explicit),
-        map.containsKey(ST.complete) ? ("yes".equals(map.remove(ST.complete))) : null,
-        newFeedURL,
-        owner,
-        map.remove(ST.subtitle),
-        map.remove(ST.summary));
+          map.remove(ST.author),
+          map.containsKey(ST.block) ? ("yes".equals(map.remove(ST.block))) : null,
+          categories,
+          image,
+          map.remove(ST.explicit),
+          map.containsKey(ST.complete) ? ("yes".equals(map.remove(ST.complete))) : null,
+          newFeedURL,
+          owner,
+          map.remove(ST.subtitle),
+          map.remove(ST.summary));
     }
   }
 

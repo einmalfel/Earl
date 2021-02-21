@@ -20,12 +20,12 @@ public final class RSSEnclosure implements Enclosure {
 
   @NonNull
   static RSSEnclosure read(@NonNull XmlPullParser parser)
-    throws IOException, XmlPullParserException {
+      throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
     final RSSEnclosure result = new RSSEnclosure(
-      Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url")),
-      Utils.nonNullInt(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "length")),
-      Utils.nonNullString(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type")));
+        Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url")),
+        Utils.nonNullInt(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "length")),
+        Utils.nonNullString(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type")));
     parser.nextText();
     return result;
   }

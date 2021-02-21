@@ -28,11 +28,11 @@ public final class MediaText {
     final String start = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "start");
     final String end = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "end");
     return new MediaText(
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "lang"),
-      start == null ? null : Utils.parseRFC2326NPT(start),
-      end == null ? null : Utils.parseRFC2326NPT(end),
-      parser.nextText());
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "lang"),
+        start == null ? null : Utils.parseRFC2326NPT(start),
+        end == null ? null : Utils.parseRFC2326NPT(end),
+        parser.nextText());
   }
 
   public MediaText(@Nullable String type, @Nullable String lang, @Nullable Integer start,

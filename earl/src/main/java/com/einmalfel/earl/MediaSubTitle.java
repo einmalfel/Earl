@@ -22,9 +22,9 @@ public final class MediaSubTitle {
   @NonNull
   static MediaSubTitle read(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
     final MediaSubTitle result = new MediaSubTitle(
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "lang"),
-      Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "href")));
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "lang"),
+        Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "href")));
     parser.nextTag();
     return result;
   }

@@ -20,7 +20,7 @@ public final class MediaHash {
   static MediaHash read(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
     parser.require(XmlPullParser.START_TAG, null, XML_TAG);
     return new MediaHash(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "algo"),
-      parser.nextText());
+        parser.nextText());
   }
 
   public MediaHash(@Nullable String algo, @NonNull String value) {

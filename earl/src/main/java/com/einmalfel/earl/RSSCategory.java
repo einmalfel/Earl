@@ -18,10 +18,10 @@ public final class RSSCategory {
 
   @NonNull
   static RSSCategory read(@NonNull XmlPullParser parser)
-    throws IOException, XmlPullParserException {
+      throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
     return new RSSCategory(Utils.nonNullString(parser.nextText()),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "domain"));
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "domain"));
   }
 
   public RSSCategory(@NonNull String value, @Nullable String domain) {

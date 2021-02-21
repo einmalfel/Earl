@@ -17,7 +17,7 @@ public final class MediaRights {
   static MediaRights read(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
     parser.require(XmlPullParser.START_TAG, null, XML_TAG);
     MediaRights result = new MediaRights(
-      Utils.nonNullString(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "status")));
+        Utils.nonNullString(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "status")));
     parser.nextTag();
     return result;
   }

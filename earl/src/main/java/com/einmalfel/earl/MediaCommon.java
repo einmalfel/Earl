@@ -148,9 +148,9 @@ public class MediaCommon {
         keywords = new LinkedList<>();
       }
       return new MediaCommon(
-        adult, rating, title, description, keywords, thumbnails, categories, hash, player,
-        credits, copyright, texts, restrictions, community, comments, embed, responses, backLinks,
-        status, prices, license, subTitles, peerLink, location, rights, scenes);
+          adult, rating, title, description, keywords, thumbnails, categories, hash, player,
+          credits, copyright, texts, restrictions, community, comments, embed, responses, backLinks,
+          status, prices, license, subTitles, peerLink, location, rights, scenes);
     }
   }
 

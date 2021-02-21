@@ -24,9 +24,9 @@ public final class MediaLocation {
     final String start = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "start");
     final String end = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "end");
     final MediaLocation result = new MediaLocation(
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "description"),
-      start == null ? null : Utils.parseMediaRssTime(start),
-      end == null ? null : Utils.parseMediaRssTime(end));
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "description"),
+        start == null ? null : Utils.parseMediaRssTime(start),
+        end == null ? null : Utils.parseMediaRssTime(end));
     Utils.skipTag(parser); // TODO geoRSS
     return result;
   }

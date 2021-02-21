@@ -51,17 +51,17 @@ public final class ItunesItem {
     @NonNull
     ItunesItem build() {
       return new ItunesItem(
-        map.remove(ST.author),
-        map.containsKey(ST.block) ? "yes".equals(map.remove(ST.block)) : null,
-        image,
-        map.containsKey(ST.duration) ? Utils.parseItunesDuration(map.remove(ST.duration)) : null,
-        map.remove(ST.explicit),
-        map.containsKey(ST.isClosedCaptioned) ? " yes".equals(
-          map.remove(ST.isClosedCaptioned)) : null,
-        map.containsKey(ST.order) ? Utils.tryParseInt(map.remove(ST.order)) : null,
-        map.remove(ST.subtitle),
-        map.remove(ST.summary),
-        keywords == null ? new LinkedList<String>() : keywords);
+          map.remove(ST.author),
+          map.containsKey(ST.block) ? "yes".equals(map.remove(ST.block)) : null,
+          image,
+          map.containsKey(ST.duration) ? Utils.parseItunesDuration(map.remove(ST.duration)) : null,
+          map.remove(ST.explicit),
+          map.containsKey(ST.isClosedCaptioned) ? " yes".equals(
+              map.remove(ST.isClosedCaptioned)) : null,
+          map.containsKey(ST.order) ? Utils.tryParseInt(map.remove(ST.order)) : null,
+          map.remove(ST.subtitle),
+          map.remove(ST.summary),
+          keywords == null ? new LinkedList<String>() : keywords);
     }
   }
 

@@ -23,10 +23,10 @@ public final class MediaPrice {
   @NonNull
   static MediaPrice read(XmlPullParser parser) throws XmlPullParserException, IOException {
     final MediaPrice result = new MediaPrice(
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "info"),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "price"),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "currency"));
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "info"),
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "price"),
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "currency"));
     parser.nextTag();
     return result;
   }

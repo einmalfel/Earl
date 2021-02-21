@@ -42,7 +42,7 @@ public final class EarlParser {
    */
   @NonNull
   public static Feed parseOrThrow(@NonNull InputStream inputStream, int maxItems)
-    throws XmlPullParserException, IOException, DataFormatException {
+      throws XmlPullParserException, IOException, DataFormatException {
     try {
       final XmlPullParser parser = Xml.newPullParser();
       parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, true);

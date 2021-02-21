@@ -24,10 +24,10 @@ public final class AtomGenerator extends AtomCommonAttributes {
     parser.require(XmlPullParser.START_TAG, null, XML_TAG);
     final String uri = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "uri");
     return new AtomGenerator(
-      new AtomCommonAttributes(parser),
-      uri == null ? null : Utils.tryParseUri(uri),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "uri"),
-      parser.nextText());
+        new AtomCommonAttributes(parser),
+        uri == null ? null : Utils.tryParseUri(uri),
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "uri"),
+        parser.nextText());
   }
 
   public AtomGenerator(@Nullable AtomCommonAttributes atomCommonAttributes, @Nullable URI uri,

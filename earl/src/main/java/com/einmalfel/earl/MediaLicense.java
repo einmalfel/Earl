@@ -23,9 +23,9 @@ public final class MediaLicense {
   static MediaLicense read(@NonNull XmlPullParser parser) throws XmlPullParserException, IOException {
     final String href = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "href");
     return new MediaLicense(
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
-      href == null ? null : Utils.tryParseUrl(href),
-      parser.nextText());
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
+        href == null ? null : Utils.tryParseUrl(href),
+        parser.nextText());
   }
 
   public MediaLicense(@Nullable String type, @Nullable URL href, @NonNull String value) {

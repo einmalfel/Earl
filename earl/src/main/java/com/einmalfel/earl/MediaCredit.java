@@ -24,8 +24,8 @@ public final class MediaCredit {
     parser.require(XmlPullParser.START_TAG, null, XML_TAG);
     final String scheme = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "scheme");
     return new MediaCredit(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "scheme"),
-      scheme == null ? null : Utils.tryParseUri(scheme),
-      parser.nextText());
+        scheme == null ? null : Utils.tryParseUri(scheme),
+        parser.nextText());
   }
 
   public MediaCredit(@Nullable String role, @Nullable URI scheme, @NonNull String value) {

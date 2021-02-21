@@ -55,20 +55,20 @@ public final class MediaContent extends MediaCommon {
     final String height = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "height");
     final String width = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "width");
     return new MediaContent(url == null ? null : Utils.tryParseUrl(url),
-      fileSize == null ? null : Utils.tryParseInt(fileSize),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "medium"),
-      isDefault == null ? null : Boolean.valueOf(isDefault),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "expression"),
-      bitrate == null ? null : Utils.tryParseInt(bitrate),
-      framerate == null ? null : Utils.tryParseInt(framerate),
-      samplingrate == null ? null : Utils.tryParseInt(samplingrate),
-      channels == null ? null : Utils.tryParseInt(channels),
-      duration == null ? null : Utils.tryParseInt(duration),
-      height == null ? null : Utils.tryParseInt(height),
-      width == null ? null : Utils.tryParseInt(width),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "lang"),
-      MediaCommon.read(parser));
+        fileSize == null ? null : Utils.tryParseInt(fileSize),
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "medium"),
+        isDefault == null ? null : Boolean.valueOf(isDefault),
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "expression"),
+        bitrate == null ? null : Utils.tryParseInt(bitrate),
+        framerate == null ? null : Utils.tryParseInt(framerate),
+        samplingrate == null ? null : Utils.tryParseInt(samplingrate),
+        channels == null ? null : Utils.tryParseInt(channels),
+        duration == null ? null : Utils.tryParseInt(duration),
+        height == null ? null : Utils.tryParseInt(height),
+        width == null ? null : Utils.tryParseInt(width),
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "lang"),
+        MediaCommon.read(parser));
   }
 
   public MediaContent(@Nullable URL url, @Nullable Integer fileSize, @Nullable String type,

@@ -35,13 +35,13 @@ public final class MediaEmbed {
     while (parser.nextTag() == XmlPullParser.START_TAG) {
       parser.require(XmlPullParser.START_TAG, null, "param");
       values.put(Utils.nonNullString(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "name")),
-        parser.nextText());
+          parser.nextText());
     }
 
     return new MediaEmbed(url == null ? null : Utils.tryParseUrl(url),
-      width == null ? null : Utils.tryParseInt(width),
-      height == null ? null : Utils.tryParseInt(height),
-      values);
+        width == null ? null : Utils.tryParseInt(width),
+        height == null ? null : Utils.tryParseInt(height),
+        values);
   }
 
   public MediaEmbed(@Nullable URL url, @Nullable Integer width, @Nullable Integer height,

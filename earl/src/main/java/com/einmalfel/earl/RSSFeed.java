@@ -77,7 +77,7 @@ public final class RSSFeed implements Feed {
 
   @NonNull
   static RSSFeed read(@NonNull XmlPullParser parser, int maxItems)
-    throws IOException, XmlPullParserException {
+      throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, XmlPullParser.NO_NAMESPACE, XML_TAG);
 
     final Map<ST, String> map = new EnumMap<>(ST.class);
@@ -93,7 +93,7 @@ public final class RSSFeed implements Feed {
     Content.ContentBuilder contentBuilder = null;
 
     while (parser.nextTag() == XmlPullParser.START_TAG && (maxItems < 1 || items
-      .size() < maxItems)) {
+        .size() < maxItems)) {
       final String namespace = parser.getNamespace();
       if (XmlPullParser.NO_NAMESPACE.equalsIgnoreCase(namespace)) {
         final String tagName = parser.getName();
@@ -115,14 +115,14 @@ public final class RSSFeed implements Feed {
             break;
           case "skipHours":
             while (parser.nextTag() == XmlPullParser.START_TAG && "hour".equals(
-              parser.getName())) {
+                parser.getName())) {
               skipHours.add(Utils.tryParseInt(parser.nextText()));
               Utils.finishTag(parser);
             }
             break;
           case "skipDays":
             while (parser.nextTag() == XmlPullParser.START_TAG && "day".equals(
-              parser.getName())) {
+                parser.getName())) {
               skipDays.add(parser.nextText());
               Utils.finishTag(parser);
             }
@@ -167,30 +167,30 @@ public final class RSSFeed implements Feed {
     }
 
     return new RSSFeed(
-      Utils.nonNullString(map.remove(ST.title)),
-      Utils.nonNullUrl(map.remove(ST.link)),
-      Utils.nonNullString(map.remove(ST.description)),
-      map.remove(ST.language),
-      map.remove(ST.copyright),
-      map.remove(ST.managingEditor),
-      map.remove(ST.webMaster),
-      map.containsKey(ST.pubDate) ? Utils.parseDate(map.remove(ST.pubDate)) : null,
-      map.containsKey(ST.lastBuildDate) ? Utils
-        .parseDate(map.remove(ST.lastBuildDate)) : null,
-      categories,
-      map.remove(ST.generator),
-      map.containsKey(ST.docs) ? Utils.tryParseUrl(map.remove(ST.docs)) : null,
-      cloud,
-      map.containsKey(ST.ttl) ? Utils.tryParseInt(map.remove(ST.ttl)) : null,
-      map.remove(ST.rating),
-      image,
-      textInput,
-      skipHours,
-      skipDays,
-      items,
-      itunesBuilder == null ? null : itunesBuilder.build(),
-      mediaBuilder == null ? null : mediaBuilder.build(),
-      contentBuilder == null ? null : contentBuilder.build());
+        Utils.nonNullString(map.remove(ST.title)),
+        Utils.nonNullUrl(map.remove(ST.link)),
+        Utils.nonNullString(map.remove(ST.description)),
+        map.remove(ST.language),
+        map.remove(ST.copyright),
+        map.remove(ST.managingEditor),
+        map.remove(ST.webMaster),
+        map.containsKey(ST.pubDate) ? Utils.parseDate(map.remove(ST.pubDate)) : null,
+        map.containsKey(ST.lastBuildDate) ? Utils
+            .parseDate(map.remove(ST.lastBuildDate)) : null,
+        categories,
+        map.remove(ST.generator),
+        map.containsKey(ST.docs) ? Utils.tryParseUrl(map.remove(ST.docs)) : null,
+        cloud,
+        map.containsKey(ST.ttl) ? Utils.tryParseInt(map.remove(ST.ttl)) : null,
+        map.remove(ST.rating),
+        image,
+        textInput,
+        skipHours,
+        skipDays,
+        items,
+        itunesBuilder == null ? null : itunesBuilder.build(),
+        mediaBuilder == null ? null : mediaBuilder.build(),
+        contentBuilder == null ? null : contentBuilder.build());
   }
 
   public RSSFeed(@NonNull String title, @NonNull URL link, @NonNull String description,

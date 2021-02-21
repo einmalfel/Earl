@@ -20,8 +20,8 @@ public final class AtomContent extends AtomText {
     parser.require(XmlPullParser.START_TAG, null, XML_TAG);
     final String srcString = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "src");
     return new AtomContent(
-      srcString == null ? null : Utils.tryParseUri(srcString),
-      AtomText.read(parser)
+        srcString == null ? null : Utils.tryParseUri(srcString),
+        AtomText.read(parser)
     );
   }
 

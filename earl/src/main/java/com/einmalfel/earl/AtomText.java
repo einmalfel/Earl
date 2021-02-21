@@ -16,11 +16,11 @@ public class AtomText extends AtomCommonAttributes {
 
   @NonNull
   static AtomText read(@NonNull XmlPullParser parser)
-    throws XmlPullParserException, IOException {
+      throws XmlPullParserException, IOException {
     return new AtomText(
-      new AtomCommonAttributes(parser),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
-      parser.nextText());
+        new AtomCommonAttributes(parser),
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "type"),
+        parser.nextText());
   }
 
   public AtomText(@Nullable AtomCommonAttributes atomCommonAttributes, @Nullable String type,

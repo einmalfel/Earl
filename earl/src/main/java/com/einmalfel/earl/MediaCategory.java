@@ -24,8 +24,8 @@ public final class MediaCategory {
     parser.require(XmlPullParser.START_TAG, null, XML_TAG);
     final String scheme = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "scheme");
     return new MediaCategory(scheme == null ? null : Utils.tryParseUri(scheme),
-      parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "label"),
-      parser.nextText());
+        parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "label"),
+        parser.nextText());
   }
 
   public MediaCategory(@Nullable URI scheme, @Nullable String label, @NonNull String value) {

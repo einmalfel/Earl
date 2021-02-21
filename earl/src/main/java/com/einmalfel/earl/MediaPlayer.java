@@ -25,9 +25,9 @@ public final class MediaPlayer {
     final String width = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "width");
     final String height = parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "height");
     final MediaPlayer result = new MediaPlayer(
-      Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url")),
-      width == null ? null : Utils.tryParseInt(width),
-      height == null ? null : Utils.tryParseInt(height));
+        Utils.nonNullUrl(parser.getAttributeValue(XmlPullParser.NO_NAMESPACE, "url")),
+        width == null ? null : Utils.tryParseInt(width),
+        height == null ? null : Utils.tryParseInt(height));
     parser.nextTag();
     return result;
   }

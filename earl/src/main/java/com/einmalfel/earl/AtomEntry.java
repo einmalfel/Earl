@@ -48,7 +48,7 @@ public final class AtomEntry extends AtomCommonAttributes implements Item {
 
   @NonNull
   static AtomEntry read(XmlPullParser parser)
-    throws XmlPullParserException, IOException {
+      throws XmlPullParserException, IOException {
     parser.require(XmlPullParser.START_TAG, null, XML_TAG);
 
     final List<AtomPerson> authors = new LinkedList<>();
@@ -137,8 +137,8 @@ public final class AtomEntry extends AtomCommonAttributes implements Item {
     }
 
     return new AtomEntry(
-      atomCommonAttributes, Utils.nonNullUri(id), title, updated, authors, content, links,
-      summary, categories, contributors, published, source, rights, mediaBuilder == null ? null : mediaBuilder.build());
+        atomCommonAttributes, Utils.nonNullUri(id), title, updated, authors, content, links,
+        summary, categories, contributors, published, source, rights, mediaBuilder == null ? null : mediaBuilder.build());
   }
 
   public AtomEntry(@Nullable AtomCommonAttributes atomCommonAttributes, @NonNull URI id,

@@ -118,19 +118,19 @@ public final class RSSItem implements Item {
     }
 
     return new RSSItem(
-      map.remove(ST.title),
-      map.containsKey(ST.link) ? Utils.tryParseUrl(map.remove(ST.link)) : null,
-      map.remove(ST.description),
-      map.remove(ST.author),
-      categories,
-      map.containsKey(ST.comments) ? Utils.tryParseUrl(map.remove(ST.comments)) : null,
-      enclosures,
-      guid,
-      map.containsKey(ST.pubDate) ? Utils.parseDate(map.remove(ST.pubDate)) : null,
-      source,
-      itunesBuilder == null ? null : itunesBuilder.build(),
-      mediaBuilder == null ? null : mediaBuilder.build(),
-      contentBuilder == null ? null : contentBuilder.build());
+        map.remove(ST.title),
+        map.containsKey(ST.link) ? Utils.tryParseUrl(map.remove(ST.link)) : null,
+        map.remove(ST.description),
+        map.remove(ST.author),
+        categories,
+        map.containsKey(ST.comments) ? Utils.tryParseUrl(map.remove(ST.comments)) : null,
+        enclosures,
+        guid,
+        map.containsKey(ST.pubDate) ? Utils.parseDate(map.remove(ST.pubDate)) : null,
+        source,
+        itunesBuilder == null ? null : itunesBuilder.build(),
+        mediaBuilder == null ? null : mediaBuilder.build(),
+        contentBuilder == null ? null : contentBuilder.build());
   }
 
   public RSSItem(@Nullable String title, @Nullable URL link, @Nullable String description,
